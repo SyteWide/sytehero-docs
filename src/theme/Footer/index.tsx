@@ -30,6 +30,7 @@ const footerLinks = [
   {
     title: 'Resources',
     items: [
+      {label: 'Buy SyteSlyders', href: 'https://sytewide.com/buy-syteslyders'},
       {label: 'SyteWide.com', href: 'https://sytewide.com'},
       {label: 'FAQ', to: '/docs/troubleshooting/faq'},
     ],
