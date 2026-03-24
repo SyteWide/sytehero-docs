@@ -37,6 +37,13 @@ export default function HeroSection() {
             className="inline-flex items-center px-7 py-3 rounded-lg bg-transparent text-white font-semibold text-base no-underline border-2 border-white/40 transition-all duration-200 hover:border-white hover:text-white hover:-translate-y-0.5 hover:no-underline">
             Explore Features
           </Link>
+          <a
+            href="https://sytewide.com/buy-syteslyders"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-7 py-3 rounded-lg bg-primary-900/60 text-white font-semibold text-base no-underline border-2 border-primary-900/60 transition-all duration-200 hover:bg-primary-900/80 hover:border-primary-900/80 hover:text-white hover:-translate-y-0.5 hover:no-underline">
+            Buy Now
+          </a>
         </div>
       </div>
     </header>

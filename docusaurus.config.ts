@@ -121,6 +121,11 @@ const config: Config = {
           label: 'Documentation',
         },
         {
+          href: 'https://sytewide.com/buy-syteslyders',
+          label: 'Buy Now',
+          position: 'right',
+        },
+        {
           href: 'https://sytewide.com',
           label: 'SyteWide.com',
           position: 'right',
