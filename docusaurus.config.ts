@@ -45,7 +45,7 @@ const config: Config = {
     },
   ],
 
-  url: 'https://slydersdocs.sytewide.com',
+  url: 'https://syteslydersdocs.sytewide.com',
   baseUrl: '/',
 
   organizationName: 'sculpted-marketing',
