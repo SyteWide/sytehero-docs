@@ -38,7 +38,7 @@ Ensure the product:
 
 ## 6. Overlay Text Floating to Bottom
 
-Add the following to **Custom CSS**:
+This is an Avada-specific issue. Add the following to **Custom CSS**:
 
 ```css
 .fusion-column-wrapper:has(.slyders-fhsbg) {
@@ -49,7 +49,7 @@ Add the following to **Custom CSS**:
 }
 ```
 
-Replace `<your value>` with the desired minimum height for your hero section.
+Replace `<your value>` with the desired minimum height for your hero section. Divi and Elementor handle column centering differently — see the [theme guides](/docs/themes/avada) for details.
 
 ## 7. CTA Button Not Updating
 
@@ -57,7 +57,7 @@ Ensure the button has the `.slyders-hero-cta` class and that the frontend JavaSc
 
 ## 8. Hero Animation Not Running
 
-The slider engine must be loaded. If using FlexSlider, Avada usually provides it. Verify the library is enqueued by checking the page source or the browser Network tab.
+The slider engine must be loaded. If using FlexSlider, Avada and Divi provide it natively. Elementor sites use SyteSlyders' bundled slider engines (Swiper or Splide recommended). Verify the library is enqueued by checking the page source or the browser Network tab. See [Slider Engines](/docs/features/slider-engines) for details.
 
 ## 9. No-Active-Slides Email Not Sending
 

@@ -1,21 +1,25 @@
 ---
 sidebar_position: 1
 title: Featured Products
-description: Select WooCommerce products to appear in your hero background slider.
+description: Select products to appear in your hero background slider.
 ---
 
 # Featured Products
 
-Featured Products is the core of SyteSlyders. It lets you select WooCommerce products to appear in the hero background slider on your site, complete with media, text overlays, and call-to-action buttons.
+Featured Products is the core of SyteSlyders. It lets you select products from your ecommerce catalog to appear in the hero background slider on your site, complete with media, text overlays, and call-to-action buttons.
+
+:::tip Platform support
+SyteSlyders works with both [WooCommerce](/docs/ecommerce/woocommerce) and [FluentCart](/docs/ecommerce/fluentcart). The workflow below applies to both platforms.
+:::
 
 ## How to Feature a Product
 
-1. In your WordPress admin, go to **Products** and edit the product you want to feature.
+1. In your WordPress admin, go to **Products** (from your WooCommerce or FluentCart menu) and edit the product you want to feature.
 2. In the **SyteSlyders** sidebar metabox, toggle **Featured Slyder Product** to **ON**.
 3. Click **Select Slyder Media** and choose an image or video from your media library.
 4. Click **Update** to save the product.
 
-The product is now marked as a featured slyder product. The `slyder-featured-image` tag is assigned to the product automatically.
+The product is now marked as a featured slyder product. SyteSlyders tags the product automatically to track its featured status.
 
 ## Managing Featured Products
 

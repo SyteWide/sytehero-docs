@@ -13,6 +13,23 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Themes',
+      items: [
+        'themes/avada',
+        'themes/divi',
+        'themes/elementor',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Ecommerce Platforms',
+      items: [
+        'ecommerce/woocommerce',
+        'ecommerce/fluentcart',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Features',
       collapsed: false,
       items: [

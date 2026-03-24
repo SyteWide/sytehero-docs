@@ -1,12 +1,14 @@
 ---
 sidebar_position: 9
 title: Integrations
-description: Theme and ecommerce platform integrations supported by SyteSlyders.
+description: Connect SyteSlyders to external services like Shippo for shipping and tracking.
 ---
 
 # Integrations
 
-The Integrations tab lets you connect SyteSlyders to external services. Currently, the available integration is Shippo for shipping and tracking data.
+SyteSlyders integrates with your WordPress theme and ecommerce platform to provide hero sliders, sales scheduling, and merchandising. For theme and ecommerce platform setup, see the [Theme Guides](/docs/themes/avada) and [Ecommerce Platforms](/docs/ecommerce/woocommerce) sections.
+
+The **Integrations tab** in the SyteSlyders admin provides connections to additional external services. Currently, the available integration is Shippo for shipping and tracking data.
 
 ## Finding the Integrations Tab
 

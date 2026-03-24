@@ -31,7 +31,7 @@ function HomepageHeader() {
 const features = [
   {
     title: 'Featured Product Sliders',
-    description: 'Turn WooCommerce products into full-width hero sliders with images, videos, and call-to-action buttons.',
+    description: 'Turn your products into full-width hero sliders with images, videos, and call-to-action buttons.',
     link: '/docs/features/featured-products',
   },
   {
@@ -41,7 +41,7 @@ const features = [
   },
   {
     title: 'Sales Scheduling',
-    description: 'Plan sales in advance with automatic WooCommerce price sync, hero slides, and banner coordination.',
+    description: 'Plan sales in advance with automatic price sync, hero slides, and banner coordination.',
     link: '/docs/features/sales-scheduling',
   },
   {
@@ -61,9 +61,40 @@ const features = [
   },
 ];
 
-function Feature({title, description, link}: {title: string; description: string; link: string}) {
+const themes = [
+  {
+    title: 'Avada',
+    description: 'Place hero sliders in Fusion Builder columns with automatic text and CTA injection.',
+    link: '/docs/themes/avada',
+  },
+  {
+    title: 'Divi',
+    description: 'Add hero sliders to Divi Builder rows with full support for Divi 4 and Divi 5.',
+    link: '/docs/themes/divi',
+  },
+  {
+    title: 'Elementor',
+    description: 'Drop hero sliders into Elementor Flexbox Containers with all slider engines included.',
+    link: '/docs/themes/elementor',
+  },
+];
+
+const platforms = [
+  {
+    title: 'WooCommerce',
+    description: 'Full product sync, sales scheduling with native price updates, and Shippo shipping integration.',
+    link: '/docs/ecommerce/woocommerce',
+  },
+  {
+    title: 'FluentCart',
+    description: 'Product tagging, sales management, and reporting — SyteSlyders handles the differences automatically.',
+    link: '/docs/ecommerce/fluentcart',
+  },
+];
+
+function Card({title, description, link, colClass}: {title: string; description: string; link: string; colClass: string}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col', colClass)}>
       <div className="text--center padding-horiz--md padding-vert--md">
         <Heading as="h3">
           <Link to={link} className={styles.featureLink}>{title}</Link>
@@ -86,7 +117,29 @@ export default function Home(): ReactNode {
           <div className="container">
             <div className="row">
               {features.map((props, idx) => (
-                <Feature key={idx} {...props} />
+                <Card key={idx} colClass="col--4" {...props} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.features}>
+          <div className="container">
+            <Heading as="h2" className={styles.sectionHeading}>Supported Themes</Heading>
+            <div className="row">
+              {themes.map((props, idx) => (
+                <Card key={idx} colClass="col--4" {...props} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.features}>
+          <div className="container">
+            <Heading as="h2" className={styles.sectionHeading}>Ecommerce Platforms</Heading>
+            <div className="row">
+              {platforms.map((props, idx) => (
+                <Card key={idx} colClass="col--6" {...props} />
               ))}
             </div>
           </div>

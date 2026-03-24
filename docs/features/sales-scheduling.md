@@ -1,12 +1,16 @@
 ---
 sidebar_position: 4
 title: Sales Scheduling
-description: Schedule sales with automatic WooCommerce price sync and banner coordination.
+description: Schedule sales with automatic price sync and banner coordination.
 ---
 
 # Sales Scheduling
 
-Sales Scheduling lets you plan WooCommerce sales in advance. When a scheduled sale goes live, SyteSlyders automatically updates product prices, creates hero slides for the sale, and syncs any linked banners -- all without manual intervention.
+Sales Scheduling lets you plan sales in advance. When a scheduled sale goes live, SyteSlyders automatically updates product prices, creates hero slides for the sale, and syncs any linked banners -- all without manual intervention.
+
+:::tip Platform support
+Sales Scheduling works with both [WooCommerce](/docs/ecommerce/woocommerce) and [FluentCart](/docs/ecommerce/fluentcart). For WooCommerce, sale prices sync natively. For FluentCart, SyteSlyders manages sale pricing directly.
+:::
 
 ## Accessing the Schedule Tab
 
@@ -22,7 +26,7 @@ If you do not see the Schedule tab, it must be enabled first:
 
 1. Open the **Schedule** tab.
 2. Click **Add Schedule** (or the equivalent button at the top of the list).
-3. **Select products:** Use the product search field to find and select the WooCommerce products (or specific variations) you want to include in the sale.
+3. **Select products:** Use the product search field to find and select the products (or specific variations) you want to include in the sale.
 4. **Set sale prices:** Enter the sale price for each selected product or variation.
 5. **Choose dates:** Pick a **Start Date** and **End Date** for the sale window.
 6. Click **Save Schedules**.
@@ -31,10 +35,10 @@ If you do not see the Schedule tab, it must be enabled first:
 
 Saving a schedule triggers several automated actions:
 
-- **WooCommerce price updates** -- The sale price is written to each product, so WooCommerce recognizes the sale natively.
+- **Price updates** -- The sale price is written to each product. For WooCommerce, this syncs natively with WooCommerce's sale system. For FluentCart, SyteSlyders manages the pricing directly.
 - **Slide creation** -- Hero slides are created (or updated) to showcase the sale products during the active period.
 - **Banner linking** -- If you selected a banner for the schedule, it is linked and will display automatically when the sale is live.
-- **Cache clearing** -- When a sale goes live, the LiteSpeed cache is purged so visitors see the updated prices and slides immediately.
+- **Cache clearing** -- If LiteSpeed Cache is installed and the automatic cache-clearing toggle is enabled in [Plugin Setup](/docs/admin-reference/plugin-setup), the LiteSpeed cache is purged when a sale goes live so visitors see updated prices and slides immediately.
 
 ## Assigning a Banner
 
@@ -68,7 +72,7 @@ To turn off sales scheduling entirely:
 2. Toggle the **Schedule** option **OFF**.
 3. Save your settings.
 
-Disabling the Schedule tab stops all WooCommerce sale syncing and banner injection hooks. Existing WooCommerce sale prices that were already written to products are not removed automatically -- you would need to clear those manually or through WooCommerce if desired.
+Disabling the Schedule tab stops all sale syncing and banner injection hooks. Existing sale prices that were already written to products are not removed automatically -- you would need to clear those manually if desired.
 
 ## Retain After Schedule
 
@@ -84,7 +88,7 @@ This is useful when you want a product to keep its hero slot after a promotion e
 When you save a schedule whose start time is in the past or equal to the current time, the schedule is activated immediately rather than waiting for the next cron tick. This means:
 
 - Slides become live right away.
-- WooCommerce sale prices are applied instantly.
+- Sale prices are applied instantly.
 - Any linked banner begins displaying immediately.
 
 This ensures there is no delay when creating a schedule that should already be active.

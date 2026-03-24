@@ -40,13 +40,13 @@ The export always includes these core settings regardless of scope toggles:
 
 ## What Is NOT Included
 
-The export does **not** include WooCommerce product meta such as:
+The export does **not** include product-level meta such as:
 
 - Featured product status
 - Hero images or videos assigned to individual products
 - Per-product hero text overrides stored in product meta
 
-These values are tied directly to WooCommerce products and are managed through the product editor or the Slyders tab.
+These values are tied directly to individual products and are managed through the product editor or the Slyders tab.
 
 ## Importing Settings
 
