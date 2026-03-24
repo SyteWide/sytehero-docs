@@ -60,7 +60,7 @@ This lets you fine-tune vertical positioning so the text sits correctly on every
 
 You can override the default text on a product-by-product basis. There are two ways to do this:
 
-1. **Product Editor:** Edit a product in WooCommerce and use the SyteSlyders metabox to enter custom text for Text Area 1, Text Area 2, and the CTA.
+1. **Product Editor:** Edit a product and use the SyteSlyders metabox to enter custom text for Text Area 1, Text Area 2, and the CTA.
 2. **Slyders Tab Inline Editor:** Go to **SyteSlyders > Slyders** and edit the text fields directly in each product's row.
 
 When a per-product override is set, it takes priority over the default text and random lines fallback for that product's slide.
@@ -74,6 +74,18 @@ Both the product metabox and the inline editor on the **Slyders** tab share the 
 ### Custom Text fields
 
 When a field's mode is set to **Custom Text** (or **Custom CTA**), the text input appears immediately on page load — you do not need to re-select the option to reveal it. The current saved value is pre-filled.
+
+## Managing Defaults with the Set Defaults Modal
+
+The **Set Defaults** button on the Slyders tab opens a modal for managing all hero text defaults. The modal includes controls for master text, random lines, per-view overrides (Desktop/Tablet/Mobile), and margin settings.
+
+The modal has three action buttons:
+
+- **Save Defaults** — Saves your default settings for future products. New featured products will inherit these values. Existing products are not changed.
+- **Apply to Current** — Saves your defaults AND applies them to all existing featured products. Use this when you want to update everything at once.
+- **Reset to Defaults** — Restores all fields to their baseline values.
+
+Glow settings are managed separately on the Settings tab.
 
 > **Note:** The "Use Master Default" option in per-view dropdowns inherits the value from the master defaults configured in the Set Defaults modal.
 

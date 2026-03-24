@@ -6,7 +6,7 @@ description: Create standalone sliders independent of your product catalog.
 
 # Custom Slyders
 
-Custom Slyders let you create standalone hero-like sliders that are not tied to WooCommerce products. They are ideal for non-product hero sections, landing pages, seasonal promotions, or any page where you want a full-featured slider without product dependencies.
+Custom Slyders let you create standalone hero-like sliders that are not tied to your product catalog. They are ideal for non-product hero sections, landing pages, seasonal promotions, or any page where you want a full-featured slider without product dependencies.
 
 ## Accessing the Custom Slyders Tab
 
@@ -28,7 +28,7 @@ Each Custom Slyder supports the following options:
 | **Enable** | Toggle the slyder on or off. A disabled slyder will not render even if its shortcode is placed on a page. |
 | **Name** | An optional label for your reference (not displayed on the front end). |
 | **Background Media URL** | The URL of the image or video to use as the slide background. |
-| **Fallback Image URL** | A static image shown if the background media fails to load or while a video buffers. |
+| **Image URL** | A fallback background image shown when the Background Media URL is empty or fails to load. |
 | **CTA URL** | The link destination for the call-to-action button. |
 | **CTA Button Text** | The label displayed on the CTA button. |
 | **CTA Open in New Tab** | When enabled, clicking the CTA button opens the link in a new browser tab instead of the current one. |

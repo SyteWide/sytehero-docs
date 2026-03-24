@@ -12,11 +12,11 @@ Install SyteSlyders, go to **Plugin Setup**, enter your license key and email, a
 
 ## 2. Feature a Product
 
-Edit any WooCommerce product, toggle **Featured Slyder Product** ON, click **Select Slyder Media**, choose a hero image, and **Update** the product.
+Edit any product, toggle **Featured Slyder Product** ON, click **Select Slyder Media**, choose a hero image, and **Update** the product.
 
 ## 3. Place the Shortcode
 
-Edit the page where you want the hero slider. Add `[slyders_featured_hero]` in an Avada Builder column/section before your overlay content (CTA button, text).
+Edit the page where you want the hero slider. Add `[slyders_featured_hero]` in your page builder before your overlay content (CTA button, text). See the [theme guides](/docs/themes/avada) for step-by-step placement instructions for Avada, Divi, or Elementor.
 
 ## 4. Style Your Overlay
 

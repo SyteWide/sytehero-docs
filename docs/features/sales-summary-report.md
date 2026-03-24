@@ -1,7 +1,7 @@
 ---
 sidebar_position: 11
 title: Sales Summary Report
-description: Automated email reports summarizing completed WooCommerce sales.
+description: Automated email reports summarizing completed sales.
 ---
 
 # Sales Summary Report

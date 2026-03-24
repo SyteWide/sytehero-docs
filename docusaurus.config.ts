@@ -75,9 +75,18 @@ const config: Config = {
           title: 'Documentation',
           items: [
             {label: 'Getting Started', to: '/docs/getting-started/installation'},
+            {label: 'Theme Guides', to: '/docs/themes/avada'},
             {label: 'Features', to: '/docs/features/featured-products'},
             {label: 'Admin Reference', to: '/docs/admin-reference/plugin-setup'},
             {label: 'Troubleshooting', to: '/docs/troubleshooting/common-issues'},
+          ],
+        },
+        {
+          title: 'Themes',
+          items: [
+            {label: 'Avada', href: 'https://avada.theme-fusion.com'},
+            {label: 'Divi', href: 'https://www.elegantthemes.com/gallery/divi/'},
+            {label: 'Elementor', href: 'https://elementor.com'},
           ],
         },
         {
@@ -85,6 +94,7 @@ const config: Config = {
           items: [
             {label: 'SyteWide.com', href: 'https://sytewide.com'},
             {label: 'WooCommerce', href: 'https://woocommerce.com'},
+            {label: 'FluentCart', href: 'https://fluentcart.com'},
           ],
         },
       ],

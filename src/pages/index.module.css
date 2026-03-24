@@ -33,3 +33,8 @@
 .featureLink:hover {
   text-decoration: underline;
 }
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
