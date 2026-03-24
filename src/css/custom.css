@@ -1,0 +1,73 @@
+:root {
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93bbfd;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-h1-font-size: 2.1875rem; /* 35px */
+  --ifm-h2-font-size: 1.75rem;   /* 28px */
+  --ifm-h3-font-size: 1.375rem;  /* 22px */
+  --ifm-h4-font-size: 1.125rem;  /* 18px */
+  --ifm-h5-font-size: 1rem;      /* 16px */
+  --ifm-font-base-size: 16px;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93bbfd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar logo — force square */
+.navbar__logo img {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* Force heading sizes — overrides Infima defaults */
+h1, .markdown h1 {
+  font-size: 2.1875rem !important; /* 35px */
+}
+
+h2, .markdown h2 {
+  font-size: 1.75rem !important; /* 28px */
+}
+
+h3, .markdown h3 {
+  font-size: 1.375rem !important; /* 22px */
+}
+
+h4, .markdown h4 {
+  font-size: 1.125rem !important; /* 18px */
+}
+
+h5, .markdown h5 {
+  font-size: 1rem !important; /* 16px */
+}
+
+.hero__title {
+  font-size: 2.1875rem !important; /* 35px */
+}
+
+@media screen and (max-width: 996px) {
+  h1, .markdown h1, .hero__title {
+    font-size: 1.75rem !important; /* 28px */
+  }
+
+  h2, .markdown h2 {
+    font-size: 1.375rem !important; /* 22px */
+  }
+
+  h3, .markdown h3 {
+    font-size: 1.125rem !important; /* 18px */
+  }
+}

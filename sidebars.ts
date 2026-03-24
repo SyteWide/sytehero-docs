@@ -1,0 +1,51 @@
+import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+
+const sidebars: SidebarsConfig = {
+  docsSidebar: [
+    {
+      type: 'category',
+      label: 'Getting Started',
+      collapsed: false,
+      items: [
+        'getting-started/installation',
+        'getting-started/quickstart',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Features',
+      collapsed: false,
+      items: [
+        'features/featured-products',
+        'features/hero-text',
+        'features/custom-slyders',
+        'features/sales-scheduling',
+        'features/banners',
+        'features/custom-css',
+        'features/shortcodes',
+        'features/slider-engines',
+        'features/integrations',
+        'features/backup-restore',
+        'features/sales-summary-report',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Admin Reference',
+      items: [
+        'admin-reference/plugin-setup',
+        'admin-reference/settings-tabs',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Troubleshooting',
+      items: [
+        'troubleshooting/common-issues',
+        'troubleshooting/faq',
+      ],
+    },
+  ],
+};
+
+export default sidebars;
