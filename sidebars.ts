@@ -42,6 +42,7 @@ const sidebars: SidebarsConfig = {
         'features/shortcodes',
         'features/slider-engines',
         'features/integrations',
+        'features/google-calendar-setup',
         'features/backup-restore',
         'features/sales-summary-report',
       ],
