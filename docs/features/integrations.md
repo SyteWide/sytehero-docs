@@ -1,14 +1,14 @@
 ---
 sidebar_position: 9
 title: Integrations
-description: Connect SyteSlyders to external services like Shippo for shipping and tracking.
+description: Connect SyteSlyders to external services like Shippo for shipping and Google Calendar for schedule syncing.
 ---
 
 # Integrations
 
 SyteSlyders integrates with your WordPress theme and ecommerce platform to provide hero sliders, sales scheduling, and merchandising. For theme and ecommerce platform setup, see the [Theme Guides](/docs/themes/avada) and [Ecommerce Platforms](/docs/ecommerce/woocommerce) sections.
 
-The **Integrations tab** in the SyteSlyders admin provides connections to additional external services. Currently, the available integration is Shippo for shipping and tracking data.
+The **Integrations tab** in the SyteSlyders admin provides connections to additional external services. Currently available integrations are Shippo for shipping and tracking data, and Google Calendar for two-way sales schedule syncing.
 
 ## Finding the Integrations Tab
 
@@ -93,3 +93,101 @@ Tracking data is cached for one hour. After that period, the next report will fe
 ### Rate limit warnings
 
 Shippo enforces per-minute rate limits. If your store has a very large number of orders in a single report period, some orders may not have tracking data in that email. The data will be fetched on the next report cycle when the rate limit resets.
+
+## Google Calendar Integration
+
+Google Calendar keeps your [sales schedules](/docs/features/sales-scheduling) and calendar events in sync. When you create or edit a schedule in SyteSlyders, it appears as an event in Google Calendar. When someone edits the event in Google Calendar, those changes sync back to the schedule automatically.
+
+### Prerequisites
+
+:::tip Before you start
+You need:
+
+- A Google account with access to Google Calendar.
+- A Google Cloud project with the **Calendar API** enabled and an **OAuth 2.0 client** (Web Application type) configured. The authorized redirect URI must match the URL shown on the Google Calendar card after saving credentials.
+- The PHP **OpenSSL** extension must be active on your server (required for encrypted credential storage).
+:::
+
+### Setup
+
+1. Open the **Integrations** tab in the SyteSlyders admin.
+2. Locate the **Google Calendar** card.
+3. Enter your **Client ID** and **Client Secret** from the Google Cloud Console.
+4. Click **Save Credentials**.
+5. Copy the **Redirect URI** shown on the card and add it to your Google Cloud Console OAuth client's authorized redirect URIs.
+6. Click **Connect with Google** to start the OAuth authorization flow.
+7. Authorize access in the Google consent screen.
+8. After redirect, a green "Connected" badge confirms the integration is active, along with the connected Google account email.
+9. Select a calendar from the **Calendar** dropdown.
+10. Optionally toggle **Auto-Sync** on (enables automatic sync every 15 minutes).
+11. Click **Save Settings**.
+
+### How Sync Works
+
+Sync runs in two directions:
+
+- **Push (SyteSlyders to Google Calendar):** When you save schedules on the Sales tab, linked events in Google Calendar are automatically created, updated, or deleted to match.
+- **Pull (Google Calendar to SyteSlyders):** Every 15 minutes (when auto-sync is enabled) or on demand via the **Sync Now** button, SyteSlyders checks for changes in Google Calendar and updates the corresponding schedules.
+
+:::info Synced fields
+**What syncs:** Schedule label, start date/time, and end date/time.
+
+**What does not sync:** Products, prices, slides, and banner assignments are managed only within SyteSlyders. Google Calendar events reflect the schedule window and name, not the sale contents.
+:::
+
+### Per-Schedule Sync Toggle
+
+Each schedule on the **Sales** tab has a Google Calendar sync toggle. You can disable sync for individual schedules without disconnecting the integration.
+
+1. Go to the **Sales** tab.
+2. Find the schedule row.
+3. Use the sync toggle to enable or disable Google Calendar sync for that schedule.
+
+Disabling sync for a schedule stops both push and pull updates for it. The Google Calendar event remains but is no longer linked.
+
+### Importing Events from Google Calendar
+
+You can create schedules from existing Google Calendar events:
+
+1. On the **Sales** tab, click **Import from Google Calendar**.
+2. A modal lists future events (next 90 days) from the selected calendar that are not already linked to a schedule.
+3. Select the events you want to import.
+4. Click **Import**.
+
+Each imported event creates a shell schedule with the event name and dates but no products or slides. You can then add products and configure pricing on the **Sales** tab.
+
+### All-Day Events
+
+All-day events in Google Calendar are supported. The start time maps to midnight and the end time maps to 11:59 PM in your site's configured timezone. Round-trip consistency is maintained -- pushing an all-day-originated schedule back to Google Calendar preserves the all-day format.
+
+### Disconnecting
+
+:::caution
+Disconnecting revokes the Google token, removes all sync linkage, and stops the automatic sync. Existing schedules are not deleted -- they simply lose their Google Calendar link.
+:::
+
+1. On the **Integrations** tab, click **Disconnect** in the Google Calendar card.
+2. Confirm the action.
+
+### Troubleshooting
+
+#### Cannot connect or OAuth fails
+
+- Verify the **Client ID** and **Client Secret** match your Google Cloud Console credentials.
+- Ensure the authorized redirect URI in Google Cloud Console matches the URL shown on the Google Calendar card.
+- Check that the PHP OpenSSL extension is active on your server.
+
+#### Sync does not update schedules
+
+- Confirm the Google Calendar card shows "Connected" and a calendar is selected.
+- Verify **Auto-Sync** is enabled if relying on automatic sync.
+- Check that the per-schedule sync toggle is enabled for the schedules in question.
+- Try clicking **Sync Now** to trigger an immediate sync.
+
+#### Event deleted in Google Calendar but schedule remains
+
+Deleting a Google Calendar event unlinks the schedule but does not delete it. The schedule remains in SyteSlyders and must be removed manually if no longer needed.
+
+#### "Sync is already in progress"
+
+A sync lock prevents concurrent runs. The lock expires after 30 seconds. Wait briefly and try again.
