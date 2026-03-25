@@ -104,7 +104,7 @@ Google Calendar keeps your [sales schedules](/docs/features/sales-scheduling) an
 You need:
 
 - A Google account with access to Google Calendar.
-- A Google Cloud project with the **Calendar API** enabled and an **OAuth 2.0 client** (Web Application type) configured. The authorized redirect URI must match the URL shown on the Google Calendar card after saving credentials.
+- A Google Cloud project with the **Calendar API** enabled and an **OAuth 2.0 client** (Web Application type) configured. See the [OAuth Setup Guide](/docs/features/google-calendar-setup) for step-by-step instructions. The authorized redirect URI must match the URL shown on the Google Calendar card after saving credentials.
 - The PHP **OpenSSL** extension must be active on your server (required for encrypted credential storage).
 :::
 
@@ -175,6 +175,7 @@ Disconnecting revokes the Google token, removes all sync linkage, and stops the 
 
 - Verify the **Client ID** and **Client Secret** match your Google Cloud Console credentials.
 - Ensure the authorized redirect URI in Google Cloud Console matches the URL shown on the Google Calendar card.
+- If you have not yet created your Google Cloud credentials, follow the [OAuth Setup Guide](/docs/features/google-calendar-setup).
 - Check that the PHP OpenSSL extension is active on your server.
 
 #### Sync does not update schedules
