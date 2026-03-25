@@ -33,7 +33,7 @@ export default function PlatformsSection() {
         <div className="text-center mb-12">
           <Heading
             as="h2"
-            className="font-heading text-2xl lg:text-3xl font-bold text-[var(--sl-text-primary)] mb-3">
+            className="font-heading text-[1.375rem] lg:text-[1.75rem] font-bold text-[var(--sl-text-primary)] mb-3">
             Ecommerce Platforms
           </Heading>
           <div className="w-12 h-[3px] bg-primary-600 rounded-full mx-auto mb-4" />
