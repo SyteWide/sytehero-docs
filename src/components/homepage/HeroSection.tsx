@@ -20,7 +20,7 @@ export default function HeroSection() {
       <div className="container relative z-10">
         <Heading
           as="h1"
-          className="font-heading text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+          className="font-heading text-[1.75rem] lg:text-[2.1875rem] font-bold text-white mb-4 leading-tight">
           {siteConfig.title}
         </Heading>
         <p className="text-lg lg:text-xl text-white/85 max-w-xl mx-auto mb-8 leading-relaxed">
