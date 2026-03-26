@@ -70,9 +70,9 @@ Both the Sales Summary and Schedule Report emails support automatic dark mode. E
 ### Periodic Summary Email
 
 1. Dark header bar with logo and "Sales Summary" subtitle
-2. Statistics banner: period label, total orders, total revenue, average order value, unique customers
+2. Statistics banner: period label, total orders, total revenue, average order value, unique customers, total shipping label cost (when Shippo tracking data includes cost)
 3. Top 3 products by quantity sold (with thumbnails, qty, revenue)
-4. Individual order cards: order number, date, customer, payment method, status badge, attribution source badges (when enabled — external source badge and/or purple "via Hero" badge), shipping & tracking section (when Shippo enabled — carrier badge, linked tracking number, status badge, ETA), line items table
+4. Individual order cards: order number, date, customer, payment method, status badge, attribution source badges (when enabled — external source badge and/or purple "via Hero" badge), shipping & tracking section (when Shippo enabled — carrier badge, linked tracking number, status badge, ETA, label cost), line items table
 5. Footer with admin link
 
 ### Real-Time / New Sale Email
