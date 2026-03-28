@@ -1,4 +1,4 @@
-# SyteSlyders Documentation Site
+# SyteHero Documentation Site
 
 Built with [Docusaurus](https://docusaurus.io/).
 

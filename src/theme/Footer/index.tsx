@@ -30,7 +30,7 @@ const footerLinks = [
   {
     title: 'Resources',
     items: [
-      {label: 'Buy SyteSlyders', href: 'https://sytewide.com/buy-syteslyders'},
+      {label: 'Buy SyteHero', href: 'https://sytewide.com/buy-sytehero'},
       {label: 'SyteWide.com', href: 'https://sytewide.com'},
       {label: 'FAQ', to: '/docs/troubleshooting/faq'},
     ],
@@ -83,13 +83,13 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <img
                   src={useBaseUrl('/img/logo.png')}
-                  alt="SyteSlyders"
+                  alt="SyteHero"
                   width={28}
                   height={28}
                   className="rounded"
                 />
                 <span className="font-heading font-semibold text-white text-sm">
-                  SyteSlyders
+                  SyteHero
                 </span>
               </div>
               <p className="text-gray-500 text-xs m-0">

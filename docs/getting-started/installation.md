@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Installation & License Activation
-description: Install SyteSlyders, activate your license, and configure your theme and ecommerce platform.
+description: Install SyteHero, activate your license, and configure your theme and ecommerce platform.
 ---
 
 # Installation & License Activation
@@ -12,15 +12,15 @@ Upload the ZIP via **WP Admin → Plugins → Add New → Upload**, or install v
 
 ## Activate
 
-Go to **Plugins** and click **Activate** on SyteSlyders. The `slyder-featured-image` product tag is created automatically.
+Go to **Plugins** and click **Activate** on SyteHero. The `sytehero-featured-image` product tag is created automatically.
 
 ## Open Plugin Setup
 
-Navigate to **SyteSlyders → Plugin Setup**. This is the only screen visible before license activation.
+Navigate to **SyteHero → Plugin Setup**. This is the only screen visible before license activation.
 
 ## Enter Your License
 
-Paste your **SyteSlyders License Key** and purchasing **customer email**, then click **Save Changes**.
+Paste your **SyteHero License Key** and purchasing **customer email**, then click **Save Changes**.
 
 ## Verify Activation
 

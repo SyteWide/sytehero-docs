@@ -10,11 +10,11 @@ Banners let you display promotional content on your site with optional date-base
 
 ## Accessing the Banners Tab
 
-Navigate to **SyteSlyders > Banners** in your WordPress admin menu.
+Navigate to **SyteHero > Banners** in your WordPress admin menu.
 
 If you do not see the Banners tab, it must be enabled first:
 
-1. Go to **SyteSlyders > Settings**.
+1. Go to **SyteHero > Settings**.
 2. Toggle the **Banners** option **ON**.
 3. Save your settings.
 
@@ -31,7 +31,7 @@ If you do not see the Banners tab, it must be enabled first:
 
 Banners become even more powerful when paired with sales scheduling:
 
-1. Go to **SyteSlyders > Schedule**.
+1. Go to **SyteHero > Schedule**.
 2. On any schedule row, use the **Banner** dropdown to select a banner.
 3. Save the schedule.
 
@@ -43,7 +43,7 @@ For details on how banner assignment and conflict resolution work, see the [Sale
 
 To turn off the banners feature entirely:
 
-1. Go to **SyteSlyders > Settings**.
+1. Go to **SyteHero > Settings**.
 2. Toggle the **Banners** option **OFF**.
 3. Save your settings.
 

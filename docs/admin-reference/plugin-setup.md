@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
 title: Plugin Setup
-description: Configure SyteSlyders plugin settings, theme, and ecommerce platform.
+description: Configure SyteHero plugin settings, theme, and ecommerce platform.
 ---
 
 # Plugin Setup
 
-**Location:** SyteSlyders → Plugin Setup (visible before and after license activation)
+**Location:** SyteHero → Plugin Setup (visible before and after license activation)
 
 ---
 
@@ -25,7 +25,7 @@ Toggle **Deactivate license on save** to unlock for a different site.
 
 ## Theme Selector
 
-The theme selector tells SyteSlyders how to display hero text overlays and CTA buttons within your page builder. Shortcodes render regardless of which theme is selected — this setting only affects how overlays are positioned.
+The theme selector tells SyteHero how to display hero text overlays and CTA buttons within your page builder. Shortcodes render regardless of which theme is selected — this setting only affects how overlays are positioned.
 
 | Theme | Page Builder |
 |-------|-------------|
@@ -37,12 +37,12 @@ See the individual theme guides for step-by-step placement instructions.
 
 ## Ecommerce Selector
 
-The ecommerce selector tells SyteSlyders which product catalog to use for featured product sliders, sales scheduling, and reporting.
+The ecommerce selector tells SyteHero which product catalog to use for featured product sliders, sales scheduling, and reporting.
 
 | Platform | Description |
 |----------|-------------|
 | [**WooCommerce**](/docs/ecommerce/woocommerce) | Native sale price sync, full order tracking, Shippo integration |
-| [**FluentCart**](/docs/ecommerce/fluentcart) | SyteSlyders manages sale pricing and tagging automatically |
+| [**FluentCart**](/docs/ecommerce/fluentcart) | SyteHero manages sale pricing and tagging automatically |
 
 See the individual platform guides for details on how each integration works.
 
@@ -63,7 +63,7 @@ Toggle file-based logging for diagnostics. The panel shows the log file path.
 
 When the LiteSpeed Cache plugin is active, an additional toggle appears:
 
-- **Clear LiteSpeed Cache automatically** — When enabled, SyteSlyders purges the LiteSpeed cache whenever a sales schedule goes live or expires. This ensures visitors see updated prices and slides immediately.
+- **Clear LiteSpeed Cache automatically** — When enabled, SyteHero purges the LiteSpeed cache whenever a sales schedule goes live or expires. This ensures visitors see updated prices and slides immediately.
 
 This toggle only appears if LiteSpeed Cache is installed and active on your site.
 

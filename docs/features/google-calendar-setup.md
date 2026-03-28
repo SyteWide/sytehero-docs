@@ -1,12 +1,12 @@
 ---
 sidebar_position: 10
 title: "Google Calendar: OAuth Setup"
-description: "Step-by-step guide to creating Google Cloud OAuth 2.0 credentials for the SyteSlyders Google Calendar integration."
+description: "Step-by-step guide to creating Google Cloud OAuth 2.0 credentials for the SyteHero Google Calendar integration."
 ---
 
 # Google Calendar: OAuth Setup
 
-Before you can connect Google Calendar to SyteSlyders, you need to create OAuth 2.0 credentials in the Google Cloud Console. This guide walks through the process step by step. Once you have your credentials, return to the [Google Calendar Integration setup](/docs/features/integrations#setup-1) to connect your calendar.
+Before you can connect Google Calendar to SyteHero, you need to create OAuth 2.0 credentials in the Google Cloud Console. This guide walks through the process step by step. Once you have your credentials, return to the [Google Calendar Integration setup](/docs/features/integrations#setup-1) to connect your calendar.
 
 :::info Time estimate
 This process takes approximately 5--10 minutes. You only need to do it once.
@@ -18,7 +18,7 @@ This process takes approximately 5--10 minutes. You only need to do it once.
 2. Sign in with the Google account you want to use for calendar syncing.
 3. Click the project dropdown in the top navigation bar.
 4. Click **New Project** (or select an existing project if you already have one).
-5. Enter a project name (e.g., "SyteSlyders Calendar") and click **Create**.
+5. Enter a project name (e.g., "SyteHero Calendar") and click **Create**.
 6. Wait for the project to be created, then select it from the project dropdown.
 
 ## Step 2: Enable the Google Calendar API
@@ -45,12 +45,12 @@ If the button says "Manage" instead of "Enable," the API is already enabled for 
 6. Search for `https://www.googleapis.com/auth/calendar` and check it.
 7. Click **Update**, then **Save and Continue**.
 8. On the **Test users** screen, click **Add Users**.
-9. Enter the Google account email address that will authorize the integration in SyteSlyders.
+9. Enter the Google account email address that will authorize the integration in SyteHero.
 10. Click **Save and Continue**.
 11. Review the summary and click **Back to Dashboard**.
 
 :::caution Publishing status
-Your app will be in **Testing** mode. This is fine for SyteSlyders -- only the Google accounts you add as test users can authorize the integration. You do **not** need to submit for Google verification unless you plan to let arbitrary Google users connect, which is not the case for a WordPress plugin admin setting.
+Your app will be in **Testing** mode. This is fine for SyteHero -- only the Google accounts you add as test users can authorize the integration. You do **not** need to submit for Google verification unless you plan to let arbitrary Google users connect, which is not the case for a WordPress plugin admin setting.
 :::
 
 ## Step 4: Create OAuth 2.0 Credentials
@@ -58,23 +58,23 @@ Your app will be in **Testing** mode. This is fine for SyteSlyders -- only the G
 1. In the left sidebar, go to **APIs & Services > Credentials**.
 2. Click **Create Credentials** at the top and select **OAuth client ID**.
 3. For **Application type**, select **Web application**.
-4. Enter a name (e.g., "SyteSlyders").
+4. Enter a name (e.g., "SyteHero").
 5. Under **Authorized redirect URIs**, click **Add URI**.
-6. Enter the redirect URI shown on the Google Calendar card in your SyteSlyders admin.
+6. Enter the redirect URI shown on the Google Calendar card in your SyteHero admin.
 7. Click **Create**.
 
 :::info Finding your redirect URI
-The redirect URI is displayed on the Google Calendar card **after** you save your Client ID and Client Secret on the SyteSlyders Integrations tab. It follows this format:
+The redirect URI is displayed on the Google Calendar card **after** you save your Client ID and Client Secret on the SyteHero Integrations tab. It follows this format:
 
-`https://yoursite.com/wp-admin/admin-post.php?action=slyders_gcal_oauth_callback`
+`https://yoursite.com/wp-admin/admin-post.php?action=hero_gcal_oauth_callback`
 
-If you have not saved credentials yet, skip the redirect URI for now. You can come back and add it after completing Step 5 below and saving your credentials in SyteSlyders.
+If you have not saved credentials yet, skip the redirect URI for now. You can come back and add it after completing Step 5 below and saving your credentials in SyteHero.
 :::
 
 ## Step 5: Copy Your Credentials
 
 1. A dialog appears showing your **Client ID** and **Client Secret**.
-2. Copy both values -- you will paste them into SyteSlyders on the Integrations tab.
+2. Copy both values -- you will paste them into SyteHero on the Integrations tab.
 3. Click **OK** to close the dialog.
 
 :::caution
@@ -89,7 +89,7 @@ You now have your OAuth 2.0 Client ID and Client Secret. Head to the [Google Cal
 
 ### "Access blocked: This app's request is invalid"
 
-This usually means the redirect URI does not match. Double-check that the **Authorized redirect URI** in Google Cloud Console exactly matches the one shown on the SyteSlyders Google Calendar card, including the protocol (`https` vs `http`).
+This usually means the redirect URI does not match. Double-check that the **Authorized redirect URI** in Google Cloud Console exactly matches the one shown on the SyteHero Google Calendar card, including the protocol (`https` vs `http`).
 
 ### "Error 403: access_denied"
 
@@ -97,7 +97,7 @@ The Google account you are using to authorize is not listed as a test user. Go b
 
 ### Consent screen asks for unexpected permissions
 
-SyteSlyders requests two scopes:
+SyteHero requests two scopes:
 
 - `https://www.googleapis.com/auth/calendar` -- read/write access to Google Calendar events.
 - `https://www.googleapis.com/auth/userinfo.email` -- used to display the connected account email in the plugin.

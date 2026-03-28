@@ -6,19 +6,19 @@ description: Schedule sales with automatic price sync and banner coordination.
 
 # Sales Scheduling
 
-Sales Scheduling lets you plan sales in advance. When a scheduled sale goes live, SyteSlyders automatically updates product prices, creates hero slides for the sale, and syncs any linked banners -- all without manual intervention.
+Sales Scheduling lets you plan sales in advance. When a scheduled sale goes live, SyteHero automatically updates product prices, creates hero slides for the sale, and syncs any linked banners -- all without manual intervention.
 
 :::tip Platform support
-Sales Scheduling works with both [WooCommerce](/docs/ecommerce/woocommerce) and [FluentCart](/docs/ecommerce/fluentcart). For WooCommerce, sale prices sync natively. For FluentCart, SyteSlyders manages sale pricing directly.
+Sales Scheduling works with both [WooCommerce](/docs/ecommerce/woocommerce) and [FluentCart](/docs/ecommerce/fluentcart). For WooCommerce, sale prices sync natively. For FluentCart, SyteHero manages sale pricing directly.
 :::
 
 ## Accessing the Schedule Tab
 
-Navigate to **SyteSlyders > Schedule** in your WordPress admin menu.
+Navigate to **SyteHero > Schedule** in your WordPress admin menu.
 
 If you do not see the Schedule tab, it must be enabled first:
 
-1. Go to **SyteSlyders > Settings**.
+1. Go to **SyteHero > Settings**.
 2. Toggle the **Schedule** option **ON**.
 3. Save your settings.
 
@@ -35,7 +35,7 @@ If you do not see the Schedule tab, it must be enabled first:
 
 Saving a schedule triggers several automated actions:
 
-- **Price updates** -- The sale price is written to each product. For WooCommerce, this syncs natively with WooCommerce's sale system. For FluentCart, SyteSlyders manages the pricing directly.
+- **Price updates** -- The sale price is written to each product. For WooCommerce, this syncs natively with WooCommerce's sale system. For FluentCart, SyteHero manages the pricing directly.
 - **Slide creation** -- Hero slides are created (or updated) to showcase the sale products during the active period.
 - **Banner linking** -- If you selected a banner for the schedule, it is linked and will display automatically when the sale is live.
 - **Cache clearing** -- If LiteSpeed Cache is installed and the automatic cache-clearing toggle is enabled in [Plugin Setup](/docs/admin-reference/plugin-setup), the LiteSpeed cache is purged when a sale goes live so visitors see updated prices and slides immediately.
@@ -58,7 +58,7 @@ Every schedule exists in one of three states:
 
 ## Per-Slide Duration Overrides
 
-By default, slides use the global interval set in your SyteSlyders settings. Schedules can override this value so that sale slides display for a longer or shorter duration (in milliseconds) than the default.
+By default, slides use the global interval set in your SyteHero settings. Schedules can override this value so that sale slides display for a longer or shorter duration (in milliseconds) than the default.
 
 ## Slide Builder Validation
 
@@ -68,7 +68,7 @@ When a schedule creates slides, the slide builder checks that each product has m
 
 To turn off sales scheduling entirely:
 
-1. Go to **SyteSlyders > Settings**.
+1. Go to **SyteHero > Settings**.
 2. Toggle the **Schedule** option **OFF**.
 3. Save your settings.
 

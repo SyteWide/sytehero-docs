@@ -10,7 +10,7 @@ Hero Text controls the text overlays and call-to-action buttons that appear on t
 
 ## Where to Find Hero Text Settings
 
-Hero text master defaults, random lines, and per-view overrides are managed via the **Set Defaults** modal on the **Slyders** tab. Click the **Set Defaults** button to open the modal. CSS class references for hero text elements are available in a collapsible reference section on the **Custom CSS** tab.
+Hero text master defaults, random lines, and per-view overrides are managed via the **Set Defaults** modal on the **Heroes** tab. Click the **Set Defaults** button to open the modal. CSS class references for hero text elements are available in a collapsible reference section on the **Custom CSS** tab.
 
 ## The Three Text Elements
 
@@ -60,8 +60,8 @@ This lets you fine-tune vertical positioning so the text sits correctly on every
 
 You can override the default text on a product-by-product basis. There are two ways to do this:
 
-1. **Product Editor:** Edit a product and use the SyteSlyders metabox to enter custom text for Text Area 1, Text Area 2, and the CTA.
-2. **Slyders Tab Inline Editor:** Go to **SyteSlyders > Slyders** and edit the text fields directly in each product's row.
+1. **Product Editor:** Edit a product and use the SyteHero metabox to enter custom text for Text Area 1, Text Area 2, and the CTA.
+2. **Heroes Tab Inline Editor:** Go to **SyteHero > Heroes** and edit the text fields directly in each product's row.
 
 When a per-product override is set, it takes priority over the default text and random lines fallback for that product's slide.
 
@@ -69,7 +69,7 @@ When a per-product override is set, it takes priority over the default text and 
 
 The fallback slide also supports per-device hero text overrides. Edit the hero text on the fallback slide panel, switch between Desktop/Tablet/Mobile views, then click **Save Hero Text** to stage your changes. Click **Save Changes** to persist them. All three device views are saved together.
 
-Both the product metabox and the inline editor on the **Slyders** tab share the same desktop/tablet/mobile view stack. Each editor shows Desktop, Tablet, and Mobile tabs so you can set the mode, glow, margin, custom text, and CTA target independently per viewport. The **Save Hero Text** button appears above the view tabs so it is always reachable without scrolling. Changes in the inline editor and the product metabox are kept in sync automatically.
+Both the product metabox and the inline editor on the **Heroes** tab share the same desktop/tablet/mobile view stack. Each editor shows Desktop, Tablet, and Mobile tabs so you can set the mode, glow, margin, custom text, and CTA target independently per viewport. The **Save Hero Text** button appears above the view tabs so it is always reachable without scrolling. Changes in the inline editor and the product metabox are kept in sync automatically.
 
 ### Custom Text fields
 
@@ -77,7 +77,7 @@ When a field's mode is set to **Custom Text** (or **Custom CTA**), the text inpu
 
 ## Managing Defaults with the Set Defaults Modal
 
-The **Set Defaults** button on the Slyders tab opens a modal for managing all hero text defaults. The modal includes controls for master text, random lines, per-view overrides (Desktop/Tablet/Mobile), and margin settings.
+The **Set Defaults** button on the Heroes tab opens a modal for managing all hero text defaults. The modal includes controls for master text, random lines, per-view overrides (Desktop/Tablet/Mobile), and margin settings.
 
 The modal has three action buttons:
 
@@ -95,7 +95,7 @@ The CTA button renders at its natural intrinsic width on all device sizes and is
 
 ## Glow Effect
 
-A glow effect can be applied to any combination of the three text elements. Glow is configured in **SyteSlyders > Settings > Hero Layout**:
+A glow effect can be applied to any combination of the three text elements. Glow is configured in **SyteHero > Settings > Hero Layout**:
 
 - Enable or disable glow for the **CTA Button**.
 - Enable or disable glow for **Text Area 1**.
@@ -109,24 +109,24 @@ These CSS classes are also listed in the collapsible reference section on the **
 
 ### CTA Button
 
-- `.slyders-hero-cta` -- Base class (all views).
-- `.slyders-hero-cta--desktop` -- Desktop only.
-- `.slyders-hero-cta--tablet` -- Tablet only.
-- `.slyders-hero-cta--mobile` -- Mobile only.
+- `.sytehero-hero-cta` -- Base class (all views).
+- `.sytehero-hero-cta--desktop` -- Desktop only.
+- `.sytehero-hero-cta--tablet` -- Tablet only.
+- `.sytehero-hero-cta--mobile` -- Mobile only.
 
 ### Text Area 1
 
-- `.slyders-hero-text-area-1` -- Base class (all views).
-- `.slyders-hero-text-area-1--desktop` -- Desktop only.
-- `.slyders-hero-text-area-1--tablet` -- Tablet only.
-- `.slyders-hero-text-area-1--mobile` -- Mobile only.
+- `.sytehero-hero-text-area-1` -- Base class (all views).
+- `.sytehero-hero-text-area-1--desktop` -- Desktop only.
+- `.sytehero-hero-text-area-1--tablet` -- Tablet only.
+- `.sytehero-hero-text-area-1--mobile` -- Mobile only.
 
 ### Text Area 2
 
-- `.slyders-hero-text-area-2` -- Base class (all views).
-- `.slyders-hero-text-area-2--desktop` -- Desktop only.
-- `.slyders-hero-text-area-2--tablet` -- Tablet only.
-- `.slyders-hero-text-area-2--mobile` -- Mobile only.
+- `.sytehero-hero-text-area-2` -- Base class (all views).
+- `.sytehero-hero-text-area-2--desktop` -- Desktop only.
+- `.sytehero-hero-text-area-2--tablet` -- Tablet only.
+- `.sytehero-hero-text-area-2--mobile` -- Mobile only.
 
 ## Shortcode Support
 

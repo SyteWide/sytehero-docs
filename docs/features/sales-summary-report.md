@@ -10,7 +10,7 @@ The Sales Summary Report sends email reports about completed orders from your Wo
 
 ## Configuration
 
-Open the **Sales** tab in the SyteSlyders admin and expand the **Sales Summary Report** section.
+Open the **Sales** tab in the SyteHero admin and expand the **Sales Summary Report** section.
 
 ### Recipients
 
@@ -83,7 +83,7 @@ Both the Sales Summary and Schedule Report emails support automatic dark mode. E
 
 ## Hero Click Tracking
 
-When a customer clicks the hero slide CTA button, SyteSlyders records that interaction. If the customer later completes a purchase, the order is flagged as "via Hero" and a purple badge appears in the sales summary email (when "Show order attribution source" is enabled). This helps you measure how effectively your hero slider drives sales.
+When a customer clicks the hero slide CTA button, SyteHero records that interaction. If the customer later completes a purchase, the order is flagged as "via Hero" and a purple badge appears in the sales summary email (when "Show order attribution source" is enabled). This helps you measure how effectively your hero slider drives sales.
 
 The tracking works automatically — no configuration is needed beyond enabling the attribution display option. It works on both WooCommerce and FluentCart stores.
 

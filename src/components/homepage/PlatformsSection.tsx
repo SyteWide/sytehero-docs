@@ -16,7 +16,7 @@ const platforms = [
   {
     title: 'FluentCart',
     description:
-      'Product tagging, sales management, and reporting — SyteSlyders handles the differences automatically.',
+      'Product tagging, sales management, and reporting — SyteHero handles the differences automatically.',
     link: '/docs/ecommerce/fluentcart',
     features: [
       'Automatic product tagging',

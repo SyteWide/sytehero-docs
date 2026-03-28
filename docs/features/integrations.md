@@ -1,18 +1,18 @@
 ---
 sidebar_position: 9
 title: Integrations
-description: Connect SyteSlyders to external services like Shippo for shipping and Google Calendar for schedule syncing.
+description: Connect SyteHero to external services like Shippo for shipping and Google Calendar for schedule syncing.
 ---
 
 # Integrations
 
-SyteSlyders integrates with your WordPress theme and ecommerce platform to provide hero sliders, sales scheduling, and merchandising. For theme and ecommerce platform setup, see the [Theme Guides](/docs/themes/avada) and [Ecommerce Platforms](/docs/ecommerce/woocommerce) sections.
+SyteHero integrates with your WordPress theme and ecommerce platform to provide hero sliders, sales scheduling, and merchandising. For theme and ecommerce platform setup, see the [Theme Guides](/docs/themes/avada) and [Ecommerce Platforms](/docs/ecommerce/woocommerce) sections.
 
-The **Integrations tab** in the SyteSlyders admin provides connections to additional external services. Currently available integrations are Shippo for shipping and tracking data, and Google Calendar for two-way sales schedule syncing.
+The **Integrations tab** in the SyteHero admin provides connections to additional external services. Currently available integrations are Shippo for shipping and tracking data, and Google Calendar for two-way sales schedule syncing.
 
 ## Finding the Integrations Tab
 
-Open the SyteSlyders admin page and click the **Integrations** tab in the top navigation bar. Each integration appears as a card with its own configuration section.
+Open the SyteHero admin page and click the **Integrations** tab in the top navigation bar. Each integration appears as a card with its own configuration section.
 
 ## Shippo Integration
 
@@ -20,7 +20,7 @@ Shippo provides shipping label and tracking data for your WooCommerce orders. Wh
 
 ### Setup
 
-1. Open the **Integrations** tab in the SyteSlyders admin.
+1. Open the **Integrations** tab in the SyteHero admin.
 2. Locate the **Shippo** card.
 3. Toggle **Enable Shippo** to on.
 4. Enter your Shippo API key in the **API Key** field.
@@ -96,7 +96,7 @@ Shippo enforces per-minute rate limits. If your store has a very large number of
 
 ## Google Calendar Integration
 
-Google Calendar keeps your [sales schedules](/docs/features/sales-scheduling) and calendar events in sync. When you create or edit a schedule in SyteSlyders, it appears as an event in Google Calendar. When someone edits the event in Google Calendar, those changes sync back to the schedule automatically.
+Google Calendar keeps your [sales schedules](/docs/features/sales-scheduling) and calendar events in sync. When you create or edit a schedule in SyteHero, it appears as an event in Google Calendar. When someone edits the event in Google Calendar, those changes sync back to the schedule automatically.
 
 ### Prerequisites
 
@@ -110,7 +110,7 @@ You need:
 
 ### Setup
 
-1. Open the **Integrations** tab in the SyteSlyders admin.
+1. Open the **Integrations** tab in the SyteHero admin.
 2. Locate the **Google Calendar** card.
 3. Enter your **Client ID** and **Client Secret** from the Google Cloud Console.
 4. Click **Save Credentials**.
@@ -126,13 +126,13 @@ You need:
 
 Sync runs in two directions:
 
-- **Push (SyteSlyders to Google Calendar):** When you save schedules on the Sales tab, linked events in Google Calendar are automatically created, updated, or deleted to match.
-- **Pull (Google Calendar to SyteSlyders):** Every 15 minutes (when auto-sync is enabled) or on demand via the **Sync Now** button, SyteSlyders checks for changes in Google Calendar and updates the corresponding schedules.
+- **Push (SyteHero to Google Calendar):** When you save schedules on the Sales tab, linked events in Google Calendar are automatically created, updated, or deleted to match.
+- **Pull (Google Calendar to SyteHero):** Every 15 minutes (when auto-sync is enabled) or on demand via the **Sync Now** button, SyteHero checks for changes in Google Calendar and updates the corresponding schedules.
 
 :::info Synced fields
 **What syncs:** Schedule label, start date/time, and end date/time.
 
-**What does not sync:** Products, prices, slides, and banner assignments are managed only within SyteSlyders. Google Calendar events reflect the schedule window and name, not the sale contents.
+**What does not sync:** Products, prices, slides, and banner assignments are managed only within SyteHero. Google Calendar events reflect the schedule window and name, not the sale contents.
 :::
 
 ### Per-Schedule Sync Toggle
@@ -187,7 +187,7 @@ Disconnecting revokes the Google token, removes all sync linkage, and stops the 
 
 #### Event deleted in Google Calendar but schedule remains
 
-Deleting a Google Calendar event unlinks the schedule but does not delete it. The schedule remains in SyteSlyders and must be removed manually if no longer needed.
+Deleting a Google Calendar event unlinks the schedule but does not delete it. The schedule remains in SyteHero and must be removed manually if no longer needed.
 
 #### "Sync is already in progress"
 
