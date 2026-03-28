@@ -6,24 +6,24 @@ description: Select products to appear in your hero background slider.
 
 # Featured Products
 
-Featured Products is the core of SyteSlyders. It lets you select products from your ecommerce catalog to appear in the hero background slider on your site, complete with media, text overlays, and call-to-action buttons.
+Featured Products is the core of SyteHero. It lets you select products from your ecommerce catalog to appear in the hero background slider on your site, complete with media, text overlays, and call-to-action buttons.
 
 :::tip Platform support
-SyteSlyders works with both [WooCommerce](/docs/ecommerce/woocommerce) and [FluentCart](/docs/ecommerce/fluentcart). The workflow below applies to both platforms.
+SyteHero works with both [WooCommerce](/docs/ecommerce/woocommerce) and [FluentCart](/docs/ecommerce/fluentcart). The workflow below applies to both platforms.
 :::
 
 ## How to Feature a Product
 
 1. In your WordPress admin, go to **Products** (from your WooCommerce or FluentCart menu) and edit the product you want to feature.
-2. In the **SyteSlyders** sidebar metabox, toggle **Featured Slyder Product** to **ON**.
-3. Click **Select Slyder Media** and choose an image or video from your media library.
+2. In the **SyteHero** sidebar metabox, toggle **Featured Hero Product** to **ON**.
+3. Click **Select Hero Media** and choose an image or video from your media library.
 4. Click **Update** to save the product.
 
-The product is now marked as a featured slyder product. SyteSlyders tags the product automatically to track its featured status.
+The product is now marked as a featured hero product. SyteHero tags the product automatically to track its featured status.
 
 ## Managing Featured Products
 
-Navigate to **SyteSlyders > Slyders** to see and manage all featured products in one place. The Slyders tab provides:
+Navigate to **SyteHero > Heroes** to see and manage all featured products in one place. The Heroes tab provides:
 
 ### Quick Toggles
 
@@ -42,7 +42,7 @@ For each product, you can set:
 - **CTA Button** -- Custom call-to-action text and link for this product's slide.
 - **Glow** -- Per-product glow settings.
 
-Each row in the Slyders tab renders a hero text views stack so switching between Desktop/Tablet/Mobile tabs edits the mode, glow, margin, text, and CTA target for that specific viewport. The panels hold the respective fields, and the inline editor mirrors the controls that live inside the product metabox, keeping markup and saving logic in sync.
+Each row in the Heroes tab renders a hero text views stack so switching between Desktop/Tablet/Mobile tabs edits the mode, glow, margin, text, and CTA target for that specific viewport. The panels hold the respective fields, and the inline editor mirrors the controls that live inside the product metabox, keeping markup and saving logic in sync.
 
 When hero text has been modified but not yet saved, an unsaved-changes notice appears in red/bold to remind you to save.
 
@@ -69,7 +69,7 @@ When no featured products are currently active (for example, all have expired or
 
 To configure the fallback:
 
-1. Go to **SyteSlyders > Slyders**.
+1. Go to **SyteHero > Heroes**.
 2. Scroll to the **Fallback Slide** section.
 3. Set a fallback image and CTA (call-to-action link and text).
 
@@ -79,7 +79,7 @@ Fallback slide changes auto-save on a 500ms debounce — no need to click Save C
 
 In addition to product slides, you can add extra slides that link to pages or category archives:
 
-1. In the **Slyders** tab, find the **Supplemental Slides** section.
+1. In the **Heroes** tab, find the **Supplemental Slides** section.
 2. Add a slide with its media, link URL, and optional text.
 3. Save your changes.
 

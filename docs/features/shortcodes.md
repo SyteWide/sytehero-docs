@@ -1,12 +1,12 @@
 ---
 sidebar_position: 7
 title: Shortcodes
-description: Use SyteSlyders shortcodes to embed sliders and banners on any page.
+description: Use SyteHero shortcodes to embed sliders and banners on any page.
 ---
 
 # Shortcodes
 
-SyteSlyders provides shortcodes that let you place hero sliders anywhere on your site -- in pages, posts, page builder layouts, or any area that supports WordPress shortcodes.
+SyteHero provides shortcodes that let you place hero sliders anywhere on your site -- in pages, posts, page builder layouts, or any area that supports WordPress shortcodes.
 
 ## Available Shortcodes
 
@@ -15,30 +15,30 @@ SyteSlyders provides shortcodes that let you place hero sliders anywhere on your
 Displays the main slider built from your featured products.
 
 ```
-[slyders_featured_hero]
+[sytehero_featured]
 ```
 
 #### View-Locked Variants
 
 Show the featured hero only on a specific device size:
 
-- **Desktop only:** `[slyders_featured_hero_desktop]`
-- **Tablet only:** `[slyders_featured_hero_tablet]`
-- **Mobile only:** `[slyders_featured_hero_mobile]`
+- **Desktop only:** `[sytehero_featured_desktop]`
+- **Tablet only:** `[sytehero_featured_tablet]`
+- **Mobile only:** `[sytehero_featured_mobile]`
 
 ### Custom Hero
 
-Displays a standalone Custom Slyder (not tied to products). Replace `X` with the Custom Slyder's ID.
+Displays a standalone Custom Hero (not tied to products). Replace `X` with the Custom Hero's ID.
 
 ```
-[slyders_custom_hero id="X"]
+[sytehero_custom id="X"]
 ```
 
 #### View-Locked Variants
 
-- **Desktop only:** `[slyders_custom_hero_desktop id="X"]`
-- **Tablet only:** `[slyders_custom_hero_tablet id="X"]`
-- **Mobile only:** `[slyders_custom_hero_mobile id="X"]`
+- **Desktop only:** `[sytehero_custom_desktop id="X"]`
+- **Tablet only:** `[sytehero_custom_tablet id="X"]`
+- **Mobile only:** `[sytehero_custom_mobile id="X"]`
 
 ## Common Attributes
 
@@ -58,7 +58,7 @@ Slide interval is configured per device view in **Settings > Default Shortcode**
 ### Example with Attributes
 
 ```
-[slyders_featured_hero height="70vh" min_height="450px" glow="#ff6b35"]
+[sytehero_featured height="70vh" min_height="450px" glow="#ff6b35"]
 ```
 
 ## Placement Tips
@@ -68,20 +68,20 @@ Slide interval is configured per device view in **Settings > Default Shortcode**
 Place the shortcode **before** your overlay content (CTA buttons, text elements) within the same page builder column. The shortcode renders the background slider, and your overlay elements sit on top of it.
 
 ```
-[slyders_featured_hero]
+[sytehero_featured]
 <!-- Your CTA button and text elements go after the shortcode -->
 ```
 
 ### Use the CTA Class on Your Button
 
-Give your CTA button element the class `slyders-hero-cta` so the plugin can dynamically update its `href` attribute as slides change. This keeps the button linked to the currently displayed product.
+Give your CTA button element the class `sytehero-hero-cta` so the plugin can dynamically update its `href` attribute as slides change. This keeps the button linked to the currently displayed product.
 
 ### Use Text Area Classes on Overlay Elements
 
 Add these classes to your overlay text elements so the plugin can update their content dynamically:
 
-- `slyders-hero-text-area-1` -- For the primary text line.
-- `slyders-hero-text-area-2` -- For the secondary text line.
+- `sytehero-hero-text-area-1` -- For the primary text line.
+- `sytehero-hero-text-area-2` -- For the secondary text line.
 
 When these classes are present, the plugin replaces the element's text content with the appropriate value (default text, random fallback, or per-product override) as slides transition.
 
@@ -90,9 +90,9 @@ When these classes are present, the plugin replaces the element's text content w
 You can use multiple view-locked shortcodes in the same section to show different configurations per device:
 
 ```
-[slyders_featured_hero_desktop height="70vh"]
-[slyders_featured_hero_tablet height="50vh"]
-[slyders_featured_hero_mobile height="40vh"]
+[sytehero_featured_desktop height="70vh"]
+[sytehero_featured_tablet height="50vh"]
+[sytehero_featured_mobile height="40vh"]
 ```
 
 Each shortcode renders only on its target device size, giving you full control over the slider experience across breakpoints.
@@ -139,9 +139,9 @@ These attributes are available for more granular control. Most users won't need 
 | `animation` | Slide transition type: `fade` or `slide`. | From Settings |
 | `arrows` | Show navigation arrows. `1` = show, `0` = hide. | From Settings |
 | `dots` | Show pagination dots. `1` = show, `0` = hide. | From Settings |
-| `tag` | Product tag slug used to filter featured products. | `slyder-featured-image` |
-| `class` | Additional CSS classes for the hero container. | `slyders-hero-featured` |
-| `button_selector` | CSS selector for the CTA button element. | `slyders-hero-cta` |
+| `tag` | Product tag slug used to filter featured products. | `sytehero-featured-image` |
+| `class` | Additional CSS classes for the hero container. | `sytehero-hero-featured` |
+| `button_selector` | CSS selector for the CTA button element. | `sytehero-hero-cta` |
 
 ### Fallback Container
 
@@ -151,4 +151,4 @@ Control what happens when no slides are active:
 |---|---|---|
 | `inactive_container_enabled` | Enable fallback container behavior. `1` = enabled. | `1` |
 | `inactive_container_selector` | CSS selector for a fallback element to show/hide. | (none) |
-| `inactive_container_hide_class` | CSS class applied to the fallback element when slides are active. | `slyders-fallback-container` |
+| `inactive_container_hide_class` | CSS class applied to the fallback element when slides are active. | `sytehero-fallback-container` |

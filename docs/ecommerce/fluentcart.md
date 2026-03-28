@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
 title: FluentCart
-description: Using SyteSlyders with FluentCart for product sliders, sales scheduling, and reporting.
+description: Using SyteHero with FluentCart for product sliders, sales scheduling, and reporting.
 ---
 
 # FluentCart
 
-SyteSlyders works with FluentCart as an alternative to WooCommerce. The admin experience is nearly identical — SyteSlyders handles the differences between platforms automatically.
+SyteHero works with FluentCart as an alternative to WooCommerce. The admin experience is nearly identical — SyteHero handles the differences between platforms automatically.
 
 ## Requirements
 
@@ -14,33 +14,33 @@ SyteSlyders works with FluentCart as an alternative to WooCommerce. The admin ex
 
 ## Selecting FluentCart
 
-1. Go to **SyteSlyders > Plugin Setup**.
+1. Go to **SyteHero > Plugin Setup**.
 2. Under **Ecommerce Selector**, choose **FluentCart**.
 3. Click **Save Changes**.
 
-Alternatively, click **Detect eCommerce Plugin** to have SyteSlyders identify your active ecommerce platform automatically.
+Alternatively, click **Detect eCommerce Plugin** to have SyteHero identify your active ecommerce platform automatically.
 
 ## How FluentCart Compares to WooCommerce
 
-The day-to-day workflow is the same. SyteSlyders handles platform-specific details behind the scenes:
+The day-to-day workflow is the same. SyteHero handles platform-specific details behind the scenes:
 
 | Feature | WooCommerce | FluentCart |
 |---------|-------------|------------|
-| Featured product tagging | Automatic | Automatic — SyteSlyders manages this for you |
-| Sales scheduling | Syncs with WooCommerce's native sale prices | SyteSlyders manages sale pricing directly |
+| Featured product tagging | Automatic | Automatic — SyteHero manages this for you |
+| Sales scheduling | Syncs with WooCommerce's native sale prices | SyteHero manages sale pricing directly |
 | Sales Summary Report | Tracks completed, processing, on-hold orders | Tracks paid orders |
 | Order attribution | WooCommerce built-in attribution (WC 8.5+) | FluentCart order source data |
 | Shippo tracking | Available | Not yet available |
 
 ## Featured Products
 
-Featuring products works the same way as WooCommerce. Toggle products on from the SyteSlyders admin, assign hero media, and they appear in your slider. SyteSlyders manages product tagging automatically — no manual setup needed.
+Featuring products works the same way as WooCommerce. Toggle products on from the SyteHero admin, assign hero media, and they appear in your slider. SyteHero manages product tagging automatically — no manual setup needed.
 
 See [Featured Products](/docs/features/featured-products) for full setup instructions.
 
 ## Sales Scheduling
 
-SyteSlyders manages sale pricing for FluentCart stores directly. When a scheduled sale activates:
+SyteHero manages sale pricing for FluentCart stores directly. When a scheduled sale activates:
 
 - **Sale prices** are applied to your products automatically.
 - **Hero slides** are created to showcase the sale products.

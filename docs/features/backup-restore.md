@@ -1,16 +1,16 @@
 ---
 sidebar_position: 10
 title: Backup & Restore
-description: Export and import all SyteSlyders settings as JSON.
+description: Export and import all SyteHero settings as JSON.
 ---
 
 # Backup & Restore
 
-Backup & Restore lets you export all of your SyteSlyders settings as a JSON file and import that file later to restore them. This is useful for migrating to a new site, recovering from a reset, or saving a snapshot before making major changes.
+Backup & Restore lets you export all of your SyteHero settings as a JSON file and import that file later to restore them. This is useful for migrating to a new site, recovering from a reset, or saving a snapshot before making major changes.
 
 ## Accessing the Backup Tab
 
-Navigate to **SyteSlyders > Backup** in your WordPress admin menu. The Backup tab is always available and does not need to be enabled in Settings.
+Navigate to **SyteHero > Backup** in your WordPress admin menu. The Backup tab is always available and does not need to be enabled in Settings.
 
 ## Exporting Settings
 
@@ -33,7 +33,7 @@ The export always includes these core settings regardless of scope toggles:
 - Hero random lines
 - Tab gates (feature flags)
 - No-slides alert contacts
-- Custom Slyders
+- Custom Heroes
 - Custom CSS (global, glow, desktop, tablet, mobile)
 - Selected theme and ecommerce provider
 - Featured order (filtered on import to match available slides)
@@ -46,14 +46,14 @@ The export does **not** include product-level meta such as:
 - Hero images or videos assigned to individual products
 - Per-product hero text overrides stored in product meta
 
-These values are tied directly to individual products and are managed through the product editor or the Slyders tab.
+These values are tied directly to individual products and are managed through the product editor or the Heroes tab.
 
 ## Importing Settings
 
 1. Open the **Backup** tab.
 2. Click **Choose File** and select a previously exported JSON file.
 3. Click **Restore Settings**.
-4. Your current SyteSlyders settings will be overwritten with the values from the imported file.
+4. Your current SyteHero settings will be overwritten with the values from the imported file.
 
 ### What happens during import
 
@@ -67,7 +67,7 @@ These values are tied directly to individual products and are managed through th
 
 ## Common Use Cases
 
-- **Migrating to a new site:** Export from the old site (with media bundling enabled), install SyteSlyders on the new site, then import the JSON file to carry over all settings and slide images.
+- **Migrating to a new site:** Export from the old site (with media bundling enabled), install SyteHero on the new site, then import the JSON file to carry over all settings and slide images.
 - **Restoring after a reset:** If you reset your settings or reinstall the plugin, import a backup to get back to your previous configuration.
 - **Pre-change safety net:** Before making significant configuration changes, export a backup so you can easily roll back if needed.
 

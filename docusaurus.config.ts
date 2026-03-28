@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import npm2yarn from '@docusaurus/remark-plugin-npm2yarn';
 
 const config: Config = {
-  title: 'SyteSlyders Documentation',
+  title: 'SyteHero Documentation',
   tagline: 'Dynamic hero sliders, sales scheduling, and visual merchandising for WordPress.',
   favicon: 'img/favicon.png',
 
@@ -45,11 +45,11 @@ const config: Config = {
     },
   ],
 
-  url: 'https://syteslydersdocs.sytewide.com',
+  url: 'https://sytehero.sytewide.com',
   baseUrl: '/',
 
   organizationName: 'sculpted-marketing',
-  projectName: 'syteslyders-docs',
+  projectName: 'sytehero-docs',
 
   onBrokenLinks: 'throw',
 
@@ -100,15 +100,15 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/syteslyders-social-card.png',
+    image: 'img/sytehero-social-card.png',
     colorMode: {
       defaultMode: 'light',
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'SyteSlyders',
+      title: 'SyteHero',
       logo: {
-        alt: 'SyteSlyders Logo',
+        alt: 'SyteHero Logo',
         src: 'img/logo.png',
         width: 40,
         height: 40,
@@ -121,7 +121,7 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://sytewide.com/buy-syteslyders',
+          href: 'https://sytewide.com/buy-sytehero',
           label: 'Buy Now',
           position: 'right',
         },

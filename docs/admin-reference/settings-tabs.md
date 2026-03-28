@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
 title: Settings Tabs Reference
-description: Complete reference for all SyteSlyders admin settings tabs.
+description: Complete reference for all SyteHero admin settings tabs.
 ---
 
 # Admin Settings Reference
 
-**Access:** SyteSlyders menu in WordPress admin. Requires a valid license to see all tabs.
+**Access:** SyteHero menu in WordPress admin. Requires a valid license to see all tabs.
 
 ---
 
@@ -16,7 +16,7 @@ description: Complete reference for all SyteSlyders admin settings tabs.
 
 Create and manage sales schedules. Assign products/variations, set sale prices, choose date windows. Saving syncs prices with your ecommerce platform and can link banners. Enable/disable in Settings.
 
-### 2. Slyders
+### 2. Heroes
 
 Manage featured products: toggle featured status, set hero media, configure per-product hero text overrides, drag-and-drop hero ordering, supplemental slides, and fallback slide configuration. Features staged remove with Save Changes safety.
 - **Set Defaults** button opens a modal for managing all hero text defaults: master enabled/text/fade, random lines, per-view overrides (Desktop/Tablet/Mobile) with mode, text override, and margin controls per field. "Save Defaults" persists hero text master and per-view override options. "Apply to Current" pushes resolved defaults to all existing slides server-side. "Reset to Defaults" restores baseline values. (Glow settings remain on the Settings tab.)
@@ -25,7 +25,7 @@ Manage featured products: toggle featured status, set hero media, configure per-
 
 Configure promotional banners with date-based scheduling. Can be linked to sales schedules. Enable/disable in Settings.
 
-### 4. Custom Slyders
+### 4. Custom Heroes
 
 Build standalone sliders with media, CTA, text areas, interval, and animation. Copy shortcode and CSS classes.
 
@@ -44,7 +44,7 @@ Configure the following options:
 - **Slider behavior**: Background Sliding, Pause on CTA Hover
 - **Hero layout**: height, min-height, glow color and apply-to toggles, transition type
 - **No Active Slides Alert Email**: Primary/Tech/Marketing contacts, image URL, test email
-- **Tab gating**: Enable or disable any admin tab (Schedules/Sales, Slyders, Banners, Custom Slyders, Settings, Integrations, Custom CSS, Backup, Documentation)
+- **Tab gating**: Enable or disable any admin tab (Schedules/Sales, Heroes, Banners, Custom Heroes, Settings, Integrations, Custom CSS, Backup, Documentation)
 
 ### 6. Integrations
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Common Issues
-description: Solutions for common SyteSlyders problems and error messages.
+description: Solutions for common SyteHero problems and error messages.
 ---
 
 # Troubleshooting
@@ -16,7 +16,7 @@ Click **Purge Admin CSS/JS** or **Clear Plugin Update Cache** (buttons above the
 
 ## 3. Tabs Missing or Hidden
 
-Some plugins or themes inject CSS that hides tabs. SyteSlyders has built-in tab recovery. Check the browser console for diagnostic logs. If the Schedule or Banners tab is missing, check **Settings → tab toggles** to ensure they are enabled.
+Some plugins or themes inject CSS that hides tabs. SyteHero has built-in tab recovery. Check the browser console for diagnostic logs. If the Schedule or Banners tab is missing, check **Settings → tab toggles** to ensure they are enabled.
 
 ## 4. Slider Not Appearing on Front-End
 
@@ -32,7 +32,7 @@ Verify the following:
 Ensure the product:
 
 - Is marked Featured
-- Has Slyder media assigned
+- Has Hero media assigned
 - Is published
 - Has an active schedule (if one is set)
 
@@ -41,7 +41,7 @@ Ensure the product:
 This is an Avada-specific issue. Add the following to **Custom CSS**:
 
 ```css
-.fusion-column-wrapper:has(.slyders-fhsbg) {
+.fusion-column-wrapper:has(.sytehero-fhsbg) {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,11 +53,11 @@ Replace `<your value>` with the desired minimum height for your hero section. Di
 
 ## 7. CTA Button Not Updating
 
-Ensure the button has the `.slyders-hero-cta` class and that the frontend JavaScript is loading. Check the browser Network tab to confirm scripts are enqueued.
+Ensure the button has the `.sytehero-hero-cta` class and that the frontend JavaScript is loading. Check the browser Network tab to confirm scripts are enqueued.
 
 ## 8. Hero Animation Not Running
 
-The slider engine must be loaded. If using FlexSlider, Avada and Divi provide it natively. Elementor sites use SyteSlyders' bundled slider engines (Swiper or Splide recommended). Verify the library is enqueued by checking the page source or the browser Network tab. See [Slider Engines](/docs/features/slider-engines) for details.
+The slider engine must be loaded. If using FlexSlider, Avada and Divi provide it natively. Elementor sites use SyteHero' bundled slider engines (Swiper or Splide recommended). Verify the library is enqueued by checking the page source or the browser Network tab. See [Slider Engines](/docs/features/slider-engines) for details.
 
 ## 9. No-Active-Slides Email Not Sending
 

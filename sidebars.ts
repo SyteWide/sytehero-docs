@@ -35,7 +35,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'features/featured-products',
         'features/hero-text',
-        'features/custom-slyders',
+        'features/custom-heroes',
         'features/sales-scheduling',
         'features/banners',
         'features/custom-css',

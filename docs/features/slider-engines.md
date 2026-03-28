@@ -6,7 +6,7 @@ description: Choose and configure FlexSlider, Swiper, or Splide as your slider e
 
 # Slider Engines
 
-SyteSlyders supports multiple slider engines — the underlying JavaScript library that powers slide transitions and touch interactions. You can choose the engine that best fits your site's needs.
+SyteHero supports multiple slider engines — the underlying JavaScript library that powers slide transitions and touch interactions. You can choose the engine that best fits your site's needs.
 
 ## Available Engines
 
@@ -18,7 +18,7 @@ SyteSlyders supports multiple slider engines — the underlying JavaScript libra
 
 ## Selecting an Engine
 
-1. Go to **SyteSlyders → Plugin Setup**.
+1. Go to **SyteHero → Plugin Setup**.
 2. Under **Theme Configuration**, find the **Slider Engine** dropdown.
 3. Select your preferred engine.
 4. Click **Save Changes**.
@@ -61,4 +61,4 @@ The available slide transition animations depend on the selected engine:
 | Swiper | fade, slide, cube, flip |
 | Splide | fade, slide |
 
-Animation is configured per shortcode (featured hero, custom slyders) and validated against the active engine. If you switch engines, any unsupported animation value falls back to a supported default.
+Animation is configured per shortcode (featured hero, custom heroes) and validated against the active engine. If you switch engines, any unsupported animation value falls back to a supported default.

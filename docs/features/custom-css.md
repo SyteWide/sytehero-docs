@@ -6,11 +6,11 @@ description: Add custom CSS per device view for fine-grained styling control.
 
 # Custom CSS
 
-Custom CSS gives you full control over the visual styling of your SyteSlyders elements. You can write CSS that applies globally or target specific device sizes for responsive fine-tuning.
+Custom CSS gives you full control over the visual styling of your SyteHero elements. You can write CSS that applies globally or target specific device sizes for responsive fine-tuning.
 
 ## Accessing the Custom CSS Tab
 
-Navigate to **SyteSlyders > Custom CSS** in your WordPress admin menu.
+Navigate to **SyteHero > Custom CSS** in your WordPress admin menu.
 
 ## CSS Sections
 
@@ -26,41 +26,41 @@ Target the glow effect applied to CTA buttons and text areas. Use this section t
 
 ### Desktop CSS
 
-Scoped to desktop viewports. Rules in this section are wrapped with the `.slyders-fhsbg--desktop` selector, so they only take effect on desktop screens.
+Scoped to desktop viewports. Rules in this section are wrapped with the `.sytehero-fhsbg--desktop` selector, so they only take effect on desktop screens.
 
 ### Tablet CSS
 
-Scoped to tablet viewports. Rules in this section are wrapped with the `.slyders-fhsbg--tablet` selector.
+Scoped to tablet viewports. Rules in this section are wrapped with the `.sytehero-fhsbg--tablet` selector.
 
 ### Mobile CSS
 
-Scoped to mobile viewports. Rules in this section are wrapped with the `.slyders-fhsbg--mobile` selector.
+Scoped to mobile viewports. Rules in this section are wrapped with the `.sytehero-fhsbg--mobile` selector.
 
 ## Wrapper-Level Override Classes
 
 For broader layout overrides that target the entire hero container rather than individual elements inside it, use these wrapper classes:
 
-- `.slyders-hero-featured--desktop`
-- `.slyders-hero-featured--tablet`
-- `.slyders-hero-featured--mobile`
+- `.sytehero-hero-featured--desktop`
+- `.sytehero-hero-featured--tablet`
+- `.sytehero-hero-featured--mobile`
 
 These are useful for adjusting container height, padding, background behavior, or other properties that affect the hero section as a whole on a given device size.
 
 ## Combining with Other Features
 
-Custom CSS works best when combined with the CSS classes exposed by other SyteSlyders features:
+Custom CSS works best when combined with the CSS classes exposed by other SyteHero features:
 
 ### Hero Text Classes
 
 Style the text overlays and CTA buttons (see [Hero Text](hero-text) for the full list):
 
-- `.slyders-hero-cta`, `.slyders-hero-cta--desktop`, `--tablet`, `--mobile`
-- `.slyders-hero-text-area-1`, `.slyders-hero-text-area-1--desktop`, `--tablet`, `--mobile`
-- `.slyders-hero-text-area-2`, `.slyders-hero-text-area-2--desktop`, `--tablet`, `--mobile`
+- `.sytehero-hero-cta`, `.sytehero-hero-cta--desktop`, `--tablet`, `--mobile`
+- `.sytehero-hero-text-area-1`, `.sytehero-hero-text-area-1--desktop`, `--tablet`, `--mobile`
+- `.sytehero-hero-text-area-2`, `.sytehero-hero-text-area-2--desktop`, `--tablet`, `--mobile`
 
-### Custom Slyders Classes
+### Custom Heroes Classes
 
-Each Custom Slyder generates its own CSS classes, shown in the [Custom Slyders](custom-slyders) tab. Copy those classes and target them here.
+Each Custom Hero generates its own CSS classes, shown in the [Custom Heroes](custom-heroes) tab. Copy those classes and target them here.
 
 ## Tips
 

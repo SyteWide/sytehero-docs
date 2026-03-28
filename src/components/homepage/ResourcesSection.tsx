@@ -31,7 +31,7 @@ export default function ResourcesSection() {
           </Heading>
           <div className="w-12 h-[3px] bg-primary-600 rounded-full mx-auto mb-4" />
           <p className="text-base text-[var(--sl-text-secondary)] max-w-lg mx-auto">
-            Explore resources to get the most out of SyteSlyders.
+            Explore resources to get the most out of SyteHero.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">

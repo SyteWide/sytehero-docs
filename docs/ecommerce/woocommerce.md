@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
 title: WooCommerce
-description: Using SyteSlyders with WooCommerce for product sliders, sales scheduling, and reporting.
+description: Using SyteHero with WooCommerce for product sliders, sales scheduling, and reporting.
 ---
 
 # WooCommerce
 
-SyteSlyders integrates directly with WooCommerce for product-based hero sliders, automated sales scheduling, and order reporting.
+SyteHero integrates directly with WooCommerce for product-based hero sliders, automated sales scheduling, and order reporting.
 
 ## Requirements
 
@@ -14,21 +14,21 @@ SyteSlyders integrates directly with WooCommerce for product-based hero sliders,
 
 ## Selecting WooCommerce
 
-1. Go to **SyteSlyders > Plugin Setup**.
+1. Go to **SyteHero > Plugin Setup**.
 2. Under **Ecommerce Selector**, choose **WooCommerce**.
 3. Click **Save Changes**.
 
-Alternatively, click **Detect eCommerce Plugin** to have SyteSlyders identify your active ecommerce platform automatically.
+Alternatively, click **Detect eCommerce Plugin** to have SyteHero identify your active ecommerce platform automatically.
 
 ## Featured Products
 
-SyteSlyders works with your existing WooCommerce product catalog. When you feature a product for the hero slider, SyteSlyders assigns a product tag to track it. You manage everything from the SyteSlyders admin — no need to edit WooCommerce settings directly.
+SyteHero works with your existing WooCommerce product catalog. When you feature a product for the hero slider, SyteHero assigns a product tag to track it. You manage everything from the SyteHero admin — no need to edit WooCommerce settings directly.
 
 See [Featured Products](/docs/features/featured-products) for full setup instructions.
 
 ## Sales Scheduling
 
-SyteSlyders syncs sale prices directly with WooCommerce. When a scheduled sale activates:
+SyteHero syncs sale prices directly with WooCommerce. When a scheduled sale activates:
 
 - **Sale prices** are written to WooCommerce automatically — your store recognizes the sale natively.
 - **Hero slides** are created to showcase the sale products.

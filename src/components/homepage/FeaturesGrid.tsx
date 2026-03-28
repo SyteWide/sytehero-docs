@@ -38,10 +38,10 @@ const features: Feature[] = [
     Icon: CalendarIcon,
   },
   {
-    title: 'Custom Slyders',
+    title: 'Custom Heroes',
     description:
       'Build standalone sliders independent of your product catalog for landing pages and promotions.',
-    link: '/docs/features/custom-slyders',
+    link: '/docs/features/custom-heroes',
     Icon: PaletteIcon,
   },
   {
