@@ -83,6 +83,24 @@ By default, when a sales schedule expires, the associated slides are automatical
 
 This is useful when you want a product to keep its hero slot after a promotion ends.
 
+## Sale Countdown Timer
+
+Each sales schedule can display an on-screen countdown timer that ticks down to the sale end time. The countdown overlay appears on the sale's hero slides and syncs with slide transitions automatically.
+
+### Enabling the Countdown
+
+1. Open the **Schedule** tab.
+2. On the sale card, toggle **Show Countdown** on.
+3. Choose a **Position**:
+   - **Bottom Right** (default) — floating overlay in the bottom-right corner of the slide.
+   - **Below CTA** — appears directly beneath the CTA button.
+   - **Top Strip** — a full-width bar across the top of the slide.
+4. Save your schedules.
+
+:::tip No extra setup
+The countdown activates automatically when the sale is live and disappears when the sale ends. No shortcode attributes are needed — the timer is injected on any page where the hero slider renders.
+:::
+
 ## Schedule Evaluation on Save
 
 When you save a schedule whose start time is in the past or equal to the current time, the schedule is activated immediately rather than waiting for the next cron tick. This means:

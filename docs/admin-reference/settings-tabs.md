@@ -10,7 +10,7 @@ description: Complete reference for all SyteHero admin settings tabs.
 
 ---
 
-## 9 Admin Tabs
+## 10 Admin Tabs
 
 ### 1. Schedules/Sales
 
@@ -36,29 +36,37 @@ In addition to license and theme settings, Plugin Setup includes:
 - **Slider Engine** — Select the slider library (FlexSlider, Swiper, or Splide). See [Slider Engines](/docs/features/slider-engines).
 - **Engine Settings** — Collapsible panels for per-engine configuration (smooth height, easing, pagination style, direction, etc.).
 
-### 5. Settings
+### 5. Analytics
+
+View slide performance metrics: impressions, clicks, and attributed revenue per slide. Three view modes (Cards, Dark Dashboard, Table) and a period selector (Last 7, 30, or 90 days). Data is collected automatically — no configuration needed.
+
+:::info Data retention
+Analytics data older than 90 days is automatically pruned.
+:::
+
+### 6. Settings
 
 Configure the following options:
 
-- **Shortcode defaults per view** (Desktop/Tablet/Mobile): height, min-height, glow
+- **Shortcode defaults per view** (Desktop/Tablet/Mobile): interval, height, min-height, glow
 - **Slider behavior**: Background Sliding, Pause on CTA Hover
 - **Hero layout**: height, min-height, glow color and apply-to toggles, transition type
 - **No Active Slides Alert Email**: Primary/Tech/Marketing contacts, image URL, test email
-- **Tab gating**: Enable or disable any admin tab (Schedules/Sales, Heroes, Banners, Custom Heroes, Settings, Integrations, Custom CSS, Backup, Documentation)
+- **Tab gating**: Enable or disable any admin tab (Schedules/Sales, Heroes, Banners, Custom Heroes, Analytics, Settings, Integrations, Custom CSS, Backup, Documentation)
 
-### 6. Integrations
+### 7. Integrations
 
 Configure connections to external services. Currently includes Shippo for shipping and tracking data. See [Integrations](/docs/features/integrations) for setup details. Enable/disable in Settings.
 
-### 7. Custom CSS
+### 8. Custom CSS
 
 Global CSS, Glow CSS, and per-view CSS editors (Desktop/Tablet/Mobile). Includes a collapsible CSS class reference section for hero text element selectors.
 
-### 8. Backup
+### 9. Backup
 
 Export all settings as JSON. Import from a previously exported file.
 
-### 9. Documentation
+### 10. Documentation
 
 The plugin README rendered in-admin for quick reference.
 
@@ -74,3 +82,13 @@ A collapsible **Troubleshooting** dropdown appears on every tab and contains:
 - **Purge Rotation Cache** — removes the current rotation cache so slides are reassembled on the next page load
 
 Each form saves and returns you to the same tab.
+
+---
+
+## Plugin Setup: Email Cron Status & Reset
+
+The Plugin Setup page includes a diagnostics section showing the current state of email cron scheduling:
+
+- **Periodic Cron** — Shows whether the hourly periodic summary cron is scheduled, its next run time, and the number of reports with periodic email enabled.
+- **Digest Cron** — Shows whether the on-demand realtime digest cron is scheduled. This cron is created automatically when a sale arrives with digest batching enabled; "Idle" is normal when no digest is pending.
+- **Reset Email Crons** — Clears all email cron events and reschedules based on current report settings. Use this if periodic or realtime sales summary emails are not sending.
