@@ -87,6 +87,10 @@ When a customer clicks the hero slide CTA button, SyteHero records that interact
 
 The tracking works automatically — no configuration is needed beyond enabling the attribution display option. It works on both WooCommerce and FluentCart stores.
 
+:::info
+For detailed per-slide performance data (impressions, clicks, and attributed revenue over time), see the **Analytics** tab in the SyteHero admin.
+:::
+
 ## Order Statuses
 
 The report includes orders with these statuses by default:
