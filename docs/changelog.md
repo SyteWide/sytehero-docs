@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.031 — 2026-04-01
+
+### Changed
+- FluentCart release workflow: clearer logging and documentation for the `x-sytehero-release` WAF header (including guidance when the same Cloudflare zone also fronts SyteOps)
+
+---
+
 ## v1.0.030 — 2026-04-01
 
 ### Changed
