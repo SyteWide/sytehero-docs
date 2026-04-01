@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.030 — 2026-04-01
+
+### Changed
+- Release automation can optionally publish the plugin ZIP to SyteWide FluentCart product downloadables when repository credentials are configured (no change required for sites that only install updates from SyteWide)
+
+---
+
 ## v1.0.029 — 2026-04-01
 
 ### Fixed
