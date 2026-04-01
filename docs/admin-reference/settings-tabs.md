@@ -38,7 +38,7 @@ In addition to license and theme settings, Plugin Setup includes:
 
 ### 5. Analytics
 
-View slide performance metrics: impressions, clicks, and attributed revenue per slide. Three view modes (Cards, Dark Dashboard, Table) and a period selector (Last 7, 30, or 90 days). The fallback-only slide appears as **Fallback Slide** with the configured fallback title on a second line. Optional: **Exclude admin and editor views from analytics**, **Reset Statistics** (clears all stored analytics after confirmation), and a preview-only URL flag `?sytehero_notrack=1` (stops impression tracking for that browser tab session).
+View slide performance metrics: impressions, clicks, and attributed revenue per slide. Three view modes (Cards, Dark Dashboard, Table) and a period selector (Last 7, 30, or 90 days). The fallback-only slide appears as **Fallback Slide** with the configured fallback title on a second line. Optional: **Exclude admin and editor views from analytics**, **Reset Statistics** (clears all stored analytics after confirmation), and a **Bookmark: browse without tracking** link that opens the site with `?sytehero_notrack=1` to skip impression tracking for that browser tab session (right-click to bookmark).
 
 :::info Data retention
 Analytics data older than 90 days is automatically pruned.
