@@ -10,6 +10,15 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.032 — 2026-04-01
+
+### Added
+- AI hero image generation powered by fal.ai — select a source image from the media library, write a prompt, pick a model (with cost indicators), and generate a new hero image directly in the WordPress admin
+- New fal.ai integration card on the Integrations tab for API key management and connection testing
+- "Generate with AI" buttons on the product metabox, Heroes tab, and Schedules tab
+
+---
+
 ## v1.0.031 — 2026-04-01
 
 ### Changed
