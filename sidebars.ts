@@ -63,6 +63,7 @@ const sidebars: SidebarsConfig = {
         'troubleshooting/faq',
       ],
     },
+    'changelog',
   ],
 };
 
