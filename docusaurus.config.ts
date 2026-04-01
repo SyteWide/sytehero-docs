@@ -143,6 +143,7 @@ const config: Config = {
             {label: 'Features', to: '/docs/features/featured-products'},
             {label: 'Admin Reference', to: '/docs/admin-reference/plugin-setup'},
             {label: 'Troubleshooting', to: '/docs/troubleshooting/common-issues'},
+            {label: 'Changelog', to: '/docs/changelog'},
           ],
         },
         {
