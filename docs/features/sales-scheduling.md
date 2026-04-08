@@ -38,7 +38,7 @@ Saving a schedule triggers several automated actions:
 - **Price updates** -- The sale price is written to each product. For WooCommerce, this syncs natively with WooCommerce's sale system. For FluentCart, SyteHero manages the pricing directly.
 - **Slide creation** -- Hero slides are created (or updated) to showcase the sale products during the active period.
 - **Banner linking** -- If you selected a banner for the schedule, it is linked and will display automatically when the sale is live.
-- **Cache clearing** -- If LiteSpeed Cache is installed and the automatic cache-clearing toggle is enabled in [Plugin Setup](/docs/admin-reference/plugin-setup), the LiteSpeed cache is purged when a sale goes live so visitors see updated prices and slides immediately.
+- **Cache clearing** -- If LiteSpeed Cache is installed and the automatic cache-clearing toggle is enabled in [Settings](/docs/admin-reference/plugin-setup), the LiteSpeed cache is purged when a sale goes live so visitors see updated prices and slides immediately.
 
 ## Assigning a Banner
 

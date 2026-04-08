@@ -8,7 +8,7 @@ description: Solutions for common SyteHero problems and error messages.
 
 ## 1. Plugin Still Locked After Entering License
 
-Re-save your key and email on **Plugin Setup**, then click **Refresh License Status**. Check for `product_mismatch`, `variation_mismatch`, or `email_mismatch` messages in the status table.
+Re-save your key and email on **Settings**, then click **Refresh License Status**. Check for `product_mismatch`, `variation_mismatch`, or `email_mismatch` messages in the status table.
 
 ## 2. Changes Not Showing in Admin
 

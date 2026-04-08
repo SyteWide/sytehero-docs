@@ -14,7 +14,7 @@ SyteHero integrates directly with WooCommerce for product-based hero sliders, au
 
 ## Selecting WooCommerce
 
-1. Go to **SyteHero > Plugin Setup**.
+1. Go to **SyteHero > Settings**.
 2. Under **Ecommerce Selector**, choose **WooCommerce**.
 3. Click **Save Changes**.
 

@@ -10,6 +10,37 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.033 — 2026-04-08
+
+### Added
+- **AI Studio modal** — new dark-themed modal for text-to-image and image-to-image generation, accessible from any admin page
+- **Admin bar launcher** — a ✨ icon in the WordPress admin bar opens the AI Studio modal from any admin screen without navigating to the AI Studio page
+- **AI media manager** — dedicated AI Media tab to browse and delete AI-generated images, with usage detection to protect in-use assets
+
+### Removed
+- **Unused Media Scanner** — AI Studio's Tools tab and all underlying scan/delete/export functionality has been removed.
+
+### Changed
+- **Admin background** — Plugin admin pages now use a neutral slate-gray page canvas (#f8fafc) so white cards visually lift off the background.
+
+### Fixed
+- **Countdown modal save** — Clicking "Save Settings" in the countdown modal now immediately persists settings via AJAX. A second manual save of the schedule form is no longer required.
+- **Analytics click tracking** — CTA clicks are now tracked at click time via a rate-limited AJAX beacon. Previously, "clicks" only recorded at completed checkout.
+
+### Changed
+- **AI Studio checkboxes** — Custom checkbox styling with proper checked state and focus indicator replaces the native browser rendering.
+
+---
+
+## v1.0.032 — 2026-04-01
+
+### Added
+- AI hero image generation powered by fal.ai — select a source image from the media library, write a prompt, pick a model (with cost indicators), and generate a new hero image directly in the WordPress admin
+- New fal.ai integration card on the Integrations tab for API key management and connection testing
+- "Generate with AI" buttons on the product metabox, Heroes tab, and Schedules tab
+
+---
+
 ## v1.0.031 — 2026-04-01
 
 ### Changed

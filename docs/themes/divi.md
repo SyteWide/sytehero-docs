@@ -10,7 +10,7 @@ Divi with Divi Builder is fully supported by SyteHero, including both Divi 4 and
 
 ## Selecting Divi
 
-1. Go to **SyteHero > Plugin Setup**.
+1. Go to **SyteHero > Settings**.
 2. Under **Theme Selector**, choose **Divi** from the dropdown.
 3. Click **Save Changes**.
 
@@ -51,7 +51,7 @@ SyteHero works with both Divi 4 and Divi 5. The same configuration steps apply t
 
 ## Slider Engines
 
-Divi includes FlexSlider, so it is available out of the box. You can also choose **Swiper** or **Splide** in **Plugin Setup > Slider Engine** for additional animation options and modern performance.
+Divi includes FlexSlider, so it is available out of the box. You can also choose **Swiper** or **Splide** in **Settings > Slider Engine** for additional animation options and modern performance.
 
 ## Responsive Layouts
 

@@ -14,7 +14,7 @@ SyteHero works with FluentCart as an alternative to WooCommerce. The admin exper
 
 ## Selecting FluentCart
 
-1. Go to **SyteHero > Plugin Setup**.
+1. Go to **SyteHero > Settings**.
 2. Under **Ecommerce Selector**, choose **FluentCart**.
 3. Click **Save Changes**.
 

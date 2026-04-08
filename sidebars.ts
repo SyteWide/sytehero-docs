@@ -45,6 +45,7 @@ const sidebars: SidebarsConfig = {
         'features/google-calendar-setup',
         'features/backup-restore',
         'features/sales-summary-report',
+        'features/ai-image-generation',
       ],
     },
     {

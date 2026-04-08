@@ -18,7 +18,7 @@ SyteHero supports multiple slider engines — the underlying JavaScript library 
 
 ## Selecting an Engine
 
-1. Go to **SyteHero → Plugin Setup**.
+1. Go to **SyteHero → Settings**.
 2. Under **Theme Configuration**, find the **Slider Engine** dropdown.
 3. Select your preferred engine.
 4. Click **Save Changes**.
@@ -27,7 +27,7 @@ The change takes effect immediately on the frontend — no additional configurat
 
 ## Per-Engine Settings
 
-Each engine exposes its own configuration options. After selecting an engine, expand the **Engine Settings** collapsible panels on the Plugin Setup page to adjust engine-specific behavior.
+Each engine exposes its own configuration options. After selecting an engine, expand the **Engine Settings** collapsible panels on the Settings page to adjust engine-specific behavior.
 
 ### FlexSlider Settings
 
