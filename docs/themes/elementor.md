@@ -10,7 +10,7 @@ Elementor with Flexbox Containers is fully supported by SyteHero. This guide wal
 
 ## Selecting Elementor
 
-1. Go to **SyteHero > Plugin Setup**.
+1. Go to **SyteHero > Settings**.
 2. Under **Theme Selector**, choose **Elementor** from the dropdown.
 3. Click **Save Changes**.
 
@@ -57,7 +57,7 @@ Unlike Avada and Divi, Elementor does not bundle a slider library. SyteHero prov
 - **Swiper** — modern, CSS-driven with rich animations (cube, flip, fade, slide)
 - **Splide** — lightweight, dependency-free, accessible
 
-Choose your engine in **Plugin Setup > Slider Engine**. No additional installation is required — SyteHero handles everything.
+Choose your engine in **Settings > Slider Engine**. No additional installation is required — SyteHero handles everything.
 
 ## Responsive Layouts
 

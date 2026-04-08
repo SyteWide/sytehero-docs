@@ -14,9 +14,9 @@ Upload the ZIP via **WP Admin → Plugins → Add New → Upload**, or install v
 
 Go to **Plugins** and click **Activate** on SyteHero. The `sytehero-featured-image` product tag is created automatically.
 
-## Open Plugin Setup
+## Open Settings
 
-Navigate to **SyteHero → Plugin Setup**. This is the only screen visible before license activation.
+Navigate to **SyteHero → Settings**. This is the only screen visible before license activation.
 
 ## Enter Your License
 

@@ -10,7 +10,7 @@ Avada with Fusion Builder is fully supported by SyteHero. This guide walks you t
 
 ## Selecting Avada
 
-1. Go to **SyteHero > Plugin Setup**.
+1. Go to **SyteHero > Settings**.
 2. Under **Theme Selector**, choose **Avada** from the dropdown.
 3. Click **Save Changes**.
 
@@ -47,7 +47,7 @@ SyteHero injects dynamic text into your page builder elements using CSS class na
 
 ## Slider Engines
 
-Avada bundles FlexSlider, so it is available out of the box. You can also choose **Swiper** or **Splide** in **Plugin Setup > Slider Engine** for additional animation options (cube, flip) and modern performance.
+Avada bundles FlexSlider, so it is available out of the box. You can also choose **Swiper** or **Splide** in **Settings > Slider Engine** for additional animation options (cube, flip) and modern performance.
 
 ## Layout Fix: Overlay Text at Bottom
 

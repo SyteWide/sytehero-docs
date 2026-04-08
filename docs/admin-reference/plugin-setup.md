@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
-title: Plugin Setup
+title: Settings
 description: Configure SyteHero plugin settings, theme, and ecommerce platform.
 ---
 
-# Plugin Setup
+# Settings
 
-**Location:** SyteHero → Plugin Setup (visible before and after license activation)
+**Location:** SyteHero → Settings (visible before and after license activation)
 
 ---
 
