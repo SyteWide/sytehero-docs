@@ -1,14 +1,14 @@
 ---
 sidebar_position: 9
 title: Integrations
-description: Connect SyteHero to external services like Shippo for shipping and Google Calendar for schedule syncing.
+description: Connect SyteHero to external services like Shippo, Google Calendar, fal.ai, and AI Providers for text-based AI features.
 ---
 
 # Integrations
 
 SyteHero integrates with your WordPress theme and ecommerce platform to provide hero sliders, sales scheduling, and merchandising. For theme and ecommerce platform setup, see the [Theme Guides](/docs/themes/avada) and [Ecommerce Platforms](/docs/ecommerce/woocommerce) sections.
 
-The **Integrations tab** in the SyteHero admin provides connections to additional external services. Currently available integrations are Shippo for shipping and tracking data, and Google Calendar for two-way sales schedule syncing.
+The **Integrations** page in the SyteHero admin (**SyteHero > Integrations** in the sidebar) provides connections to external services and AI providers. Available integrations include Shippo for shipping data, Google Calendar for schedule syncing, fal.ai for AI image generation, and AI Providers for text-based AI features like automatic image SEO metadata.
 
 ## Finding the Integrations Tab
 
