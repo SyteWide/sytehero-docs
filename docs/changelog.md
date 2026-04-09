@@ -10,6 +10,21 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.034 — 2026-04-09
+
+### Added
+- **Integrations refresh** — refresh actions for the AI model list and max-tokens fields on the Integrations card
+
+### Changed
+- **AI Providers card** — three-column layout, Browse Models links, clearer dropdowns, and visual polish
+- **Maintenance** — uninstall cleanup, FluentCart-related fixes, and modularization from the comprehensive review
+
+### Fixed
+- **Fal balance capture** — fast models record post-generation balance and cost data more reliably
+- **AI integrations** — Straico and Gemini model loading, integrations refresh behavior, badge contrast, and max-tokens synchronization
+
+---
+
 ## v1.0.033 — 2026-04-08
 
 ### Added
