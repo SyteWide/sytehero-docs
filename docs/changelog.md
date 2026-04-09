@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.035 — 2026-04-09
+
+### Changed
+- **FluentCart detection** — recognizes FluentCart and FluentCart Pro using broader class and constant signals when WooCommerce is not installed
+
+### Fixed
+- **Plugin activation** — no longer fatals when the ecommerce gateway is unavailable; featured-tag setup runs when the store is ready
+
+---
+
 ## v1.0.034 — 2026-04-09
 
 ### Added
