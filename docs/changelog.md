@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.039 — 2026-04-15
+
+### Changed
+- **AI Copy modal styling** — reference tiles, inputs, suggestion chips, and status states now use the same dark modal surface styling as the other AI Studio modals.
+- **Transform modal footer layout** — action groups now keep a cleaner responsive structure as space tightens, with more consistent button alignment across desktop and mobile.
+
+---
+
 ## v1.0.038 — 2026-04-15
 
 ### Changed
