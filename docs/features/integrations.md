@@ -192,3 +192,49 @@ Deleting a Google Calendar event unlinks the schedule but does not delete it. Th
 #### "Sync is already in progress"
 
 A sync lock prevents concurrent runs. The lock expires after 30 seconds. Wait briefly and try again.
+
+## AI Image Providers Integration
+
+The AI Image Providers card controls image-generation providers used by AI Studio and image-related workflows. Each provider appears in its own card so you can manage credentials and connection tests independently.
+
+### Setup
+
+1. Open the **Integrations** tab in the SyteHero admin.
+2. Locate the **AI Image Providers** card.
+3. In each provider card, enable or disable that provider as needed.
+4. Enter or update API keys for the providers you want to use.
+5. Optionally click **Test Connection** on individual provider cards to validate credentials.
+6. Click the shared **Save Settings** button below the provider cards to save all provider changes at once.
+
+### Capability Routing
+
+The **Capability Routing** section appears below the provider cards. It lets you choose which provider handles each capability (Generate, Transform, Remove Background, Upscale, Extend to Fit, and Image-to-Video).
+
+- Routing options only show providers that support the capability.
+- Providers without a configured key are excluded from selectable routing options.
+- Click **Save Routing** after making routing changes.
+
+## AI Providers Integration
+
+The AI Providers card lets you configure API keys for text-based AI providers (OpenAI, Anthropic, OpenRouter, Gemini, Straico). These keys power features like automatic SEO metadata generation when saving AI-generated images.
+
+### Setup
+
+1. Open the **Integrations** tab in the SyteHero admin.
+2. Locate the **AI Providers** card.
+3. Enter an API key for one or more providers.
+4. Click **Save Settings**.
+5. Under **Function Configuration**, select which provider and model to use for each function (e.g., Image SEO Meta).
+
+### Function Configuration
+
+Each AI-powered function can use a different provider and model:
+
+| Function | Description | Status |
+|----------|-------------|--------|
+| Image SEO Meta | Generates title, alt text, caption, and description for AI images | Active |
+| Prompt Enhancement | Enhances fal.ai generation prompts | Coming Soon |
+
+### Key Storage
+
+API keys are encrypted at rest using AES-256-CBC (requires the PHP OpenSSL extension). Keys are stored independently in SyteHero and are not shared with other plugins.
