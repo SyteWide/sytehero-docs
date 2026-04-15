@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.037 — 2026-04-15
+
+### Changed
+- **AI Studio — Integrations tab** — AI image providers now render as separate card-style blocks with a shared save flow, making multi-provider configuration faster and less error-prone. Per-provider connection testing is preserved.
+- **Documentation** — Integrations docs updated to describe the refreshed card layout and shared save workflow.
+
+---
+
 ## v1.0.036 — 2026-04-15
 
 ### Changed
