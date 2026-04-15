@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.040 — 2026-04-15
+
+### Fixed
+- **AI provider tokens-refresh button** — the refresh button next to **Max Tokens** on the AI Image provider card now syncs only the tokens value from the selected model. It no longer refetches the models list. If the models haven't been loaded yet, click **Refresh models** first.
+- **Admin-bar AI modals** — modals launched from the top **SyteHero → AI Studio → [modal]** menu (AI Copy, BG Removal, Upscale, Outpaint, Image-to-Video) now render with the same styling as the AI Studio Generate modal. Previously, opening them outside the AI Studio page loaded only the base modal stylesheet, leaving drop zones and AI Copy-specific layout unstyled.
+
+---
+
 ## v1.0.039 — 2026-04-15
 
 ### Changed
