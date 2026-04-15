@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.036 — 2026-04-15
+
+### Changed
+- **AI Studio** — Fal AI is now implemented as the first adapter in a pluggable AI image/media provider system. Each capability (Generate, Transform, Remove BG, Upscale, Extend to Fit, Image-to-Video) can be independently routed to different providers. Existing Fal API key and settings migrate automatically on upgrade.
+- **Prompt Enhancement** — now available as a function area on the Integrations tab; when configured with a text provider (Claude, OpenAI, etc.) prompts are enhanced via that provider instead of Fal's built-in model.
+
+---
+
 ## v1.0.035 — 2026-04-09
 
 ### Changed
