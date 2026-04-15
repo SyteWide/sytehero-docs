@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.038 — 2026-04-15
+
+### Changed
+- **Prompt Enhancement** — now routes through the shared AI text-provider system. Fal is registered as a text provider so existing Fal-only setups keep working without any extra configuration. Saved Fal API keys carry over automatically.
+
+### Removed
+- **Legacy AI image shims** — `sytehero_fal_*` AJAX action aliases, the `sytehero_fal_settings` option, and the `FalAiSettings` / `get_fal_service` transitional helpers from the v1.0.036 AI provider refactor have been removed. Any integrations still calling the old names must update to `sytehero_ai_image_*`.
+
+---
+
 ## v1.0.037 — 2026-04-15
 
 ### Changed
