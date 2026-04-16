@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.041 — 2026-04-15
+
+### Fixed
+- **AI Studio admin-bar modals on every page** — Generate, Transform, Remove Background, Upscale, Extend to Fit, Image to Video, and AI Copy now work when launched from the admin bar on any admin page (Dashboard, Posts, Users, Plugins) or on the frontend for logged-in admins. Previously the modals opened but buttons inside were inert because their scripts didn't receive the full SyteHero config or the WordPress media picker.
+
+### Changed
+- **Admin-bar launcher moved to enqueued assets** — the launcher script and styles previously printed inline in each admin page now load from cacheable `sytehero-admin-bar-launcher.js` and `.css` files. No user-facing difference beyond slightly smaller page HTML.
+
+---
+
 ## v1.0.040 — 2026-04-15
 
 ### Fixed
