@@ -10,6 +10,27 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.042 — 2026-04-15
+
+### Fixed
+- **Admin-bar launcher reliability** — removed a hard script dependency (`media-editor`) that could silently prevent the launcher from loading, causing admin-bar AI Studio items to stop responding to clicks.
+- **Modal media picker diagnostics** — media picker guards now log a visible console warning when `wp.media` is unavailable, replacing the previous silent no-op.
+
+### Changed
+- **Launcher script hardening** — script loader now tracks already-loaded assets to prevent duplicates, scopes click handling to the admin bar, and logs errors on script load failure.
+
+---
+
+## v1.0.041 — 2026-04-15
+
+### Fixed
+- **AI Studio admin-bar modals on every page** — Generate, Transform, Remove Background, Upscale, Extend to Fit, Image to Video, and AI Copy now work when launched from the admin bar on any admin page (Dashboard, Posts, Users, Plugins) or on the frontend for logged-in admins. Previously the modals opened but buttons inside were inert because their scripts didn't receive the full SyteHero config or the WordPress media picker.
+
+### Changed
+- **Admin-bar launcher moved to enqueued assets** — the launcher script and styles previously printed inline in each admin page now load from cacheable `sytehero-admin-bar-launcher.js` and `.css` files. No user-facing difference beyond slightly smaller page HTML.
+
+---
+
 ## v1.0.040 — 2026-04-15
 
 ### Fixed
