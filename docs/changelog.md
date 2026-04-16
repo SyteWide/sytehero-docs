@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## Unreleased
+
+### Fixed
+- **Straico AI provider** — migrated from v1 API (which returned HTTP 522) to the OpenAI-compatible v2 API. Straico now uses the same request format as OpenAI and OpenRouter.
+
+### Changed
+- **AI chat completion timeout** — increased from 30 seconds to 60 seconds to accommodate slower LLM providers and aggregator services.
+
+---
+
 ## v1.0.042 — 2026-04-15
 
 ### Fixed
