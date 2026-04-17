@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.045 — 2026-04-16
+
+### Fixed
+- **Fatal error on admin pages** — added missing `use` import for `AiProviderAjaxHandler` in `AdminJsConfig` after the AJAX namespace refactor. The class moved to `Admin\Ajax` but the reference was not updated, causing a fatal "Class not found" error on every admin page load.
+
+---
+
 ## v1.0.044 — 2026-04-16
 
 ### Fixed
