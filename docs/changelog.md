@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.044 — 2026-04-16
+
+### Fixed
+- **Uniform hero height** — product, custom/page, and fallback slides now all render at the same configured height. Previously, custom slides with large images could push the hero beyond the set viewport height.
+- **FlexSlider smoothHeight** — no longer fights the hero height constraint inside the slider background.
+- **Supplemental slide auto-save** — editing text, margins, modes, or glow on custom/page slides now auto-saves via AJAX. Previously these changes were lost because the save was never triggered.
+- **Push View persistence** — the Push View button now persists changes for supplemental and fallback hero text editors.
+
+---
+
 ## v1.0.043 — 2026-04-15
 
 ### Fixed
