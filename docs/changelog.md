@@ -10,6 +10,17 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.047 — 2026-04-18
+
+### Added
+- **Pre-packaged overlay scaffold for the Elementor widget** — dropping the **SyteHero Hero Slider** widget onto a page now produces the Text Area 1, Text Area 2, and CTA overlay automatically. No separate Heading/Button widgets required and no CSS-class scaffolding to remember. Content still comes from *SyteHero → Custom Heroes* (or the Featured Products slider); empty source fields hide the matching overlay element.
+- **Style tab on the Elementor widget** — per-placement controls for text colour, font size, font weight, line height, and alignment on each of Text Area 1, Text Area 2, and CTA, plus a layout "gap between elements" control. Values cascade on top of the global SyteHero Settings defaults.
+
+### Changed
+- **Shared scaffold subsystem** introduced under `Syte\Hero\Integrations\Scaffold` (`StyleSchema`, `StyleTokens`, `ScaffoldRenderer`). The Elementor widget is the first consumer; the Gutenberg block (v1.0.048) and Avada/Divi elements (v1.0.049) will reuse the same building blocks.
+
+---
+
 ## v1.0.046 — 2026-04-18
 
 ### Added
