@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.046 — 2026-04-18
+
+### Added
+- **Elementor widget: SyteHero Hero Slider** — drop a "SyteHero Hero Slider" widget onto any Elementor page and pick either the Featured Products slider or a saved Custom Hero from a dropdown. Rotation, Text Area 1 / Text Area 2 / CTA overlays, license gating, and theme styling are inherited from the existing shortcode path, so there is no duplicate content to manage. Per-instance view variant (desktop/tablet/mobile) and an optional wrapper CSS class are exposed.
+- **Settings → Tab access → Enable Elementor widgets** toggle — lets admins turn the widget off globally without affecting existing shortcode placements.
+
+---
+
 ## v1.0.045 — 2026-04-16
 
 ### Fixed
