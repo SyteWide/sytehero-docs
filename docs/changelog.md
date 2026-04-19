@@ -10,6 +10,19 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.058 — 2026-04-19
+
+### Fixed
+- **Elementor pages: SyteHero hero now renders at full size** instead of collapsing to a small square in the corner. The shortcode's inline sizing CSS/JS was hardcoded to the globally-selected SyteHero theme (typically Avada's `.fusion-column-wrapper`), which doesn't exist inside an Elementor widget — leaving the absolutely-positioned slider with no parent height. The Elementor widget now overrides the active injection profile during its render, and the frontend slider JS falls back to the closest `.elementor-widget-container` / `.e-con` / `[data-sytehero-hero-wrapper]` when the configured selector doesn't match. Sites that use SyteHero in mixed-builder contexts (e.g. Avada theme with Elementor pages) will see the hero render correctly in both.
+- **Save Image Details: preview at the top now reliably appears with the actual generated image.** In the non-deferred save flow, the modal opened the dialog before the image URL had been fetched, so the preview block stayed empty. The flow now fetches the preview URL before opening the dialog, falls back to reading the rendered result `<img>` element when state is empty, and always renders the preview wrapper as a stable visual anchor.
+- **Discard button is now always visible** in the Save Image Details dialog — including in studio mode where no attachment exists yet. In the no-attachment case, Discard simply resets the in-flight generation and closes the dialog so users can re-prompt; in preset-tool mode it still deletes the auto-saved attachment from the media library.
+- **Modal no longer auto-closes after saving SEO metadata.** Previously, completing a non-deferred save closed the entire modal, removing the user's chance to review the saved image, regenerate, or apply it. The modal now stays open after save so the user can decide what to do next.
+
+### Added
+- **`sytehero_active_theme_injection_profile` filter** lets renderers temporarily substitute the active theme injection profile for the duration of a single shortcode render. Used by the Elementor widget to force its own profile on Avada-themed sites; available for any custom integration that needs the same.
+
+---
+
 ## v1.0.057 — 2026-04-19
 
 ### Added
