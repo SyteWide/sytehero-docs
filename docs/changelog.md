@@ -10,6 +10,17 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.059 — 2026-04-19
+
+### Fixed
+- **All builder integrations now use their own theme profile during render**, not just Elementor (v1.0.058). The same root cause that collapsed Elementor heroes to a sliver — the inline sizer using whichever profile the global SyteHero setting selected — would have surfaced any time a builder integration was used on a site whose SyteHero theme didn't match. Each builder now owns its rendering context:
+  - **Avada Fusion element** forces the Avada profile (`.fusion-column-wrapper`).
+  - **Divi module** forces the Divi profile (`.et_pb_column`).
+  - **Elementor widget** continues to force the Elementor profile (`.elementor-widget-container` chain).
+  - **Gutenberg block** sizes against the scaffold's own wrapper (`.sytehero-scaffold-wrap`) so the block works in any host theme without depending on theme-specific column structure.
+
+---
+
 ## v1.0.058 — 2026-04-19
 
 ### Fixed
