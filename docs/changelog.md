@@ -10,6 +10,23 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.060 — 2026-04-19
+
+### Changed
+- **Builder profile-override system hardened.** The 4 builder integrations (Avada Fusion, Divi, Elementor, Gutenberg) that override the active theme injection profile during their render now share a single `RenderProfileScope` helper that wraps `add_filter` / `do_shortcode` / `remove_filter` in a try/finally. If the shortcode chain throws (license check, repository query, theme adapter), the override is no longer leaked past the render — preventing silent corruption of subsequent slider renders on the same page request.
+- **Gutenberg block override now covers all three injection selectors** (`overlay_wrapper_selector`, `text_host_selector`, `cta_text_selector`) instead of only the wrapper. On sites where SyteHero is set to a host theme like Avada, the Gutenberg block's overlay text and CTA injection no longer try to find Avada-specific selectors (`.fusion-text`, `.fusion-button-text`) inside the host-theme-agnostic block scaffold.
+- **Theme keys exposed as constants** on `ThemeConfig` (`THEME_KEY_AVADA`, `THEME_KEY_DIVI`, `THEME_KEY_ELEMENTOR`) so builder integrations don't repeat magic-string keys that a future refactor could silently drift from.
+
+### Fixed
+- **`ServiceContainer::get_active_theme_injection_profile()` now type-guards** the resolved theme adapter's return value. A misbehaving custom adapter that returns a non-array (object, null, scalar) now falls back to the global `ThemeConfig` instead of corrupting the downstream shortcode chain.
+- **Frontend slider JS fallback chain reordered** for clarity. Builder-specific selectors (`.elementor-widget-container`, `.e-con`, `.et_pb_column`, `.sytehero-scaffold-wrap`) are tried first; the `[data-sytehero-hero-wrapper]` data attribute is now last because it's only set by the inline sizer that has already failed by the time we reach the fallback.
+
+### Added
+- **Public `Syte\\Hero\\Integrations\\Scaffold\\RenderProfileScope`** helper class. Two static methods: `with_override( callable $override, callable $body )` for exception-safe profile substitution during a render, and `force_theme( string $theme_key )` to build a fixed-profile override callable from a `ThemeConfig::THEME_KEY_*` constant. Available for any custom integration that needs the same scoped-override behavior.
+- **10 new unit tests** covering the filter contract: `RenderProfileScopeTest` (7 tests, including try/finally cleanup on body exception) and `ServiceContainerProfileFilterTest` (3 tests covering the filter wiring + non-array result guard). PHPUnit suite is now 1230 tests / 3720 assertions.
+
+---
+
 ## v1.0.059 — 2026-04-19
 
 ### Fixed
