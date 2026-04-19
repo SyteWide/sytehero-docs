@@ -10,6 +10,25 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.052 — 2026-04-19
+
+### Changed
+- **Scaffold decoupled from Elementor-specific class names.** The builder-scaffold renderer now emits `.e-con`, `.elementor-widget-container`, `.elementor-button`, and `.elementor-button-text` *only* for the Elementor widget path. Gutenberg / Avada / Divi / Divi 5 scaffolds produce clean, theme-neutral DOM — `.sytehero-hero-text-area-1`, `.sytehero-hero-text-area-2`, `.sytehero-hero-cta`, `.sytehero-hero-cta-text`. No frontend behaviour change (the overlay-injection JS's `el.closest(selector) || el` fallback continues to land text in our elements regardless).
+- **Gutenberg block editor-script handle** is now computed dynamically via `generate_block_asset_handle()` instead of a hardcoded string — future-proof against WP's handle-generation algorithm changes.
+- **Fusion Builder preview template** uses the underscore HTML-escape delimiter (`{{- }}` instead of `{{= }}`) for `data.sh_source` interpolation. Defensive escaping at the template boundary even though the field currently only carries sanitized dropdown values.
+
+### Added
+- **CI Node build step.** `.github/workflows/release.yml` now runs `npm ci` + `npm run build:all` between PHPUnit and the ZIP-staging step, so the release zip always contains freshly-built `assets/blocks/` and `assets/divi5/` rather than whatever was last committed.
+- **Coming Soon placeholder contract tests** — asserts the Divi 5 placeholder row in Settings remains inert (no `TabGateOptions` key backing it) until the module actually ships.
+- **Divi 4 ↔ Divi 5 coexistence contract tests** (deliberately skipped until the D5 module lands). Encodes the required short-circuit behaviour as a ready-made regression net for the future implementer.
+- **Divi 5 stub bundle** emits a small runtime marker (`window.SyteHeroDivi5 = 'coming-soon'`, ~88 bytes) so WP caching/minify plugins don't treat the compiled file as corrupt.
+
+### Notes
+- An attempt to migrate from deprecated `divi-types-*` npm aliases to the direct `@divi/*` packages was reverted — the direct packages have a transitive dependency (`@types/codemirror@5.65.16`) that's missing from the npm registry, breaking fresh installs. Deferred to the Divi 5 native module continuation work; conditions for a successful re-attempt are documented.
+- No runtime behaviour change on any of the four supported builders.
+
+---
+
 ## v1.0.051 — 2026-04-19
 
 ### Added
