@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.050 — 2026-04-19
+
+### Added
+- **Fusion Builder element preview** — the SyteHero Hero Slider element now renders a labelled preview card inside Fusion Builder showing the element's name and selected source. Previously the builder showed only a generic element rectangle.
+
+---
+
 ## v1.0.049 — 2026-04-18
 
 ### Added
