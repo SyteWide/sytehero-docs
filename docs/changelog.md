@@ -10,6 +10,24 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.061 — 2026-04-19
+
+### Fixed
+- **Elementor builder canvas: hero no longer collapses to 0 px.** The scaffold wrap/stage layers that wrap every builder widget's slider did not carry a min-height, so the absolutely-positioned `.sytehero-fhsbg` slider had no sized containing block and disappeared inside the Elementor canvas. The scaffold now propagates the same min-height formula the outer-wrapper sizer uses, scoped with `:has(.sytehero-fhsbg)` so non-hero widgets still flow at their natural height. Same fix applies silently to Avada, Divi, and Gutenberg scaffolds.
+
+### Added
+- **Builder widgets detect the viewport's breakpoint automatically.** Elementor, Avada Fusion, Divi, and Gutenberg SyteHero widgets now opt into reactive breakpoint detection — the wrapper's `sytehero-hero-featured--{desktop|tablet|mobile}` class tracks the viewport via `matchMedia`, so authors no longer need to hand-pick a view per breakpoint or render per-view variants. Elementor's own breakpoint config is honored when present (so changing tablet to 900 px in Site Settings → Layout flows through automatically). Plain `[sytehero_featured]` / `[sytehero_custom]` shortcodes placed outside a builder widget keep the existing fixed-view behavior.
+- **`sytehero/breakpoints` filter** — pin custom viewport thresholds site-wide without editing core. Receives `( array $breakpoints, string $theme_key )` and must return `[ 'mobile_max' => int, 'tablet_max' => int ]`. Defaults follow each theme's own conventions (Elementor 767/1024, Avada 640/1024, Divi 767/980, generic 767/1024).
+
+### Changed
+- **Heads-up for custom CSS authors.** On pages rendered through a SyteHero builder widget (Elementor / Avada Fusion / Divi / Gutenberg), the hero wrapper's view class (`.sytehero-hero-featured--desktop|--tablet|--mobile`) now tracks the visitor's viewport instead of staying pinned to whatever view the widget was configured for. If you have site CSS that assumes a stable `--desktop` class on a placement, that rule will unselect on mobile/tablet viewports. To restore the old "always desktop" behavior on a specific placement, target by the widget-specific wrapper class instead (e.g., `.sytehero-scaffold-wrap--elementor`, or a custom class you add via the widget's "Extra wrapper CSS class" field). Plain shortcode calls outside a builder widget are unaffected.
+
+### Internal
+- Inline sizer script de-duplicated into `Syte\Hero\Frontend\SliderSizerScript` — both `[sytehero_featured]` and `[sytehero_custom]` now emit byte-identical sizing JS, and the helper has dedicated unit-test coverage (11 tests).
+- Elementor live-config read hardened: the resolver now checks `window.elementorFrontend.config.responsive.activeBreakpoints` (Elementor 3.4+), `window.elementorFrontend.config.responsive.breakpoints` (3.2–3.3), and the raw `window.elementorFrontendConfig.responsive.{activeBreakpoints,breakpoints}` fallback, so user-overridden Elementor breakpoints propagate regardless of load order.
+
+---
+
 ## v1.0.060 — 2026-04-19
 
 ### Changed
