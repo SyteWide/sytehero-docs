@@ -10,6 +10,19 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.048 — 2026-04-18
+
+### Added
+- **Gutenberg block: SyteHero Hero Slider** — insert the block on any post, page, or site-editor template and pick a saved hero from the Inspector. The overlay (Text Area 1, Text Area 2, CTA) is pre-packaged in the block's output; no container assembly required. Reuses the shared scaffold subsystem introduced in v1.0.047 so block placements produce the same frontend markup as the Elementor widget.
+- **Inspector Style panels** — colour, font size, font weight, line height, and alignment per Text Area 1 / Text Area 2 / CTA, plus a layout gap control. Values cascade on top of the global SyteHero Settings defaults.
+- **Settings → Tab access → Enable Gutenberg block** toggle — hides the block from the inserter without affecting existing shortcode placements.
+
+### Changed
+- **Minimum WordPress version** bumped to **5.8** (required for `block.json`-based block registration). Effectively no real-site impact; WP 5.0–5.7 is <1% of active sites per wordpress.org usage stats.
+- **Build pipeline**: root `package.json` + `@wordpress/scripts` added for the Gutenberg block bundle. Dev-only — `src/`, `package.json`, `node_modules/` are excluded from the release zip by the existing allowlist. Built output ships from `assets/blocks/`.
+
+---
+
 ## v1.0.047 — 2026-04-18
 
 ### Added
