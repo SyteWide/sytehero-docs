@@ -10,6 +10,21 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.051 — 2026-04-19
+
+### Added
+- **Divi 5 native module infrastructure (Coming Soon feature).** Build-time groundwork for a future first-class Divi 5 module — npm dependencies (`@divi/types` + targeted `@types/divi__*` packages), TypeScript + Webpack configs, a `build:divi5` script, and a stub `src/divi5/` source tree that compiles cleanly. The module implementation itself is deferred pending a green-light signal (customer demand, Divi 5 adoption threshold, or upstream `@divi/*` API stabilisation); see `docs/superpowers/plans/2026-04-19-divi5-module-continuation.md`.
+- **"Divi 5 native module (Coming Soon)" placeholder** under *Settings → Advanced → Tab access*. Greyed out and non-interactive — marks where the real toggle will appear when the module ships.
+
+### Changed
+- Divi Classic module and Gutenberg block documentation now reference the Coming Soon Divi 5 roadmap.
+
+### Notes
+- No runtime behaviour changes on Divi 4 or Divi 5 sites. The Classic module from v1.0.049 continues to serve both (Divi 5 via its Classic-compatibility layer).
+- Rolling back this release is safe: all additions are dev-only tooling + a disabled UI row; no new runtime code paths were introduced.
+
+---
+
 ## v1.0.050 — 2026-04-19
 
 ### Added
