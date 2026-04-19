@@ -10,6 +10,18 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.049 — 2026-04-18
+
+### Added
+- **Avada / Fusion Builder element: SyteHero Hero Slider** — register a native Fusion Builder element via `fusion_builder_map()` on `fusion_builder_before_init`. The element wraps a shortcode (`[sytehero_fusion_hero_slider]`) that reuses the shared scaffold subsystem introduced in v1.0.047, producing byte-identical frontend markup to the Elementor widget and Gutenberg block for equivalent attributes. Style tab exposes colour, font size, font weight, line height, and alignment per Text Area 1 / Text Area 2 / CTA, plus a layout gap.
+- **Divi Classic module: SyteHero Hero Slider** — register a custom `ET_Builder_Module` subclass via `et_builder_ready`. Targets the classic back-end Divi Builder; the Visual Builder uses Divi's AJAX fallback rendering (a future release may add native VB rendering via a Divi Extension). Same Style-tab controls as the Fusion element.
+- **Settings → Tab access toggles** — two new toggles (**Enable Fusion Builder element**, **Enable Divi module**) let admins hide each integration without affecting existing shortcode placements.
+
+### Changed
+- Bumped the shared scaffold subsystem's builder set to four: Elementor (v1.0.047), Gutenberg (v1.0.048), Avada / Fusion Builder, Divi Classic. Every builder consumes the same `Syte\Hero\Integrations\Scaffold\StyleSchema` + `ScaffoldRenderer` so authors see consistent behaviour across platforms.
+
+---
+
 ## v1.0.048 — 2026-04-18
 
 ### Added
