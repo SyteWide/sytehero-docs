@@ -10,6 +10,18 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.053 — 2026-04-19
+
+### Changed
+- **Scaffold wrapper discovery simplified.** `sytehero-frontend-overlay.js` now recognises `.sytehero-scaffold-wrap` as the overlay wrapper directly, short-circuiting the theme-profile walk-up when a builder widget is present. The scaffold no longer needs to carry `.e-con` (or any theme-specific class) to be discoverable, and the Elementor builder path stops emitting `.e-con` entirely.
+- **Non-Elementor builders emit a bare CTA text `<span></span>`** — the unreferenced `sytehero-hero-cta-text` class introduced in v1.0.052 has been dropped. The Elementor path continues to emit `.elementor-button-text` where the Elementor theme profile's host selector expects it.
+
+### Added
+- **Editor-script handle contract tests** — `HeroSliderBlockModuleTest` now directly asserts `editor_script_handle()` returns `'sytehero-hero-slider-editor-script'` and stays in lockstep with `BLOCK_NAME`. A `generate_block_asset_handle()` test stub in `tests/bootstrap.php` mirrors WP's real algorithm so both the live and fallback paths are covered.
+- **Strengthened coexistence-test sentinel** — verifies via reflection that the three `DiviModuleRegistrarCoexistenceTest` future-contract methods still exist so a rename or accidental deletion trips a failing test immediately.
+
+---
+
 ## v1.0.052 — 2026-04-19
 
 ### Changed
