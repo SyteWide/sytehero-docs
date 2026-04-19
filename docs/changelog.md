@@ -10,6 +10,28 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.055 — 2026-04-19
+
+### Changed
+- **Unified drop-zone placeholder wording across AI tool modals.** The per-tool modals (Remove Background, Extend to Fit, Upscale, Image-to-Video) now read "Drop or click" to match the hero and AI Studio modals, replacing the longer "Drop or click to select image" for a consistent drop-target affordance.
+
+---
+
+## v1.0.054 — 2026-04-19
+
+### Fixed
+- **"Unexpected status: in_progress" error on slow AI generations.** The AI image modals were only recognising fal.ai status codes in their legacy uppercase form, so when a model stayed in progress long enough to be re-polled (common with Nano Banana Pro), the UI bailed out with an error. Poll handlers now normalise the response so either uppercase or lowercase statuses round-trip cleanly.
+- **Drag-and-drop uploads into the AI Studio modal no longer vanish.** Previously the dropped file uploaded to the Media Library but never appeared in the source area unless the Media Library picker had been opened first. The drop handler is now wired to the same state-update path as click-to-select, so the thumbnail updates immediately.
+- **AI Studio "Upload File" button now shows the image straight away.** Same class of bug as the drag-drop case: if a user clicked Upload File before ever opening the Media Library picker, the file uploaded but the thumb stayed empty. It now routes through the base modal's shared selection handler.
+
+### Added
+- **Drag-and-drop is now available in every AI modal.** The hero image generator, AI Studio, and the per-tool modals (Remove Background, Extend to Fit, Upscale, Image-to-Video) all accept an image file dropped onto their source area in addition to click-to-pick. The placeholder now reads "Drop or click to select" as a visible hint.
+
+### Changed
+- **"Extend to Fit" is now a collapsed dropdown instead of an always-visible row.** It used to appear automatically whenever the source image's aspect ratio didn't match the target, which confused users unfamiliar with outpainting. It now only appears when your source actually doesn't match the selected ratio, shows up collapsed by default, and carries a discreet "Recommended — your source doesn't match…" hint next to the summary. Opening it reveals the optional fill prompt and "Extend to &lt;ratio&gt;" button. The Extend to Fit tool modal keeps the dropdown auto-expanded since it's the tool's primary action.
+
+---
+
 ## v1.0.053 — 2026-04-19
 
 ### Changed
