@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.062 — 2026-04-19
+
+### Fixed
+- **Theme/framework auto-detection now recognizes Elementor when it's installed as a plugin**, even on Avada- or Divi-themed sites. Previously, an Avada site with Elementor active would auto-detect as `Avada` — so SyteHero's inline sizer would hunt for `.fusion-column-wrapper` ancestors that never exist inside an Elementor page, and the hero wrapper wouldn't receive its sizing tokens. Fresh installs now default to `Elementor` on those mixed setups. Existing sites can re-run detection from **SyteHero → Settings → Detect** (or override manually via the Theme dropdown).
+
+### Added
+- **`sytehero/is_elementor_plugin_active` filter** — override SyteHero's Elementor plugin detection. Useful if you want to force a theme-based profile even when Elementor is active (e.g., an Avada site where Elementor is installed but only used on a handful of pages managed by the SyteHero Avada widget). Receives the bootstrap-derived boolean and must return a boolean.
+
+---
+
 ## v1.0.061 — 2026-04-19
 
 ### Fixed
