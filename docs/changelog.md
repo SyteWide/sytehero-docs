@@ -10,6 +10,23 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.057 — 2026-04-19
+
+### Added
+- **Save Image Details now shows a preview of the generated image** at the top of the dialog, so you can see exactly what you're about to save before filling in title/alt/caption/description.
+- **"Discard" button in Save Image Details** for AI Studio's preset tools (Extend to Fit, Remove Background) where the generated image is auto-saved to the Media Library before the dialog opens. Clicking Discard prompts for confirmation, then deletes the attachment so you don't have to clean up unwanted images by hand. The original source image is preserved so you can immediately retry. If the image is already in use elsewhere on the site, Discard surfaces a friendly inline message instead of force-deleting. (Studio mode hides the button entirely — Cancel still works there because nothing was saved yet.)
+- **`sytehero_fal_outpaint_guardrail_prompt` filter** for agencies and developers who want to tune the outpaint guardrail phrasing per-site without forking. Receives `( string $prompt, string $image_url, string $user_prompt )`.
+
+### Changed
+- **Extend-to-Fit Aspect Ratio panel spacing has been refined.** The description, the "Extend to &lt;ratio&gt;" button, and the optional fill-prompt input now have proper visual hierarchy — the button reads as the primary action and the prompt is visually separated as an optional refinement.
+- **Outpaint (Extend to Fit) now reliably matches the original background.** A guardrail instruction is automatically prepended to every outpaint request asking the model to seamlessly extend the existing scene and avoid introducing unrelated objects, text, or scenery. Your custom fill-prompt (if any) is appended as additional direction. The fill-prompt placeholder and an inline tip have been updated to reflect this.
+- **Elementor editor placeholder for the SyteHero Hero Slider widget now shows the human-readable source name** (e.g. "Featured Products slider", "Custom Hero: Spring Sale") instead of the raw slug.
+
+### Fixed
+- **Elementor editor canvas no longer loses scroll when the SyteHero Hero Slider widget is added.** The featured-products slider's positioning and touch handlers were trapping wheel/touch events inside Elementor's preview iframe. The widget now renders a static placeholder when in edit mode (the live slider still renders normally on the published page), the slider's frontend JS bails early if it detects Elementor edit mode, and a defensive CSS reset neutralises the slider's `overflow:hidden`/`position:absolute` whenever Elementor's editor body class is present — so even hero markup that lands in the editor through other paths (HTML/shortcode widgets, cached templates) can no longer trap scroll.
+
+---
+
 ## v1.0.056 — 2026-04-19
 
 ### Fixed
