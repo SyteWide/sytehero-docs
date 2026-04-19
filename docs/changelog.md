@@ -10,6 +10,20 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.056 — 2026-04-19
+
+### Fixed
+- **Dragging an image into the AI Studio source area now reliably selects it.** A follow-up to v1.0.055 addressing two stacked issues: the uploader falls back through `sizes.medium.url → url → guid` (and logs a warning if none are usable), and the thumbnail `<img>` retries with the full-size URL when its subsize variant (e.g. `-229x300.jpg`) fails to load. If both variants fail (the rare case where the upload response URL points to a different origin that hasn't yet received the file), the drop zone restores its placeholder and surfaces an "Upload failed" hint instead of silently collapsing. Fix spans every AI Studio modal — AI Studio, Remove Background, Extend to Fit, Upscale, Image-to-Video, Hero generator.
+
+### Added
+- **"Processing…" spinner in the source image drop zone during upload.** Dropping an image (or using the AI Studio "Upload File" button) now shows a centred spinner and a pulsing accent border while the file is uploading, so the zone never looks unresponsive between drop and selection. The AI Copy Reference image tile gets an equivalent spinner overlay. Copy is localizable via `SyteHero.i18n.aiSourceProcessing` / `aiSourceUploading` / `aiSourceUploadFailed`.
+- **Drag-and-drop on the AI Copy modal's Reference image tile.** The tile already accepted click-to-pick via the Media Library; it now also accepts a dropped image file, mirroring the behaviour of every other image input in AI Studio.
+
+### Changed
+- **"Extend to Fit Aspect Ratio" now sits directly under the Quality selector** inside the generation options, instead of appearing as a standalone row above the prompt. Keeps the option visually grouped with the other generation controls where users expect it.
+
+---
+
 ## v1.0.055 — 2026-04-19
 
 ### Changed
