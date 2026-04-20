@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.065 — 2026-04-19
+
+### Fixed
+- **Elementor full-bleed rule now actually zeroes every padding variant.** The v1.0.064 rule only zeroed the `padding` shorthand, but Elementor emits padding via `padding-block-start` / `padding-block-end` / `padding-inline-start` / `padding-inline-end` logical longhands on some kit and version combinations — those longhands aren't reset by a physical shorthand in the same cascade, so a residual border persisted on affected sites. The full-bleed rule now zeroes the shorthand, all four logical longhands, the container gap, the widget's margin, and `.elementor-widget-container`'s own padding, so no single layer can keep a residual gutter when the SyteHero Hero Slider is the sole widget in its section.
+
+### Internal
+- **CSS regression test expanded** — two new assertions lock in the logical-longhand zeros + the widget-container reset so a future "simplification" of the rule can't silently re-introduce the border.
+
+---
+
 ## v1.0.064 — 2026-04-19
 
 ### Fixed
