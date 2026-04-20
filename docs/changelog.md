@@ -10,6 +10,27 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.073 — 2026-04-20
+
+### Internal
+- **`FeaturedProductsPage` data assembly extracted.** A new `FeaturedProductsPageDataAssembler` class (+ readonly `FeaturedProductsPageData` DTO) now owns all data preparation work previously inline in `FeaturedProductsPage::render()`. The render method is reduced from ~1 980 to ~1 640 lines; output is byte-for-byte identical, verified by the render-equivalence harness. No user-facing behavior changed.
+
+---
+
+## v1.0.072 — 2026-04-20
+
+### Internal
+- **WP integration test harness added.** A second PHPUnit suite (`phpunit.integration.xml.dist`) now boots a real WordPress environment against a local MySQL database. Provides render-equivalence pinning for `FeaturedProductsPage`, guarding future admin-page decomposition work against silent HTML regressions. No user-facing behavior changed.
+
+---
+
+## v1.0.071 — 2026-04-20
+
+### Internal
+- **AI AJAX handler refactored into concern-scoped classes.** The single 1 400-line `AiImageAjaxHandler` class has been split into six focused handlers (`AiSettingsAjaxHandler`, `AiGenerationAjaxHandler`, `AiPromptAjaxHandler`, `AiEditingAjaxHandler`, `AiVideoAjaxHandler`, `AiPipelineAjaxHandler`) plus a shared `AiImageAjaxSupport` utility class and a thin `AiImageAjaxController` orchestrator. All 21 `wp_ajax_*` action names and priorities are identical to before. No user-facing behavior changed.
+
+---
+
 ## v1.0.070 — 2026-04-20
 
 ### Internal
