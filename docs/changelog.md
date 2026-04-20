@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.074 — 2026-04-20
+
+### Fixed
+- **Hero image now fills the wrapper at all viewport widths.** On Elementor, Divi, Gutenberg, and Avada, the hero background image previously rendered at its natural aspect ratio rather than filling the container — leaving a white band below the hero on tablet and mobile viewports (and when the browser window was narrower than the source image width). The text overlays and CTA button, being centered in the full-height wrapper, would visually float in the middle of the empty white area. Root cause: FlexSlider's vendor stylesheet was loaded after `sytehero-frontend.css` and its equal-specificity `height: auto` rule won the cascade. Fixed by bumping the SyteHero image rule specificity so it reliably wins regardless of stylesheet load order.
+
+---
+
 ## v1.0.073 — 2026-04-20
 
 ### Internal
