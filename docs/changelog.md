@@ -10,6 +10,42 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.070 — 2026-04-20
+
+### Internal
+- **Modularization cleanup across the builder integration layer.** Four near-identical whitespace-class sanitizers are now a single shared helper (`ClassTokenSanitizer`); the repeated hero-render ceremony across the Elementor / Avada / Divi / Gutenberg widget render paths lives in a single `BuilderHeroRenderer` trait that each builder opts into; the duplicated `resolve_view_glow_enabled` logic between the featured and custom hero shortcodes is now a single `SlideOverlayResolver` call; and the admin Featured Products page routes its slide-id collection through the already-canonical `SlideOrderingService` statics. Unit coverage expanded by ~25 tests across `ClassTokenSanitizer`, `SlideOverlayResolver`, `SlideOrderingService`, and the new trait. No public API, hook name, option key, AJAX action, or asset handle changed.
+
+---
+
+## v1.0.069 — 2026-04-20
+
+### Removed
+- **Reactive breakpoint auto-swap has been removed.** Earlier v1.0.061 introduced a JavaScript listener that tried to swap the hero's desktop/tablet/mobile layout class as the viewport changed. It didn't reliably match Elementor's live breakpoints and could freeze at the wrong view, so it's gone.
+
+### Fixed
+- **Hero view is now driven entirely by the element-level "View" dropdown** (Default / Desktop / Tablet / Mobile) on each builder — Elementor, Avada/Fusion, Divi, and Gutenberg. The view you pick in the editor is the view the visitor sees, full stop. No runtime class swapping, no guesswork about whose breakpoint config is authoritative.
+
+_Release note:_ v1.0.069 ships bundled with the v1.0.068 typography expansion (entry immediately below) — the two releases were cut together rather than as separate tags.
+
+---
+
+## v1.0.068 — 2026-04-20
+
+### Fixed
+- **Tablet & mobile Elementor hero no longer leaves a white gap below the image.** The slide image was rendering at its natural aspect ratio because vendor FlexSlider's `.flexslider .slides img { height: auto }` rule (specificity 0,2,1) was beating the SyteHero cover-fit rule (specificity 0,1,1). The image rule now uses `.sytehero-fhsbg .slides img` to match vendor specificity, and our cascade-later position lets `height: 100%; object-fit: cover` win — the image fills the wrapper edge to edge on every breakpoint.
+
+### Added
+- **16 new typography & box controls per Text Area 1 / 2 / CTA Button on every builder** (Elementor, Divi, Avada/Fusion, Gutenberg). Authors can now configure font-family, font-style, font-variant, letter-spacing, text-indent, white-space, text-transform, text-decoration + decoration-colour / style / thickness / underline-offset, text-shadow, text-stroke, background-colour, and padding. All routed through the shared `StyleTokens` pipeline → `--sh-{el}-*` CSS custom properties consumed by scaffold CSS, so behaviour is identical regardless of which builder you use. The existing five controls (colour, font-size, font-weight, line-height, alignment) are unchanged and back-compat. New tokens fall back to `inherit` so v1.0.067 sites with no per-element overrides keep their theme cascade exactly as before.
+- **Keyword UI for Elementor letter-spacing / text-decoration-thickness / text-underline-offset.** Each control is now a paired SELECT (`Inherit` / `normal` or `auto` / `Custom value`) plus a SLIDER conditionally shown when "Custom value" is picked, so authors can pick the keyword fallback without typing.
+- **Always-visible TA1 / TA2 / CTA placeholder in the Elementor editor canvas.** When no source is selected (or the picked source doesn't yet resolve to slides), the editor now shows three styled placeholder elements ("Text Area 1", "Text Area 2", "Call to Action") so authors can immediately tweak typography without having to populate content first. Toggleable via the new `sytehero_elementor_editor_placeholder_enabled` filter (returns `true` by default).
+
+### Internal
+- **Cross-builder StyleMappers refactored to be schema-driven.** Adding a new typography prop is now a one-line change in `StyleSchema::element_controls()`; each builder's StyleMapper iterates the schema and emits its native controls. No more per-prop hand-coded blocks across four mappers.
+- **Hardened token sanitization for inline-style emission.** `font-family` rejects values with unbalanced quotes (preventing `style="..."` attribute escape), `text-shadow` / `-webkit-text-stroke` reject unbalanced parens (preventing invalid CSS), and the two composite sanitizers were factored into a single `sanitize_css_composite` helper so the rules stay in lockstep.
+- **CSS regression tests added** for every new typography prop on every element (48 new assertions) plus a vendor-specificity guard for the cover-fit rule and unit tests for `EditorPreviewRenderer::placeholder_payload()`, so future stylesheet refactors can't silently regress any of these fixes.
+
+---
+
 ## v1.0.067 — 2026-04-19
 
 ### Fixed
