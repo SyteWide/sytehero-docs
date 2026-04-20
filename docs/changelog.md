@@ -10,6 +10,31 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.064 — 2026-04-19
+
+### Fixed
+- **Elementor hero no longer shows a white border around it.** When the SyteHero Hero Slider is the only widget in its Elementor section, the section's default 10 px padding is now zeroed so the hero runs edge-to-edge — which is what almost every hero placement wants. Sections that contain additional widgets alongside the hero keep their normal padding, and sections where the padding is set explicitly via Elementor's section controls still win on specificity.
+- **Editor preview now respects the SyteHero license state.** On sites without an active license, the Elementor editor canvas falls back to the dashed placeholder instead of showing real overlay text and product images — matching the published-page behavior that renders empty when the license is locked.
+
+### Added
+- **`sytehero_elementor_editor_preview_enabled` filter** — a kill-switch for the Elementor editor static-preview feature introduced in v1.0.063. Return `false` to restore the pre-v1.0.063 dashed placeholder. Useful on very large product catalogues where the extra per-editor-open product query noticeably slows editor load, or for authors who simply preferred the older placeholder card.
+
+### Internal
+- **CSS regression test added** so the v1.0.063 Elementor width-collapse fix cannot silently disappear in a future scaffold-CSS refactor. Exercises the three `--elementor`-scoped rules plus the new sole-widget full-bleed selector.
+- **Featured-slides repository accepts a read-only cache mode.** `FeaturedSlidesRepository::get_slides_by_tag_slug()` gained an optional third argument `$skip_cache_write` (default `false`). When `true` (and `$skip_cache` is `false`), the repository reads the frontend transient cache for speed but never writes to it — letting admin-context callers (the Elementor editor preview, chiefly) avoid seeding the public cache with a query that may legally include draft / pending products. Existing two-arg callers are unaffected.
+
+---
+
+## v1.0.063 — 2026-04-19
+
+### Fixed
+- **Elementor hero no longer renders as a 0-width gray box on the published page.** Elementor's outer widget element is `display: flex` (default `flex-direction: row`), and inside our scaffold both the slider (`.sytehero-fhsbg`) and overlay are absolutely positioned, contributing zero intrinsic horizontal extent. Without an explicit width, `.elementor-widget-container` was collapsing to 0 px wide — the slide image (`width: 100%`) then rendered at 0×0, while the heights cascaded correctly from `:has()` rules and the inline sizer. Added three width rules scoped to the `--elementor` builder modifier so the chain inherits the column's available width. Other builder integrations (Avada, Divi, Gutenberg) are unaffected.
+
+### Added
+- **Static first-slide preview inside the Elementor editor canvas.** Dropping or selecting the SyteHero Hero Slider widget in the Elementor editor now shows a non-interactive snapshot of what the published hero will display — first slide's image, overlay text, and CTA — instead of the previous "live preview disabled" placeholder card. The preview is wrapped in `pointer-events: none` and never instantiates the slider engine, so the editor canvas's scroll and Elementor's drag handles work normally. Style-tab controls (gap, alignment, color tokens) update the preview live. When no source is selected or no slides are configured, the existing dashed placeholder still appears.
+
+---
+
 ## v1.0.062 — 2026-04-19
 
 ### Fixed
