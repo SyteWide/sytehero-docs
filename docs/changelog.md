@@ -10,6 +10,17 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.066 — 2026-04-19
+
+### Fixed
+- **Hero slider no longer inherits a 4 px white border on all four sides.** FlexSlider's bundled stylesheet (the library SyteHero uses under the hood for the default slider engine) applies a 4 px white border + 4 px rounded corners to `.flexslider` — a classic "Polaroid frame" default intended for card-style image galleries, not full-bleed heroes. The border has been silently present on every SyteHero hero since forever but was invisible while earlier bugs kept the slider collapsed to 0 px in Elementor; once the v1.0.063 width fix let the slider render at real dimensions, the border became user-visible. The new reset zeroes the border, radius, box-shadow, and the white background on the hero-scoped `.flexslider` element only — leaving any FlexSlider use outside the hero (if any) untouched. Affects Avada / Divi / Elementor / plain-shortcode placements equally.
+- **Simplified the v1.0.064–065 Elementor full-bleed rule.** The `gap`, widget `margin`, and `.elementor-widget-container` padding overrides that were piled on in v1.0.065 were defensive speculation against the wrong root cause (the border was FlexSlider, not Elementor container chrome). They are removed; the rule now only zeroes the `.e-con` padding shorthand + its four logical longhands, which is all that is actually needed for the Elementor full-bleed case.
+
+### Internal
+- **FlexSlider reset regression test added** so a future vendor-CSS refresh cannot silently restore the Polaroid frame.
+
+---
+
 ## v1.0.065 — 2026-04-19
 
 ### Fixed
