@@ -10,6 +10,15 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.067 — 2026-04-19
+
+### Fixed
+- **Elementor hero CTA now centers horizontally inside the overlay.** A legacy `align-self: flex-start` rule on `.sytehero-hero-cta` (written for the older theme-shortcode path where the CTA's parent was a flex row) was overriding the scaffold overlay's `align-items: center` and pushing the CTA to the left edge in Elementor placements. The scaffold overlay now neutralizes that legacy rule so the CTA inherits the overlay's centered alignment alongside Text Area 1 and Text Area 2.
+- **Hero overlay text defaults to white in the Elementor / Gutenberg scaffold.** Text Area 1 / 2 previously fell back to `inherit`, which on most themes resolved to the page's dark body color and made them invisible against dark hero images until an author manually configured a color. The default is now `#fff`, so the hero is readable out-of-the-box; authors who set a color via builder controls keep their value.
+- **5px minimum spacing between Text Area 1, Text Area 2, and CTA is now enforced on all themes.** Previously, configuring a margin of 0% (or leaving the per-element margin off) could collapse the elements together. The scaffold overlay's gap is floored at 5px, the per-element margin rules clamp to `max(5px, configured value)`, and a baseline 5px top margin applies to TA2 and CTA inside the hero wrapper on Avada, Divi, Elementor, and Gutenberg.
+
+---
+
 ## v1.0.066 — 2026-04-19
 
 ### Fixed
