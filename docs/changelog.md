@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.077 — 2026-04-21
+
+### Added
+- **Copy styles from another widget (Elementor).** Each of the three Style sections on the SyteHero Hero Slider widget (Text Area 1, Text Area 2, CTA Button) now has a **Copy from…** dropdown at the top. Pick any Heading, Text Editor, Button, Icon Box, or Call-to-Action widget on the current page and that widget's colour, typography, alignment, padding, and text-shadow flow into the SyteHero section in one click. You can also copy between SyteHero's own sections (e.g. TA1 → TA2 → CTA) in the same dropdown. Every copy is one undoable action (Ctrl/Cmd+Z). Properties the source widget doesn't expose are left unchanged on the target. Works entirely in the Elementor editor — no frontend bundle impact.
+
+---
+
 ## v1.0.076 — 2026-04-21
 
 ### Changed
