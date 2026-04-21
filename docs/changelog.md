@@ -10,6 +10,20 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.079 — 2026-04-21
+
+### Added
+- **CTA Button style section now renders a real button.** Before v1.0.079 the SyteHero Hero Slider's CTA section inherited the same text-oriented controls as Text Area 1 / Text Area 2 — great for styling a heading, wrong for styling a button. v1.0.079 gives CTA its own button-parity control set: text colour + hover, background colour + hover, border (style / width / colour / radius), box-shadow, plus the typography and padding controls you already had. The hover controls drive a matching CSS `:hover` / `:focus-visible` state on the rendered `.sytehero-hero-cta` anchor. Available in every builder integration: Elementor (dedicated controls), Gutenberg (Inspector Panel was resynced to the new attribute surface), and Avada Fusion / Divi (the divergent schema flows through their existing control_args pipelines — shadows land as textareas, borders as dimension controls).
+- **"Copy styles from…" picker now filters by section (Elementor).** Text Area 1 and Text Area 2 dropdowns list only text widgets (Heading, Text Editor, Icon Box, Call-to-Action). The CTA Button dropdown lists only button widgets. Copying from an Elementor Button widget into CTA populates colour, hover colour, background, hover background, border (style / width / colour / radius), padding, typography, text-shadow, and box-shadow in one click.
+
+### Changed
+- **Third-party widgets need a registered category to appear in the picker.** v1.0.078's "list every widget on the page" behaviour is replaced by a curated allowlist. Third-party widgets can join either dropdown by registering a map entry via the existing `sytehero_elementor_style_picker_map` filter — each entry now declares `'category' => 'text' | 'button' | 'both'`. See `docs/developer/integrations/elementor-widgets.md`.
+
+### Removed
+- **Text-only controls on the CTA Button style section.** `text-decoration`, `text-decoration colour / style / thickness`, `text-underline-offset`, `text-stroke`, `text-indent`, `white-space`, and `font-variant` are gone from the CTA panel. Saved values for those controls on existing widgets stop applying — the feature shipped in v1.0.077 and the blast radius is small. Text Area 1 / Text Area 2 are unchanged.
+
+---
+
 ## v1.0.078 — 2026-04-21
 
 ### Fixed
