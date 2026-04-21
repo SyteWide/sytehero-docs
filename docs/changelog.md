@@ -10,6 +10,26 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.076 — 2026-04-21
+
+### Changed
+- **Auto is now the default View variant — "Default" is gone.** The v1.0.075 release added an "Auto" option to the hero widget's View variant control alongside the legacy "Default". Feedback was unanimous: the two options were confusing, and Auto is what almost everyone wants — a widget that adapts to the viewport automatically. v1.0.076 removes "Default" from the control and makes Auto the default selection for new widgets. Existing widgets that had "Default" saved are silently upgraded to Auto on the next page load, so no re-save or migration is required. If you prefer a single forced view, Desktop / Tablet / Mobile are still available exactly as before.
+
+### Removed
+- **"Default (as configured)" option in all four builder integrations.** Replaced by Auto. See Changed above.
+
+---
+
+## v1.0.075 — 2026-04-20
+
+### Added
+- **Auto View mode for hero widgets.** New "Auto" option in the View variant control on every builder (Elementor, Gutenberg, Divi, Avada). When selected, the hero renders the Desktop, Tablet, and Mobile views and shows the correct one at each viewport size — automatically. In Elementor, the editor's device-mode toggle (Desktop / Tablet / Mobile preview buttons) also drives the switch, so you see exactly what visitors will see while you design. Uses Elementor's configured breakpoints when active; on other builders, falls back to 1199 / 767 px (matches the plugin's own frontend CSS breakpoints). Existing widgets set to Default / Desktop / Tablet / Mobile are unchanged.
+
+### Internal
+- **New `BreakpointProviderInterface` subsystem.** Third-party builders (Bricks, Beaver Builder, etc.) can now register their own breakpoint providers via the `sytehero_breakpoint_providers` filter without touching plugin core. See `docs/developer/architecture/auto-breakpoint-mode.md`.
+
+---
+
 ## v1.0.074 — 2026-04-20
 
 ### Fixed
