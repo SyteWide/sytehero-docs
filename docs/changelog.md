@@ -10,6 +10,17 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.084 — 2026-04-22
+
+### Fixed
+- **Border styles now copy correctly from Elementor Button widgets.** The style picker's border source-key lookup covered only one of the two key patterns Elementor uses across versions (`border_border` vs `button_border_border`). Both patterns are now tried in order, so border style, border width, and border colour copy regardless of Elementor version.
+- **CTA visibility animation preserves Elementor button layout.** When the runtime overlay cycler shows or hides the CTA button, it now sets `display: inline-flex` (matching Elementor's button flex model) instead of `inline-block`, so the `elementor-button-content-wrapper` flex centering works correctly on Elementor Pro and custom Elementor-based themes.
+
+### Changed
+- **CTA `padding` and `border-radius` now explicitly default to `0`.** The CSS fallback values were removed in v1.0.083 with the intent of letting `elementor-size-sm` class defaults cascade through, but that cascade does not occur due to specificity and source-order rules. The explicit `0` fallback is restored with a CSS comment explaining the behaviour, so authors know to set these via the Style tab or "Copy styles from…" rather than expecting class-based defaults.
+
+---
+
 ## v1.0.083 — 2026-04-22
 
 ### Changed
