@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.082 — 2026-04-22
+
+### Fixed
+- **Hero is now truly full-bleed in the Elementor editor canvas.** The section-level padding removal rule used `:only-child`, which always fails in the editor because Elementor injects overlay and shape elements as sibling children of the container. The selector is replaced with a `:not(:has(…))` guard that ignores Elementor's own UI elements, so the container padding is correctly zeroed out in both the editor and on the published page.
+
+---
+
 ## v1.0.081 — 2026-04-22
 
 ### Fixed
