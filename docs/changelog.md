@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.085 — 2026-04-22
+
+- **Elementor:** “Copy styles from…” uses `$e.run('document/elements/settings')`; editor preview matches live per-view height, glow data/CSS vars, and `data-sytehero-ready`; live-preview JS applies per-slide glow like the front end.
+- **CTA:** Scaffold defaults are a readable pill (`#fff` / `rgba(0,0,0,0.65)` padding/radius) until Style-tab tokens override.
+
+---
+
 ## v1.0.084 — 2026-04-22
 
 ### Fixed
