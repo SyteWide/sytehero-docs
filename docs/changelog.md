@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.083 — 2026-04-22
+
+### Changed
+- **CTA button now renders with full Elementor button markup.** The hero CTA element carries the same class set and inner HTML structure as a native Elementor Button widget (`elementor-button-link`, `elementor-size-sm`, `elementor-button-content-wrapper`) in all render paths (editor preview, live preview, and published scaffold). This enables Elementor theme and kit button styles to apply by default, allows "Copy styles from…" to correctly transfer all button properties (including padding and border-radius) from any Elementor Button widget on the page, and ensures the CTA's appearance matches the rest of the author's site button style.
+
+---
+
 ## v1.0.082 — 2026-04-22
 
 ### Fixed
