@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.080 — 2026-04-21
+
+### Added
+- **Live all-slide preview in the Elementor editor.** The editor canvas now cycles through every slide in the hero using the per-slide interval set in the Heroes tab. Text Area 1, Text Area 2, and CTA text fade in and out per slide. Videos (YouTube, Vimeo, Gumlet, direct mp4/webm) play inline. All three device-mode previews (desktop, tablet, mobile) each get their own independent cycling preview when Auto view mode is selected. The canvas stays fully scrollable — no FlexSlider, Swiper, or Splide in the editor.
+
+### Fixed
+- **"Copy styles from…" picker now applies styles immediately.** Styles copied from another Text Area, CTA section, or a third-party widget now update the canvas preview at once and persist to the published page on save. The previous implementation used a code path that did not fire the change events Elementor needs to update the preview, so nothing appeared to change. Native panel controls were not affected.
+
+---
+
 ## v1.0.079 — 2026-04-21
 
 ### Added
