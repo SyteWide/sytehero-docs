@@ -10,6 +10,15 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.081 — 2026-04-22
+
+### Fixed
+- **No more whitespace below the hero in the Elementor editor canvas.** Elementor's `.elementor-widget-container` carries a default padding that appeared as a blank gap beneath the live preview. The widget container's padding is now zeroed out so the hero preview renders flush to its edges.
+- **"Copy styles from…" now activates the Publish button.** After a style copy the Elementor Publish / Update button stays grayed out because the saver's change-flag was never signalled. It now activates immediately after any copy.
+- **CTA background colour now copies correctly from an Elementor Button widget.** Elementor's native Button widget stores its background colour via `Group_Control_Background` under the key `button_background_color`. The picker map was reading `background_color` (wrong key), so the background was silently skipped. The key is corrected; all other button properties (border radius, text colour, hover states, etc.) were already copying correctly.
+
+---
+
 ## v1.0.080 — 2026-04-21
 
 ### Added
