@@ -10,6 +10,36 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.087 — 2026-04-22
+
+### Added
+- **Elementor editor preview gains manual slide controls.** Multi-slide heroes rendered inside the Elementor editor canvas now include prev / next arrow buttons (vertically centred on the preview edges) and a dot-indicator strip (bottom centred) so authors can step through slides on demand without waiting for the auto-advance timer. The controls are scoped strictly to the editor preview (`.sytehero-elementor-editor-preview`) — nothing bleeds onto the published frontend. The outer preview wrap keeps `pointer-events: none` so the Elementor canvas stays fully interactive everywhere except the control buttons themselves, which opt back in via a `pointer-events: auto` island. Every button carries accessible `aria-label` text (`Previous slide`, `Next slide`, `Go to slide N`) and keyboard focus rings; clicking a control resets the auto-advance timer so the next automatic tick starts fresh from the newly-active slide's configured interval.
+- **`sytehero_elementor_editor_preview_manual_controls` filter.** Integrators who prefer the pre-v1.0.087 auto-advance-only experience can return `false` from this filter to hide the arrows and dot indicators. The filter receives the current slide count as its second argument so decisions can vary per-preview. Default is `true` (controls enabled).
+- **`EditorPreviewRenderer::build_manual_controls_markup( int $slide_count )`.** New public helper for composing the controls island in isolation — returns `''` for single-slide previews and whenever the filter opts out, which keeps every branch of the emission logic unit-testable without having to stand up a full `compose_live()` payload.
+
+### Changed
+- **Blocksy palette bridge is now gated behind Blocksy-theme detection.** `StyleMapper::theme_palette_additions()` previously fired whenever a `colorPalette` theme mod was present, regardless of which theme was active. Because `colorPalette` is a generic enough mod key that another theme could coincidentally use it, this risked synthesising `blocksy_palette_N` map entries that pointed at an unrelated theme's palette. The bridge now only runs when `wp_get_theme()->get_template()` resolves to `blocksy` (which covers Blocksy parent theme + every Blocksy child theme — child themes inherit their parent's template slug) or when `BLOCKSY_PATH` is defined. Vanilla-Elementor installs and installs running non-Blocksy themes with a stray `colorPalette` mod now see a clean kit-only fallback map, exactly as they should. The `sytehero_elementor_global_color_map` filter still runs last and remains the authoritative override for custom theme integrations.
+- **Editor live-preview cycler refactored around a Map-keyed stage state.** The slide-cycler in `sytehero-editor-live-preview.js` moved its `current` index / pending timer / slides list out of closure locals and into a `Map<stage, StageState>` so manual prev/next/dot click handlers can drive the same advance machinery the auto-timer uses. Behaviour for auto-advance is preserved exactly; manual advances wrap in both directions (prev on slide 0 → last slide, next on last → 0) and clear the pending auto-timer before scheduling the next tick, so authors never see a lurch from a stale pending advance firing right after they click.
+
+### Fixed
+- **Vanilla-Elementor installs no longer emit stray Blocksy palette IDs in the editor preview.** See above — the Blocksy detection gate fixes a theoretical issue where a non-Blocksy theme persisting anything under the generic `colorPalette` mod key would have caused the hero widget's `blocksy_palette_N` references to resolve to that unrelated theme's colour, painting the wrong hex in the editor iframe. On real-world installs the practical impact was minimal (most non-Blocksy themes don't use `colorPalette` as a mod key), but the regression tests now lock this contract so the bridge stays opt-in to Blocksy forever.
+
+### Developer notes
+- **New regression tests (`StyleMapperGlobalColorFallbackTest`).** Three new cases cover (a) vanilla-Elementor on a non-Blocksy theme with no `colorPalette` mod → kit-only map and no `blocksy_palette_*` leakage, (b) non-Blocksy theme with a stray `colorPalette` mod → bridge skipped and naked `var()` emitted for `blocksy_palette_N` IDs, and (c) Blocksy child theme (`get_template()` = `blocksy`, `get_stylesheet()` = `blocksy-child`) → bridge fires normally. The existing Blocksy-bridge tests were updated to explicitly activate the Blocksy theme stub so they continue to pass.
+- **New test suite (`EditorPreviewManualControlsTest`, 14 tests / 33 assertions).** Covers every branch of `build_manual_controls_markup()` (single-slide returns empty, multi-slide emits the island, filter can disable, filter receives slide count, dot count matches slide count, first dot marked active, per-slide `aria-label` and `data-sh-slide-index`, all buttons use `type="button"` to avoid Elementor form-submit conflicts) plus three end-to-end assertions through `compose_live()` (integration emits controls for multi-slide, omits for single-slide, honours filter opt-out). Full plugin suite green: 1,479 tests / 4,394 assertions.
+
+---
+
+## v1.0.086 — 2026-04-22
+
+### Fixed
+- **Elementor editor preview now shows CTA / Text Area 1 / Text Area 2 in their correct colours.** When the hero is edited inside the Elementor panel, the editor iframe does not always load the active theme's palette stylesheet (for example Blocksy's `global.css`, which is what defines `--e-global-color-blocksy_palette_*`). Any colour the author picked via the Elementor global-colour selector therefore resolved to an undefined variable in the editor, dropping the CTA to its neutral scaffold fallback and producing an unstyled button with excess whitespace around it. Global-colour references now emit `var(--e-global-color-X, #hex)` — the hex is resolved from two sources in priority order: Elementor's active Kit (for vanilla Elementor globals like `primary` / `accent` / `text`), then a Blocksy palette bridge that reads the theme mod `colorPalette` directly (because Blocksy stores its palette in Customizer theme mods, not in the Elementor Kit). The editor now paints the same colours the front end does, even when Blocksy's companion CSS is absent from the iframe.
+
+### Changed
+- **Global colour lookup is cached per request and mockable via filter.** A new `sytehero_elementor_global_color_map` filter lets integrations (and unit tests) extend or override the resolved ID → hex map without loading Elementor, and the map itself is resolved once per request. Filter precedence is: Elementor Kit → theme-palette bridge → filter (runs last and has the final say).
+
+---
+
 ## v1.0.085 — 2026-04-22
 
 - **Elementor:** “Copy styles from…” uses `$e.run('document/elements/settings')`; editor preview matches live per-view height, glow data/CSS vars, and `data-sytehero-ready`; live-preview JS applies per-slide glow like the front end.
