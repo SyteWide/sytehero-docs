@@ -10,6 +10,22 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.088 — 2026-04-22
+
+### Fixed
+- **Elementor “Copy styles from…” now updates the canvas immediately.** The style picker writes `--sh-*` custom properties on the active widget’s `.sytehero-scaffold-wrap` inside the preview iframe after each copy, using the same `sh_*` → `--sh-*` map as PHP `StyleTokens`, so authors see typography and colours without waiting on an unreliable async re-render for server-only widgets.
+- **Scaffold CSS + editor live-preview script load on every Elementor preview boot.** `elementor/preview/enqueue_styles` and `elementor/preview/enqueue_scripts` now call `Assets::register()` when needed and enqueue `sytehero-widget-scaffold` plus `sytehero-editor-live-preview`, fixing missing `--sh-*` consumers and slide media fill rules in the iframe.
+- **Multi-slide editor previews stay filled when stylesheets are absent.** `EditorPreviewRenderer::compose_live()` emits a scoped inline `<style id="sytehero-editor-live-inline">` and merges `object-fit:cover` fill rules into each slide’s root `<img>` / `<video>` / `<iframe>` so the preview cannot letterbox even if asset loading regresses.
+
+### Added
+- **`StyleTokens::get_var_map()`** — flat map published to `window.syteheroStylePicker.styleVarMap` for picker DOM sync.
+- **Editor-only pulse animation** — `.sytehero-editor-live-flash` on TA / CTA after a successful copy (scoped to `.sytehero-elementor-editor-preview`).
+
+### Developer notes
+- **PHPUnit:** `StyleTokensVarMapTest`, `EditorPreviewAssetsHookTest`, `EditorPreviewMediaSizingTest`; **bootstrap:** `wp_register_script`, `wp_enqueue_script`, `wp_localize_script` stubs for asset registration tests.
+
+---
+
 ## v1.0.087 — 2026-04-22
 
 ### Added
