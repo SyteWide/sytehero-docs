@@ -16,13 +16,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 - **Elementor “Copy styles from…” now updates the canvas immediately.** The style picker writes `--sh-*` custom properties on the active widget’s `.sytehero-scaffold-wrap` inside the preview iframe after each copy, using the same `sh_*` → `--sh-*` map as PHP `StyleTokens`, so authors see typography and colours without waiting on an unreliable async re-render for server-only widgets.
 - **Scaffold CSS + editor live-preview script load on every Elementor preview boot.** `elementor/preview/enqueue_styles` and `elementor/preview/enqueue_scripts` now call `Assets::register()` when needed and enqueue `sytehero-widget-scaffold` plus `sytehero-editor-live-preview`, fixing missing `--sh-*` consumers and slide media fill rules in the iframe.
 - **Multi-slide editor previews stay filled when stylesheets are absent.** `EditorPreviewRenderer::compose_live()` emits a scoped inline `<style id="sytehero-editor-live-inline">` and merges `object-fit:cover` fill rules into each slide’s root `<img>` / `<video>` / `<iframe>` so the preview cannot letterbox even if asset loading regresses.
+- **TA1 / TA2 / CTA no longer stay invisible in the Elementor editor preview.** `sytehero-frontend.css` hides the overlay elements with `opacity:0; visibility:hidden` as FOUC protection, and relies on `sytehero-frontend-overlay.js` (gated by `.sytehero-fhsbg`) to reveal them inline with `!important`. The editor preview never emits `.sytehero-fhsbg`, so that reveal path never fired — even when the live-preview JS had already populated the overlay text from the active slide. A scoped reveal rule (`.sytehero-elementor-editor-preview .sytehero-hero-text-area-1/2, .sytehero-hero-cta { opacity: 1; visibility: visible; }`) is now shipped in both `sytehero-widget-scaffold.css` and the inline `<style id="sytehero-editor-live-inline">` block, and is included in both `compose()` (placeholder fallback) and `compose_live()` (multi-slide live preview), so the overlay is visible whether or not the external stylesheet loaded.
 
 ### Added
 - **`StyleTokens::get_var_map()`** — flat map published to `window.syteheroStylePicker.styleVarMap` for picker DOM sync.
 - **Editor-only pulse animation** — `.sytehero-editor-live-flash` on TA / CTA after a successful copy (scoped to `.sytehero-elementor-editor-preview`).
 
 ### Developer notes
-- **PHPUnit:** `StyleTokensVarMapTest`, `EditorPreviewAssetsHookTest`, `EditorPreviewMediaSizingTest`; **bootstrap:** `wp_register_script`, `wp_enqueue_script`, `wp_localize_script` stubs for asset registration tests.
+- **PHPUnit:** `StyleTokensVarMapTest`, `EditorPreviewAssetsHookTest`, `EditorPreviewMediaSizingTest` (now includes FOUC-override assertions for both `compose()` and `compose_live()` paths); **bootstrap:** `wp_register_script`, `wp_enqueue_script`, `wp_localize_script` stubs for asset registration tests.
 
 ---
 
