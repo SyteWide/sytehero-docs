@@ -41,7 +41,7 @@ Enable per-sale email notifications to get an email every time an order is compl
 
 | Setting | Description |
 |---------|-------------|
-| Digest Window | **Immediately** sends one email per sale. **5/15/30 min** batches multiple sales into a single digest email. |
+| Digest Window | **Immediately** sends one email per sale. **5 min**, **15 min**, or **30 min** batches multiple sales into a single digest email at the chosen interval. |
 
 Deduplication prevents multiple emails for the same order when both order completion and payment hooks fire.
 

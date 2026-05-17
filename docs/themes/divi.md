@@ -55,7 +55,7 @@ Divi includes FlexSlider, so it is available out of the box. You can also choose
 
 ## Responsive Layouts
 
-Divi Builder has built-in visibility settings for modules and rows (show/hide on desktop, tablet, phone). You can combine these with SyteHero' view-locked shortcodes for full responsive control:
+Divi Builder has built-in visibility settings for modules and rows (show/hide on desktop, tablet, phone). You can combine these with SyteHero's view-locked shortcodes for full responsive control:
 
 - `[sytehero_featured_desktop]` — renders only on desktop
 - `[sytehero_featured_tablet]` — renders only on tablet

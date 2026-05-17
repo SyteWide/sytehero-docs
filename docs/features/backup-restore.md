@@ -50,6 +50,16 @@ These values are tied directly to individual products and are managed through th
 
 ## Importing Settings
 
+:::caution Restore overwrites current settings + drops site-specific bindings
+**Import will overwrite your current SyteHero settings.** Take a fresh export first if you want a rollback point.
+
+Restore is not a full mirror — the importer intentionally drops references that wouldn't survive a site change:
+
+- Page and category slide bindings are dropped (target site may not have the same pages or categories).
+- Featured-order keys for products / pages / categories are dropped — only custom slide and fallback references that exist in the imported data are kept.
+- Imported sales schedules become non-sale schedules — sale flags + product pricing data + product/page/category slide links are cleared; schedule windows and custom/fallback slide associations are preserved.
+:::
+
 1. Open the **Backup** tab.
 2. Click **Choose File** and select a previously exported JSON file.
 3. Click **Restore Settings**.
@@ -59,9 +69,9 @@ These values are tied directly to individual products and are managed through th
 
 - All imported values pass through the same sanitizers used by admin forms.
 - **Media re-import:** If the backup includes bundled media, each image is uploaded into the target site's Media Library and assigned a new attachment ID. All slide references are remapped automatically.
-- **Custom slides only:** Only custom-type supplemental slides are imported. Page and category slide bindings are dropped because the target site may not have the same pages or categories.
+- **Custom slides only:** Only custom-type supplemental slides are imported (per the admonition above — page and category slide bindings are dropped).
 - **Featured order filtering:** Product, page, and category keys are removed from the featured order. Only custom slide and fallback references that exist in the imported data are kept.
-- **Sales schedules:** Imported schedules are converted to non-sale schedules -- sale flags are cleared, product pricing data is removed, and product/page/category slide links are dropped. Schedule windows (start/end) and custom/fallback slide associations are preserved.
+- **Sales schedules:** Imported schedules are converted to non-sale schedules — sale flags are cleared, product pricing data is removed, and product/page/category slide links are dropped. Schedule windows (start/end) and custom/fallback slide associations are preserved.
 - **Banners:** Imported as-is through the standard banner sanitizer. LiteSpeed cache is automatically purged.
 - **Tab gates:** Merged with the existing tab gates on the target site rather than replacing them.
 

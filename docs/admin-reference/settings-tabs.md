@@ -29,12 +29,9 @@ Configure promotional banners with date-based scheduling. Can be linked to sales
 
 Build standalone sliders with media, CTA, text areas, interval, and animation. Copy shortcode and CSS classes.
 
-### Plugin Setup Configuration
-
-In addition to license and theme settings, Plugin Setup includes:
-
-- **Slider Engine** — Select the slider library (FlexSlider, Swiper, or Splide). See [Slider Engines](/docs/features/slider-engines).
-- **Engine Settings** — Collapsible panels for per-engine configuration (smooth height, easing, pagination style, direction, etc.).
+:::note Plugin Setup configuration
+Plugin Setup also includes Slider Engine selection (FlexSlider / Swiper / Splide) and per-engine settings panels. See the [Plugin Setup reference](plugin-setup) and [Slider Engines](/docs/features/slider-engines).
+:::
 
 ### 5. Settings
 

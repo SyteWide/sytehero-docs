@@ -34,6 +34,10 @@ If the button says "Manage" instead of "Enable," the API is already enabled for 
 
 ## Step 3: Configure the OAuth Consent Screen
 
+:::note Google Cloud Console UI evolves
+The Google Cloud Console UI for OAuth setup is updated periodically. The step sequence below is accurate as of the most recent SyteHero docs review, but Google may rename screens or reorder fields. If a labeled field is missing, look for an equivalent in adjacent screens — the underlying OAuth setup flow is stable.
+:::
+
 1. In the left sidebar, go to **APIs & Services > OAuth consent screen**.
 2. Select **External** as the user type and click **Create**.
 3. Fill in the required fields:

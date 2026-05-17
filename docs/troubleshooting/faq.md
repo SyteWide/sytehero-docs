@@ -8,7 +8,7 @@ description: Frequently asked questions about SyteHero.
 
 ## What themes does SyteHero support?
 
-[Avada](/docs/themes/avada), [Divi](/docs/themes/divi), and [Elementor](/docs/themes/elementor) are fully supported. The core slider features work on any theme that includes FlexSlider.
+[Avada](/docs/themes/avada), [Divi](/docs/themes/divi), and [Elementor](/docs/themes/elementor) are officially supported. Other themes can render the shortcodes, but text-overlay placement and CTA-button wiring may need theme-specific CSS. SyteHero ships its own bundled slider engines (FlexSlider, Swiper, and Splide), so the theme does not need to provide one.
 
 ## Do I need WooCommerce?
 
@@ -24,7 +24,7 @@ Use view-locked shortcodes (`[sytehero_featured_desktop]`, `[sytehero_featured_m
 
 ## How do I change the slide transition speed?
 
-Set the interval (in milliseconds) in **Settings > Default Shortcode** section for each view, or override per-shortcode with `interval="5000"`.
+Set the interval (in milliseconds) in **Settings → Default Shortcode** for each device view (Desktop / Tablet / Mobile). The interval cannot be overridden per-shortcode — `[sytehero_featured]` does not accept an `interval` attribute. To run different intervals on different pages, use a view-locked shortcode (`[sytehero_featured_desktop]`, etc.) and adjust the per-view default.
 
 ## Can I use videos instead of images?
 
@@ -44,7 +44,7 @@ All settings are stored as WordPress options. Product-level settings (featured s
 
 ## Does SyteHero affect my product featured image?
 
-No. SyteHero uses its own media meta. Your product's featured image is untouched.
+No. SyteHero stores its hero image and video selections in a separate field on each product. Your product's WordPress featured image is untouched.
 
 ## How do I completely remove SyteHero?
 

@@ -72,7 +72,7 @@ To turn off sales scheduling entirely:
 2. Toggle the **Schedule** option **OFF**.
 3. Save your settings.
 
-Disabling the Schedule tab stops all sale syncing and banner injection hooks. Existing sale prices that were already written to products are not removed automatically -- you would need to clear those manually if desired.
+Disabling the Schedule tab stops all sale syncing and banner injection hooks. Existing sale prices already written to products remain in place. On WooCommerce, you can clear sale prices through WooCommerce's product editor. On FluentCart, sale prices are managed by SyteHero — re-enable the Schedule tab to clear them through the normal expiry flow, or clear them via the FluentCart product editor.
 
 ## Retain After Schedule
 

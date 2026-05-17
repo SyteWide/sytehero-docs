@@ -66,7 +66,7 @@ Replace `500px` with the desired minimum height for your hero section.
 
 ## Responsive Layouts
 
-Fusion Builder offers built-in visibility controls for columns (show/hide on desktop, tablet, mobile). You can combine these with SyteHero' view-locked shortcodes for full responsive control:
+Fusion Builder offers built-in visibility controls for columns (show/hide on desktop, tablet, mobile). You can combine these with SyteHero's view-locked shortcodes for full responsive control:
 
 - `[sytehero_featured_desktop]` — renders only on desktop
 - `[sytehero_featured_tablet]` — renders only on tablet

@@ -35,6 +35,18 @@ The theme selector tells SyteHero how to display hero text overlays and CTA butt
 
 See the individual theme guides for step-by-step placement instructions.
 
+## Slider Engine
+
+Select which slider library SyteHero loads on the front end:
+
+- **FlexSlider** — lightweight, jQuery-based. Available out of the box on Avada and Divi.
+- **Swiper** — modern, CSS-driven with rich transition options (fade, cube, flip, slide).
+- **Splide** — lightweight, dependency-free, accessible.
+
+SyteHero bundles all three engines, so no extra plugin is required. The **Engine Settings** panel below the selector exposes per-engine options (smooth height, easing, pagination style, transition direction). Defaults are sensible — open the panel only when tuning a specific behavior.
+
+See [Slider Engines](/docs/features/slider-engines) for the full per-engine reference.
+
 ## Ecommerce Selector
 
 The ecommerce selector tells SyteHero which product catalog to use for featured product sliders, sales scheduling, and reporting.
