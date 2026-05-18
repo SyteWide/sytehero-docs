@@ -12,9 +12,9 @@ description: Complete reference for all SyteHero admin settings tabs.
 
 ## 11 Admin Tabs
 
-### 1. Schedules/Sales
+### 1. Schedules
 
-Create and manage sales schedules. Assign products/variations, set sale prices, choose date windows. Saving syncs prices with your ecommerce platform and can link banners. Enable/disable in Settings.
+Create and manage scheduled campaigns: assign products and variations, set sale prices, choose date windows, and link banners. Saving syncs prices with your ecommerce platform on the scheduled start/end times. Enable/disable in Settings.
 
 ### 2. Heroes
 
@@ -29,12 +29,9 @@ Configure promotional banners with date-based scheduling. Can be linked to sales
 
 Build standalone sliders with media, CTA, text areas, interval, and animation. Copy shortcode and CSS classes.
 
-### Settings Configuration
-
-In addition to license and theme settings, Settings includes:
-
-- **Slider Engine** — Select the slider library (FlexSlider, Swiper, or Splide). See [Slider Engines](/docs/features/slider-engines).
-- **Engine Settings** — Collapsible panels for per-engine configuration (smooth height, easing, pagination style, direction, etc.).
+:::note Settings tab configuration
+The Settings tab also includes Slider Engine selection (FlexSlider / Swiper / Splide) and per-engine settings panels. See the [Settings reference](plugin-setup) and [Slider Engines](/docs/features/slider-engines).
+:::
 
 ### 5. Analytics
 
@@ -52,7 +49,7 @@ Configure the following options:
 - **Slider behavior**: Background Sliding, Pause on CTA Hover
 - **Hero layout**: height, min-height, glow color and apply-to toggles, transition type
 - **No Active Slides Alert Email**: Primary/Tech/Marketing contacts, image URL, test email
-- **Tab gating**: Enable or disable any admin tab (Schedules/Sales, Heroes, Banners, Custom Heroes, Analytics, Settings, Integrations, Custom CSS, Backup, Documentation)
+- **Tab gating**: Enable or disable any admin tab (Schedules, Heroes, Banners, Custom Heroes, Analytics, Settings, Integrations, Custom CSS, Backup, Documentation)
 
 ### 7. Integrations
 

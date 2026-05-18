@@ -22,7 +22,7 @@ If you do not see the Banners tab, it must be enabled first:
 
 1. Open the **Banners** tab.
 2. Click **Add Banner** (or the equivalent button at the top of the list).
-3. **Set banner content:** Enter the HTML that should be displayed. This can include text, images, links, or any valid HTML markup.
+3. **Set banner content:** Enter the HTML that should be displayed. This can include text, images, links, or any valid HTML markup. Banner HTML is sanitized through WordPress's `wp_kses_post` allowlist — the same allowlist used for post content — which strips `<script>` tags and inline event handlers (`onclick=`, etc.) for safety. Standard formatting tags (`<a>`, `<strong>`, `<em>`, `<img>`, etc.) are preserved.
 4. **Schedule dates:** Choose a **Start Date** and **End Date** to control when the banner is visible.
 5. **Enable or disable:** Use the toggle to activate or deactivate the banner. A disabled banner will not display regardless of its scheduled dates.
 6. Save your changes.
@@ -31,7 +31,7 @@ If you do not see the Banners tab, it must be enabled first:
 
 Banners become even more powerful when paired with sales scheduling:
 
-1. Go to **SyteHero > Schedule**.
+1. Go to **SyteHero > Schedules**.
 2. On any schedule row, use the **Banner** dropdown to select a banner.
 3. Save the schedule.
 

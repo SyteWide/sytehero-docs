@@ -63,9 +63,9 @@ Each featured product can have its own schedule window:
 - Products without dates remain active indefinitely (until manually removed).
 - **Retain After Schedule** — Toggle this on to keep the product in the hero rotation after its schedule expires. When off (default), expired products are removed automatically.
 
-## Fallback Slide
+## Fallback Slide (required)
 
-When no featured products are currently active (for example, all have expired or been removed), a fallback slide is displayed instead. The fallback slide is required to ensure the hero area always has content.
+Every SyteHero hero area must have a fallback slide configured. When no featured products are currently active (for example, all have expired or been removed), the fallback slide is what visitors see — without it, the hero area would render empty.
 
 To configure the fallback:
 

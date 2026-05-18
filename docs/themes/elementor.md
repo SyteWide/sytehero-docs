@@ -61,7 +61,7 @@ Choose your engine in **Settings > Slider Engine**. No additional installation i
 
 ## Responsive Layouts
 
-Elementor offers built-in responsive visibility controls for containers and widgets (show/hide on desktop, tablet, mobile). You can combine these with SyteHero' view-locked shortcodes for full responsive control:
+Elementor offers built-in responsive visibility controls for containers and widgets (show/hide on desktop, tablet, mobile). You can combine these with SyteHero's view-locked shortcodes for full responsive control:
 
 - `[sytehero_featured_desktop]` — renders only on desktop
 - `[sytehero_featured_tablet]` — renders only on tablet

@@ -8,7 +8,7 @@ description: Get your first hero slider running in minutes.
 
 ## 1. Activate & License
 
-Install SyteHero, go to **Settings**, enter your license key and email, and save. See the [full installation guide](installation) for details.
+Install and activate SyteHero, then open **SyteHero → Settings** (the only screen available before activation). Paste your license key and customer email, click **Save Changes**, and confirm the status table shows **Valid**. See the [full installation guide](installation) if anything looks off.
 
 ## 2. Feature a Product
 
