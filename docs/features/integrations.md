@@ -126,7 +126,7 @@ You need:
 
 Sync runs in two directions:
 
-- **Push (SyteHero to Google Calendar):** When you save schedules on the Sales tab, linked events in Google Calendar are automatically created, updated, or deleted to match.
+- **Push (SyteHero to Google Calendar):** When you save schedules on the Schedules tab, linked events in Google Calendar are automatically created, updated, or deleted to match.
 - **Pull (Google Calendar to SyteHero):** Every 15 minutes (when auto-sync is enabled) or on demand via the **Sync Now** button, SyteHero checks for changes in Google Calendar and updates the corresponding schedules.
 
 :::info Synced fields

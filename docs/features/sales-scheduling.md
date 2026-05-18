@@ -12,19 +12,19 @@ Sales Scheduling lets you plan sales in advance. When a scheduled sale goes live
 Sales Scheduling works with both [WooCommerce](/docs/ecommerce/woocommerce) and [FluentCart](/docs/ecommerce/fluentcart). For WooCommerce, sale prices sync natively. For FluentCart, SyteHero manages sale pricing directly.
 :::
 
-## Accessing the Schedule Tab
+## Accessing the Schedules Tab
 
-Navigate to **SyteHero > Schedule** in your WordPress admin menu.
+Navigate to **SyteHero > Schedules** in your WordPress admin menu.
 
-If you do not see the Schedule tab, it must be enabled first:
+If you do not see the Schedules tab, it must be enabled first:
 
 1. Go to **SyteHero > Settings**.
-2. Toggle the **Schedule** option **ON**.
+2. Toggle the **Schedules** option **ON**.
 3. Save your settings.
 
 ## Creating a Sales Schedule
 
-1. Open the **Schedule** tab.
+1. Open the **Schedules** tab.
 2. Click **Add Schedule** (or the equivalent button at the top of the list).
 3. **Select products:** Use the product search field to find and select the products (or specific variations) you want to include in the sale.
 4. **Set sale prices:** Enter the sale price for each selected product or variation.
@@ -69,10 +69,10 @@ When a schedule creates slides, the slide builder checks that each product has m
 To turn off sales scheduling entirely:
 
 1. Go to **SyteHero > Settings**.
-2. Toggle the **Schedule** option **OFF**.
+2. Toggle the **Schedules** option **OFF**.
 3. Save your settings.
 
-Disabling the Schedule tab stops all sale syncing and banner injection hooks. Existing sale prices that were already written to products are not removed automatically -- you would need to clear those manually if desired.
+Disabling the Schedules tab stops all sale syncing and banner injection hooks. Existing sale prices already written to products remain in place. On WooCommerce, you can clear sale prices through WooCommerce's product editor. On FluentCart, sale prices are managed by SyteHero — re-enable the Schedules tab to clear them through the normal expiry flow, or clear them via the FluentCart product editor.
 
 ## Retain After Schedule
 
@@ -89,7 +89,7 @@ Each sales schedule can display an on-screen countdown timer that ticks down to 
 
 ### Enabling the Countdown
 
-1. Open the **Schedule** tab.
+1. Open the **Schedules** tab.
 2. On the sale card, toggle **Show Countdown** on.
 3. Choose a **Position**:
    - **Bottom Right** (default) — floating overlay in the bottom-right corner of the slide.

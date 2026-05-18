@@ -57,7 +57,7 @@ Ensure the button has the `.sytehero-hero-cta` class and that the frontend JavaS
 
 ## 8. Hero Animation Not Running
 
-The slider engine must be loaded. If using FlexSlider, Avada and Divi provide it natively. Elementor sites use SyteHero' bundled slider engines (Swiper or Splide recommended). Verify the library is enqueued by checking the page source or the browser Network tab. See [Slider Engines](/docs/features/slider-engines) for details.
+The slider engine must be loaded. If using FlexSlider, Avada and Divi provide it natively. Elementor sites use SyteHero's bundled slider engines (Swiper or Splide recommended). Verify the library is enqueued by checking the page source or the browser Network tab. See [Slider Engines](/docs/features/slider-engines) for details.
 
 ## 9. No-Active-Slides Email Not Sending
 
