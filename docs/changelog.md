@@ -10,6 +10,17 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.089 — 2026-05-21
+
+### Fixed
+- **Term deletion no longer crashes with SyteHero active.** `Syte_Hero::prevent_featured_tag_deletion()` was registered against the `pre_delete_term` action with the wrong arity, causing a PHP 8 `ArgumentCountError` whenever WordPress fired the hook (admin term-delete, REST, and `wp term delete` from WP-CLI). Operators had to work around it with `--skip-plugins=sytehero`. The callback now uses the action's canonical `($term, $taxonomy)` signature.
+- **The SyteHero featured tag is now actually undeletable.** Returning a `WP_Error` from an action did nothing — WordPress discards action return values — so the previous guard was a placebo. Deletion of the featured tag now halts via `wp_die()` from every entry point (admin, REST, WP-CLI, direct `wp_delete_term()`), with a clear protected-tag message.
+
+### Changed
+- **Admin tag list hides "Delete" on the SyteHero featured tag.** New `tag_row_actions` filter removes the row action so the protected tag never offers a delete link in `wp-admin/edit-tags.php?taxonomy=product_tag`. The `wp_die()` guard remains as the deep safety net for non-UI paths.
+
+---
+
 ## v1.0.088 — 2026-04-22
 
 ### Fixed
