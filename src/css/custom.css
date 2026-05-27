@@ -93,14 +93,14 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* Primary palette */
-  --ifm-color-primary: #2563eb;
-  --ifm-color-primary-dark: #1d4ed8;
-  --ifm-color-primary-darker: #1e40af;
-  --ifm-color-primary-darkest: #1e3a8a;
-  --ifm-color-primary-light: #3b82f6;
-  --ifm-color-primary-lighter: #60a5fa;
-  --ifm-color-primary-lightest: #93bbfd;
+  /* Primary palette — SyteHero terra-cotta brand. */
+  --ifm-color-primary: #D85A50;
+  --ifm-color-primary-dark: #C24A40;
+  --ifm-color-primary-darker: #B4453B;
+  --ifm-color-primary-darkest: #952F26;
+  --ifm-color-primary-light: #E97A6E;
+  --ifm-color-primary-lighter: #F2A096;
+  --ifm-color-primary-lightest: #FBD8D2;
 
   /* Typography */
   --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
@@ -130,12 +130,12 @@
   --sl-color-success: #16a34a;
   --sl-color-warning: #d97706;
   --sl-color-error: #dc2626;
-  --sl-color-info: #2563eb;
+  --sl-color-info: #D85A50;
 
   /* Code blocks */
   --sl-code-bg: #f6f8fa;
   --sl-code-border: #e2e8f0;
-  --docusaurus-highlighted-code-line-bg: rgba(37, 99, 235, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(216, 90, 80, 0.1);
 
   /* Infima surface mapping */
   --ifm-background-color: var(--sl-bg-surface);
@@ -158,13 +158,14 @@
    -------------------------------------------------------------------------- */
 
 [data-theme='dark'] {
-  --ifm-color-primary: #60a5fa;
-  --ifm-color-primary-dark: #3b82f6;
-  --ifm-color-primary-darker: #2563eb;
-  --ifm-color-primary-darkest: #1d4ed8;
-  --ifm-color-primary-light: #93bbfd;
-  --ifm-color-primary-lighter: #bfdbfe;
-  --ifm-color-primary-lightest: #dbeafe;
+  /* Dark mode uses the on-dark variant of the terra-cotta brand. */
+  --ifm-color-primary: #E97A6E;
+  --ifm-color-primary-dark: #D85A50;
+  --ifm-color-primary-darker: #C24A40;
+  --ifm-color-primary-darkest: #B4453B;
+  --ifm-color-primary-light: #F2A096;
+  --ifm-color-primary-lighter: #F8C2BA;
+  --ifm-color-primary-lightest: #FBD8D2;
 
   /* Surfaces — warm grays */
   --sl-bg-surface: #161616;
@@ -179,7 +180,7 @@
   --sl-color-success: #4ade80;
   --sl-color-warning: #fbbf24;
   --sl-color-error: #f87171;
-  --sl-color-info: #60a5fa;
+  --sl-color-info: #E97A6E;
 
   /* Code blocks */
   --sl-code-bg: #1e1e2e;
@@ -255,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
 .menu__link--active:not(.menu__link--sublist) {
   border-left: 2px solid var(--ifm-color-primary);
   padding-left: calc(var(--ifm-menu-link-padding-horizontal) - 2px);
-  background-color: rgba(37, 99, 235, 0.06);
+  background-color: rgba(216, 90, 80, 0.06);
   font-weight: 500;
 }
 
@@ -287,7 +288,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .alert--info {
-  --ifm-alert-background-color: rgba(37, 99, 235, 0.06);
+  --ifm-alert-background-color: rgba(216, 90, 80, 0.06);
   border-left-color: var(--sl-color-info);
 }
 

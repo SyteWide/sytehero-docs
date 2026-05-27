@@ -4,23 +4,24 @@
  */
 
 export const colors = {
+  // SyteHero brand: terra-cotta scale.
   primary: {
-    50: '#eff6ff',
-    100: '#dbeafe',
-    200: '#bfdbfe',
-    300: '#93bbfd',
-    400: '#60a5fa',
-    500: '#3b82f6',
-    600: '#2563eb',
-    700: '#1d4ed8',
-    800: '#1e40af',
-    900: '#1e3a8a',
-    950: '#172554',
+    50: '#FDF1EF',
+    100: '#FBD8D2',
+    200: '#F8C2BA',
+    300: '#F2A096',
+    400: '#E97A6E',
+    500: '#D85A50',
+    600: '#C24A40',
+    700: '#B4453B',
+    800: '#952F26',
+    900: '#7A271F',
+    950: '#3D120F',
   },
   success: '#16a34a',
   warning: '#d97706',
   error: '#dc2626',
-  info: '#2563eb',
+  info: '#D85A50',
 } as const;
 
 export const breakpoints = {
