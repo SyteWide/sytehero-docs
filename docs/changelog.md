@@ -10,6 +10,17 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.090 — 2026-05-27
+
+### Changed
+- **Full brand overhaul.** Adopted the new SyteWide brand system end-to-end: the SyteHero slider mark (terra-cotta `#D85A50`) and SyteWide span mark (navy `#1E3A8A`) replace the legacy indigo logos across every admin page, email footer, WP admin sidebar menu icon, and the public docs site (logo, favicon, social card, primary color scale). Plugin admin color tokens migrate from indigo to terra-cotta; all stale hex fallbacks were swept so every `var(--sytehero-color-primary, …)` declaration resolves to a brand color even when CSS variables fail to load.
+- **Brand assets now flow through the WordPress media library.** Bundled brand logos are side-loaded once on activation (with `admin_init` and manual "Refresh Brand Media Library" fallback paths) so admin pages, transactional emails, and shortcodes render them via attachment IDs — picking up srcset, lazy-load, and CDN integrations automatically. Default brand attachments are hidden from your media browser so they never clutter the Library. A new Settings button forces a re-import if logos ever go missing.
+
+### Added
+- **SyteWide attribution in the admin footer.** SyteHero plugin pages now show "SyteHero is built and maintained by SyteWide" with the current plugin version in the WP admin footer.
+
+---
+
 ## v1.0.089 — 2026-05-21
 
 ### Fixed
@@ -481,7 +492,7 @@ _Release note:_ v1.0.069 ships bundled with the v1.0.068 typography expansion (e
 - **Settings → Tab access → Enable Gutenberg block** toggle — hides the block from the inserter without affecting existing shortcode placements.
 
 ### Changed
-- **Minimum WordPress version** bumped to **5.8** (required for `block.json`-based block registration). Effectively no real-site impact; WP 5.0–5.7 is <1% of active sites per wordpress.org usage stats.
+- **Minimum WordPress version** bumped to **5.8** (required for `block.json`-based block registration). Effectively no real-site impact; WP 5.0–5.7 is &lt;1% of active sites per wordpress.org usage stats.
 - **Build pipeline**: root `package.json` + `@wordpress/scripts` added for the Gutenberg block bundle. Dev-only — `src/`, `package.json`, `node_modules/` are excluded from the release zip by the existing allowlist. Built output ships from `assets/blocks/`.
 
 ---
