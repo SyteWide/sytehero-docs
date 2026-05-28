@@ -48,7 +48,7 @@ const config: Config = {
   url: 'https://sytehero.sytewide.com',
   baseUrl: '/',
 
-  organizationName: 'SyteWide',
+  organizationName: 'sculpted-marketing',
   projectName: 'sytehero-docs',
 
   onBrokenLinks: 'throw',
@@ -109,8 +109,7 @@ const config: Config = {
       title: 'SyteHero',
       logo: {
         alt: 'SyteHero Logo',
-        src: 'img/logo.svg',
-        srcDark: 'img/logo-dark.svg',
+        src: 'img/logo.png',
         width: 40,
         height: 40,
       },
