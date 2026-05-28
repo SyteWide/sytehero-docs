@@ -10,7 +10,7 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
-## v1.0.090 — 2026-05-27
+## v1.0.091 — 2026-05-28
 
 ### Changed
 - **Full brand overhaul.** Adopted the new SyteWide brand system end-to-end: the SyteHero slider mark (terra-cotta `#D85A50`) and SyteWide span mark (navy `#1E3A8A`) replace the legacy indigo logos across every admin page, email footer, WP admin sidebar menu icon, and the public docs site (logo, favicon, social card, primary color scale). Plugin admin color tokens migrate from indigo to terra-cotta; all stale hex fallbacks were swept so every `var(--sytehero-color-primary, …)` declaration resolves to a brand color even when CSS variables fail to load.
