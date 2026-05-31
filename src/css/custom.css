@@ -226,17 +226,9 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(22, 22, 22, 0.8);
 }
 
-/* Wrapper must match the 40px mark so the img centers with the title text;
-   the default 2rem wrapper let the taller img overhang downward (~4px off). */
-.navbar__logo {
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
 .navbar__logo img {
   width: 40px;
   height: 40px;
-  display: block;
 }
 
 .navbar__title {
