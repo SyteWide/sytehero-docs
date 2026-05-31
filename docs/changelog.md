@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.092 — 2026-05-30
+
+### Fixed
+- **Email SyteHero logo no longer washes out in dark mode — including Gmail.** The footer logo on transactional and report emails now sits on a dark backing plate (the same treatment as the logo in the email header), using the white version of the lockup. Because it doesn't depend on dark-mode CSS — which Gmail ignores — the logo stays crisp in every major email client and theme instead of fading into a near-black silhouette.
+
+---
+
 ## v1.0.091 — 2026-05-28
 
 ### Changed
