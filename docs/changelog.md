@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.093 — 2026-05-31
+
+### Fixed
+- **SyteHero icon in email logos no longer washes out on the dark plate.** The mark's two faded side cards used transparency tuned for light backgrounds, so on the dark email plate they collapsed to a near-black smudge while the center card and wordmark stayed crisp. The on-dark logo now uses solid side cards, so the full mark reads clearly. After updating, open **SyteHero → Settings** and click **Refresh Brand Media Library** once so the new logo replaces the cached copy.
+
+---
+
 ## v1.0.092 — 2026-05-30
 
 ### Fixed
