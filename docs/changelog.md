@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.094 — 2026-05-31
+
+### Changed
+- **Brand logo updates now apply automatically.** The plugin records a fingerprint of each bundled logo image and re-imports it into the media library when that image changes in an update — so the dark-mode logo fix (and any future logo refresh) shows up on the next admin load without manually clicking **Refresh Brand Media Library**. The button remains for forcing a full rebuild.
+
+---
+
 ## v1.0.093 — 2026-05-31
 
 ### Fixed
