@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.096 — 2026-06-01
+
+### Fixed
+- **Email prices now display with your store's currency precision.** Sale prices and order/line-item totals that ended in a zero — for example a $37.50 price — were sometimes shown without the trailing zero (`$37.5`). Email prices now consistently follow your store's configured decimal places (two for USD/EUR, none for zero-decimal currencies like JPY) across the sale schedule report email and the sales-summary / new-order emails.
+
+---
+
 ## v1.0.095 — 2026-06-01
 
 ### Added
