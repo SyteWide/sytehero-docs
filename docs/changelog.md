@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.095 — 2026-06-01
+
+### Added
+- **Custom banner shortcode endings.** Non-primary banners can now use a custom shortcode ending (e.g. `[sytehero_banner_free_shipping]`) instead of the auto-generated one. Set it in the banner's **Shortcode** box; leave it blank to keep the default. Endings must be unique — saving a duplicate is blocked — and changing an ending breaks any pages already using the old shortcode.
+
+### Fixed
+- **Copying a banner's shortcode now includes the surrounding `[ ]` brackets.** On the Banners screen the shortcode is now shown — and copied — as `[sytehero_product_page_banners]` instead of the bare tag, so you can paste it straight into a page or builder and have it work. The hidden (deleted-banner) shortcodes are displayed with brackets too.
+
+---
+
 ## v1.0.094 — 2026-05-31
 
 ### Changed
