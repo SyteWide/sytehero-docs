@@ -10,6 +10,18 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.097 — 2026-06-16
+
+### Changed
+- **"Reset Email Crons" is now "Reset Email Notifications."** Alongside rescheduling the email crons, the button now also clears any pending sale-alert backlog — and sets a cut-off so already-processed orders are never re-announced — so a one-time notification flood can be stopped in a single click. It reports how many pending queues were cleared.
+
+### Fixed
+- **"New Sale" emails now send once per order.** Previously a sale could be emailed twice — once at purchase and again when the order was later marked completed — which also produced batches of stale alerts when a backlog of old orders was completed together. Each order is now announced exactly once, at the moment of sale, via a persistent per-order marker.
+- **SyteHero now loads on sites without WooCommerce or FluentCart.** When no ecommerce gateway is active the plugin no longer fatals during boot — non-commerce features keep working and the sales tools stay dormant until a supported store is present.
+- **Cleared a WordPress 6.7+ "translation loading triggered too early" notice.** Admin menu titles are now translated when WordPress is ready instead of during plugin load, so the notice no longer appears in debug logs.
+
+---
+
 ## v1.0.096 — 2026-06-01
 
 ### Fixed

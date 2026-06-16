@@ -81,6 +81,8 @@ Both the Sales Summary and Schedule Report emails support automatic dark mode. E
 2. Single order card with full details
 3. Footer with admin link
 
+Each order triggers **exactly one** "New Sale" email, sent at the moment of purchase — an order is never re-announced if it is later updated or marked completed. If you ever need to stop a one-time flood of stale alerts (for example after importing or bulk-completing a backlog of old orders), use **Reset Email Notifications** on the Settings tab, which clears the pending sale-alert backlog.
+
 ## Hero Click Tracking
 
 When a customer clicks the hero slide CTA button, SyteHero records that interaction. If the customer later completes a purchase, the order is flagged as "via Hero" and a purple badge appears in the sales summary email (when "Show order attribution source" is enabled). This helps you measure how effectively your hero slider drives sales.
