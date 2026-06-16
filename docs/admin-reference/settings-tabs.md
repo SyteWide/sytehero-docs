@@ -95,4 +95,4 @@ The Settings page includes a diagnostics section showing the current state of em
 
 - **Periodic Cron** — Shows whether the hourly periodic summary cron is scheduled, its next run time, and the number of reports with periodic email enabled.
 - **Digest Cron** — Shows whether the on-demand realtime digest cron is scheduled. This cron is created automatically when a sale arrives with digest batching enabled; "Idle" is normal when no digest is pending.
-- **Reset Email Crons** — Clears all email cron events and reschedules based on current report settings. Use this if periodic or realtime sales summary emails are not sending.
+- **Reset Email Notifications** — Clears all email cron events (including any orphaned legacy hooks) and reschedules them based on current report settings, and also clears any pending sale-alert backlog so already-processed orders are not re-announced. Use this if periodic or realtime sales summary emails are not sending, or to stop a one-time flood of stale "New Sale" alerts. The notice reports how many pending queues were cleared.
