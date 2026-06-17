@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.098 — 2026-06-17
+
+### Changed
+- **Sales emails now name their cadence and the report that sent them.** Subject lines carry a tag — `[Daily]`, `[Weekly]`, `[Monthly]` for scheduled summaries, `[Instant]` for the immediate new-sale alert, and `[Digest]` for the batched real-time digest — followed by the report's name (e.g. `[Daily] Morning Sales — Sales Summary: Your Store (SyteHero)`). Every sales email also gains a "Sent by:" line in the footer identifying the schedule, so you can tell which report produced a message even after the subject scrolls away.
+
+---
+
 ## v1.0.097 — 2026-06-16
 
 ### Changed
