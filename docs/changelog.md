@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.099 — 2026-06-17
+
+### Changed
+- **Sales and report email footers now use title-case labels with extra spacing above the footer text and SyteHero logo.** Footer references read in title case — e.g. "Sent By: Daily Sales Report · Instant Alert", with mode labels like "Daily Summary" and "Instant Alert" — the "Sent by:"/"Sent from" lines become "Sent By:"/"Sent From", and there's a little more breathing room above the footer text and the SyteHero logo plate.
+
+---
+
 ## v1.0.098 — 2026-06-17
 
 ### Changed
