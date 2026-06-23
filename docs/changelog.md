@@ -12,6 +12,9 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ## v1.0.099 — 2026-06-17
 
+### Added
+- **Deploy tool: `--avada` / `--no-avada` toggle to reset Avada/Fusion caches after deploy (default on; no-op on non-Avada sites).** — 2026-06-23
+
 ### Changed
 - **Sales and report email footers now use title-case labels with extra spacing above the footer text and SyteHero logo.** Footer references read in title case — e.g. "Sent By: Daily Sales Report · Instant Alert", with mode labels like "Daily Summary" and "Instant Alert" — the "Sent by:"/"Sent from" lines become "Sent By:"/"Sent From", and there's a little more breathing room above the footer text and the SyteHero logo plate.
 
