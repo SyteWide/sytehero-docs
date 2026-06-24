@@ -10,6 +10,15 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.100 — 2026-06-24
+
+### Fixed
+- **Daily sales-summary digests now cover the current day, not the day before.** A daily digest reports the current day's orders up to the send time — which acts as the day's cutoff — and is labeled with that day's date. Previously a digest sent in the evening showed the full *previous* calendar day. Orders placed after the cutoff are included in the next day's digest. The schedule settings now note this cutoff behavior under the daily Send Time.
+- **"Send Test Email" now previews the real daily digest.** A daily test email now uses the same midnight-to-now window as a live digest (instead of a rolling 24 hours), so its contents match its date label and what you'll actually receive.
+- **Changing "Only completed orders" no longer skips a day of orders.** Toggling that filter now advances the report's cutoff to the moment of the change, so the next digest resumes cleanly without dropping orders placed since the previous send.
+
+---
+
 ## v1.0.099 — 2026-06-17
 
 ### Added
