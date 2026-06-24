@@ -30,8 +30,8 @@ Enable periodic summaries to receive automatic order digests.
 | Day of Month | For monthly frequency — which day (1–28) |
 | Send when empty | Toggle to receive a report even when there are no orders in the period |
 
-Period windows:
-- **Daily** — Yesterday (midnight to midnight, site timezone)
+Period windows (site timezone):
+- **Daily** — The current day's orders up to the send time. The Send Time acts as the day's cutoff: each digest covers orders since the previous day's send time, and any orders placed after the cutoff are included in the next day's digest. The digest is labeled with its cutoff date (the day it represents).
 - **Weekly** — Previous Monday through Sunday
 - **Monthly** — Previous calendar month
 
