@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.104 — 2026-06-25
+
+### Fixed
+- **More accurate referrer attribution for unusual hostnames.** Web referrers whose domain begins with a TLD-like label (for example a site at `io.example.com`) are no longer mistaken for a mobile-app referrer and labeled "Mobile App" — they now resolve to the real site. In-app referrals (e.g. the Facebook or Instagram app) continue to resolve to the app name.
+
+---
+
 ## v1.0.103 — 2026-06-25
 
 ### Changed
