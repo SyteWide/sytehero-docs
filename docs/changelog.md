@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.103 — 2026-06-25
+
+### Changed
+- **Clearer acquisition channels in the Sources dashboard and report.** Channels now follow Google Analytics' standard grouping shown as "Channel · Source" — e.g. **Organic Search · Google**, **Paid Search · Google**, **Organic Social · Facebook**, **Email · Klaviyo**, **Referral · somesite.com** — replacing the ambiguous "Google" vs "Google (Organic)" and the cryptic "(Referral)" labels. Paid vs. organic is now split correctly by reading the campaign medium.
+
+---
+
 ## v1.0.102 — 2026-06-25
 
 ### Added
