@@ -10,6 +10,25 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.102 — 2026-06-25
+
+### Added
+- **Sources Analytics report email — get your Sources dashboard delivered on a schedule.** Each Sales Summary report can now be set to a new "Sources Analytics" type that emails your acquisition-channel and SyteHero-influence breakdown (with previous-period deltas) on a daily, weekly, or monthly cadence. Choose a 7-, 30-, or 90-day period and turn individual sections on or off: KPIs, Acquisition channels, SyteHero influence split, and the Channel × Hero cross-tab. Reuses your existing recipients and schedule. Works with WooCommerce and FluentCart.
+
+### Fixed
+- **In-app referrals now show the app name instead of a raw package id.** Orders that arrive from an Android or iOS in-app browser (e.g. the Facebook or Instagram app) previously showed a reverse-DNS package id like `com.facebook.katana` as the source. They now resolve to the real app name where known, or a clean "Mobile App" label otherwise — so Sources reports and the order attribution badge read correctly.
+- **The "Open Sources Dashboard" button in the Sources Analytics email now opens the Sources tab** instead of the default plugin tab.
+- **A near-flat period (a change that rounds to 0.0%) now shows a neutral indicator** in the Sources email instead of a colored up/down arrow next to "0.0%".
+
+---
+
+## v1.0.101 — 2026-06-24
+
+### Added
+- **Sources dashboard — see which acquisition channels and SyteHero heroes drive your sales.** A new Sources tab (next to Analytics) breaks down paid orders by acquisition channel (Facebook, Google, Direct, Klaviyo, Referral, and more) and by SyteHero hero influence (Featured Hero Slider, Custom Heroes per slide). A Channel × Hero cross-tab shows what percentage of each channel's orders had a hero assist. Choose Last 7, 30, or 90 days with previous-period deltas. Works with WooCommerce and FluentCart.
+
+---
+
 ## v1.0.100 — 2026-06-24
 
 ### Fixed
