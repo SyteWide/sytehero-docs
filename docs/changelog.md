@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.108 — 2026-06-26
+
+### Added
+- **Attribution dashboard:** A new **Attribution** tab shows credited revenue by channel and source, with a model selector to switch instantly between first-touch, last-touch, linear, position-based, and time-decay — all from data already captured at checkout, over a 7/30/90-day window.
+- **Affiliate vendor crediting:** Map a coupon code to an affiliate vendor on the Attribution tab. When that coupon is redeemed, the order's closing touch is credited to the vendor under the Last-touch and Position-based models, so partner-driven sales show up against the partner.
+
+---
+
 ## v1.0.107 — 2026-06-26
 
 ### Added
