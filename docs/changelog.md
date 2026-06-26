@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.107 — 2026-06-26
+
+### Added
+- **Multi-model attribution scoring:** SyteHero now credits every order under five attribution models — first-touch, last-touch, linear, position-based (40 % first / 40 % last / 20 % middle), and time-decay (recent touches weighted heavier with a 7-day half-life). All five are calculated at checkout so you can compare models instantly without reprocessing orders.
+
+---
+
 ## v1.0.106 — 2026-06-25
 
 ### Added
