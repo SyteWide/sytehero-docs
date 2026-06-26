@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.109 — 2026-06-26
+
+### Fixed
+- **Critical:** Fixed a fatal error on plugin load introduced in 1.0.108 — one new class file was named slightly differently from what the autoloader expected, so the plugin could not boot. Renamed the file to match, and added an automated check that verifies every class file is named correctly so this cannot recur.
+
+---
+
 ## v1.0.108 — 2026-06-26
 
 ### Added
