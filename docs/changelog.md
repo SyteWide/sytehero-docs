@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.105 — 2026-06-25
+
+### Added
+- **Native visitor analytics (first-party, privacy-conscious) — foundation.** SyteHero now records anonymous, first-party visit signals (referrer and campaign tags) with its own same-origin tracker, which is resilient to the ad blockers and page caching that often block the platforms' built-in attribution. No IP addresses are stored, a random visitor token (not personal data) is used, capture honors the WP Consent API, and it can be disabled with a filter. This is the groundwork for upcoming multi-touch attribution and channel comparison — nothing new appears in reports yet.
+
+---
+
 ## v1.0.104 — 2026-06-25
 
 ### Fixed
