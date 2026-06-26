@@ -21,6 +21,9 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 - **Attribution in the report email:** The Sources Analytics report email can include an optional Attribution Models section showing per-model credited revenue.
 - **Affiliate commissions:** Set a percentage or flat commission per affiliate coupon. SyteHero accrues what each vendor is owed as their coupons are redeemed, and the Attribution tab shows a per-vendor payout view (accrued / paid / owed) with a **Mark paid** button. Works with both WooCommerce and FluentCart.
 
+### Fixed
+- **Builder auto-mode rendering:** Fixed a crash that could occur when a page builder (Elementor, Avada, Divi, or Gutenberg) rendered a SyteHero hero in responsive "auto" mode without a theme override.
+
 ---
 
 ## v1.0.107 — 2026-06-26
