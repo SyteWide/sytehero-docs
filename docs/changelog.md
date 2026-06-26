@@ -14,7 +14,11 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ### Added
 - **Attribution dashboard:** A new **Attribution** tab shows credited revenue by channel and source, with a model selector to switch instantly between first-touch, last-touch, linear, position-based, and time-decay — all from data already captured at checkout, over a 7/30/90-day window.
-- **Affiliate vendor crediting:** Map a coupon code to an affiliate vendor on the Attribution tab. When that coupon is redeemed, the order's closing touch is credited to the vendor under the Last-touch and Position-based models, so partner-driven sales show up against the partner.
+- **Affiliate vendor crediting:** Map a coupon code to an affiliate vendor on the Attribution tab. When that coupon is redeemed, the order's closing touch is credited to the vendor under the Last-touch and Position-based models, so partner-driven sales show up against the partner. Works with both WooCommerce and FluentCart; on WooCommerce you can also set the vendor on the coupon edit screen.
+- **Attribution settings:** Enable or disable attribution tracking and set how long anonymous source touches are kept, under **Settings → Native Attribution**.
+- **SyteHero vs platform comparison:** The Attribution tab compares SyteHero's attribution with WooCommerce/FluentCart's own, by channel group, plus a per-vendor revenue breakdown (revenue, orders, average order value).
+- **Affiliate link auto-apply:** Optionally have a `?ref=COUPON` link apply that coupon to the WooCommerce cart automatically (per coupon, or a global default — off by default).
+- **Attribution in the report email:** The Sources Analytics report email can include an optional Attribution Models section showing per-model credited revenue.
 
 ---
 
