@@ -19,6 +19,7 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 - **SyteHero vs platform comparison:** The Attribution tab compares SyteHero's attribution with WooCommerce/FluentCart's own, by channel group, plus a per-vendor revenue breakdown (revenue, orders, average order value).
 - **Affiliate link auto-apply:** Optionally have a `?ref=COUPON` link apply that coupon to the WooCommerce cart automatically (per coupon, or a global default — off by default).
 - **Attribution in the report email:** The Sources Analytics report email can include an optional Attribution Models section showing per-model credited revenue.
+- **Affiliate commissions:** Set a percentage or flat commission per affiliate coupon. SyteHero accrues what each vendor is owed as their coupons are redeemed, and the Attribution tab shows a per-vendor payout view (accrued / paid / owed) with a **Mark paid** button. Works with both WooCommerce and FluentCart.
 
 ---
 
