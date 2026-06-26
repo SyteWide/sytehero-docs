@@ -10,6 +10,20 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.106 — 2026-06-25
+
+### Added
+- **Multi-touch order attribution (native):** SyteHero now records each visitor's full journey across sessions and devices and saves a durable attribution snapshot on every WooCommerce and FluentCart order, so your sales reports can credit the whole path to purchase — not just the last click. Journeys that belong to an order are kept regardless of the data-retention window.
+
+### Fixed
+- **FluentCart order data:** FluentCart orders now read the correct fields from FluentCart's tables — the buyer's account, email, and name; the order total; the purchased line items; and the shipping address. Previously these came back empty or zero because they were read from the wrong place, which left FluentCart attribution stitching, order notifications, and sales totals incomplete. WooCommerce was unaffected.
+- **FluentCart variable products & sales:** Fixed FluentCart variable-product detection, variation lookups, variation search, and the price-range refresh after a scheduled sale starts or ends — these relied on FluentCart product columns that have since been renamed, so they silently did nothing. WooCommerce was unaffected.
+- **FluentCart order events:** Hero-slide revenue tracking, real-time order emails, and native attribution now trigger correctly when a FluentCart order is paid. FluentCart hands these events different data than WooCommerce, which SyteHero wasn't unpacking, so they previously didn't fire for FluentCart orders. WooCommerce was unaffected.
+- **FluentCart media & price reads:** FluentCart product images are now correctly recognized as in-use (preventing accidental cleanup), and FluentCart product prices resolve in AI Studio — both previously read a renamed FluentCart column.
+- **FluentCart banner injection:** Hero banners now display on FluentCart product-listing pages. They previously hooked a FluentCart action that doesn't exist, so they never appeared on FluentCart stores.
+
+---
+
 ## v1.0.105 — 2026-06-25
 
 ### Added
