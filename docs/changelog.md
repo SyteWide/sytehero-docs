@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.110 — 2026-06-26
+
+### Fixed
+- **Affiliate vendors editor:** the table now uses the full width, and the Commission type/amount fields sit side by side with proper spacing (they were getting squeezed onto separate lines).
+- **Native Attribution settings:** the section now uses the same clean collapsible styling as the other settings groups (removed a stray expander arrow and misaligned heading).
+
+---
+
 ## v1.0.109 — 2026-06-26
 
 ### Fixed
