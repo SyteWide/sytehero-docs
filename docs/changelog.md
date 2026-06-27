@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.111 — 2026-06-26
+
+### Fixed
+- **Native Attribution on updated sites:** the daily data-retention cleanup and the attribution settings now self-heal automatically on sites that *updated* into Native Attribution (rather than installing it fresh). Previously these were only set up during a fresh activation, so a site that received the feature via a plugin update would never schedule the retention cleanup or store its settings. Tracking still worked, but old visit data was never trimmed. No action needed — affected sites repair themselves on the next page load after updating.
+
+---
+
 ## v1.0.110 — 2026-06-26
 
 ### Fixed
