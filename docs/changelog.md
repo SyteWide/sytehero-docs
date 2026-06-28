@@ -10,6 +10,20 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.112 — 2026-06-27
+
+### Fixed
+- **Native Attribution:** visits with no UTM tags now resolve to their real source (e.g. Google, Facebook, or the referring site) instead of being grouped under a single "Referral" bucket.
+- **Native Attribution:** internal page-to-page navigation no longer creates phantom "self-referral" touches that diluted multi-touch credit.
+
+### Added
+- **Native Attribution:** a "Recent attributed orders" table showing each order's entry source, referrer and landing page, the credited amount under the selected model, and whether an affiliate coupon arrived via a referral link or was entered manually.
+
+### Changed
+- Existing orders are re-scored once after updating so the attribution totals reflect the corrected sources.
+
+---
+
 ## v1.0.111 — 2026-06-26
 
 ### Fixed
