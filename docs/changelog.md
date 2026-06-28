@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.113 — 2026-06-28
+
+### Fixed
+- **Critical:** sites running SyteHero **without** WooCommerce or FluentCart active no longer crash with a fatal error on every page load. The Native Attribution journey recorder required a store connection that those sites don't have; it now stays dormant until a supported store is present.
+
+---
+
 ## v1.0.112 — 2026-06-27
 
 ### Fixed
