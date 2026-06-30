@@ -10,6 +10,28 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.115 — 2026-06-30
+
+### Fixed
+- **Email reports:** Sources and Attribution reports never trigger per-order ("real-time") emails — real-time alerts stay Sales Summary only — even if a real-time toggle was left enabled before switching the report type.
+- **Attribution report email:** the "Top channels" section heading always names the selected attribution model.
+
+### Changed
+- Internal hardening and cleanup of the email-report system; no change to existing report output.
+
+---
+
+## v1.0.114 — 2026-06-28
+
+### Added
+- **Attribution email reports:** create a scheduled (daily/weekly/monthly) email of your multi-model attribution data — credited revenue per model, a top-channels breakdown for a chosen primary model, and a native-vs-platform comparison. Add one under **Email Reports** and pick the "Attribution" report type.
+- **Create email report buttons:** the Attribution and Sources dashboards now link straight to the report editor.
+
+### Changed
+- The report editor section is now titled **"Email Reports"** (it creates sales, sources, and attribution reports — not just sales summaries).
+
+---
+
 ## v1.0.113 — 2026-06-28
 
 ### Fixed
