@@ -32,6 +32,8 @@ Each Custom Hero supports the following options:
 | **CTA URL** | The link destination for the call-to-action button. |
 | **CTA Button Text** | The label displayed on the CTA button. |
 | **CTA Open in New Tab** | When enabled, clicking the CTA button opens the link in a new browser tab instead of the current one. |
+| **Make Slide Clickable** | When enabled, the entire slide is a link to the CTA URL — clicking anywhere on the background navigates, not just the CTA button. Text and buttons layered on top keep their own links. |
+| **Slide Link Open in New Tab** | When enabled, the whole-slide link opens in a new browser tab. |
 | **Text Area 1** | Primary overlay text (headline, title, etc.). |
 | **Text Area 2** | Secondary overlay text (tagline, description, etc.). |
 | **Interval** | Time in milliseconds before transitioning to the next slide (if the hero section has multiple slides). |

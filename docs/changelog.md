@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.116 — 2026-07-12
+
+### Added
+- **Clickable slides:** make an entire slide link to its destination — a product page, a linked page/category, or a custom URL — with an optional "open in new tab." Available for featured product slides (product editor and the Heroes tab), the Heroes tab's page/category/custom supplemental slides, and standalone Custom Heroes. Buttons and text layered on the slide keep their own links.
+
+---
+
 ## v1.0.115 — 2026-06-30
 
 ### Fixed
