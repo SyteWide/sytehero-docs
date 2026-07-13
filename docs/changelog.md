@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.117 — 2026-07-13
+
+### Fixed
+- **Heroes tab:** the schedule status pill (e.g. "Always On") now vertically centers its label within the pill.
+
+---
+
 ## v1.0.116 — 2026-07-12
 
 ### Added
