@@ -95,3 +95,16 @@ Each slide (product or supplemental) supports individual settings:
 | **Video Fit** | For video media: **Cover** fills the container (may crop edges) or **Letterbox** shows the full video (may add bars). |
 | **Pause State** | Whether the slider pauses while this slide is active. |
 | **CTA Target Blank** | When enabled, the CTA link opens in a new browser tab. |
+| **Make Slide Clickable** | When enabled, the whole slide is a link to its destination — see [Slide Link](#slide-link-clickable-slides) below. |
+
+## Slide Link (Clickable Slides)
+
+By default only the CTA button is clickable. **Slide Link** makes the entire slide a link, so visitors can click anywhere on the background image or video to navigate. Buttons and text layered on a slide (the CTA button, Text Area 1/2) always keep their own separate links — enabling Slide Link never changes what the CTA button does. Whole-slide clicks are tracked the same way as CTA clicks for attribution.
+
+**Product slides** — configure it in the **SyteHero** metabox on the product editor or the Heroes-tab inline editor (both save to the same product):
+
+1. Turn **Make entire slide clickable** ON.
+2. Choose the destination: **Product link** (the product's own page, default) or **Custom link** (a URL you enter).
+3. Optionally enable **Open slide link in a new tab**.
+
+**Supplemental slides** — each Custom/Page/Category slide has its own **Make entire slide clickable** toggle (plus **Open slide link in a new tab**). There's no product-vs-custom choice — the slide links to whatever destination you already set (custom URL, page permalink, or category archive).
