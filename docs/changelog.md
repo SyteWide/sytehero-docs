@@ -10,6 +10,22 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.119 — 2026-07-14
+
+### Added
+- **Featured products:** newly-added product slides now show the **Open Button/CTA Link in New Tab**, **Make entire slide clickable**, and **Open slide link in a new tab** toggles right on the row, so you can set them before saving.
+- **Heroes tab:** a new **Hide all text & CTAs** toggle on each product and supplemental slide row hides all hero text and the CTA for that slide in one click; turn it off to restore the default text.
+
+### Changed
+- **Custom slides:** a CTA URL is no longer required — a **title** is required instead. Leave the URL blank for a non-clickable slide and set its background media after adding.
+
+### Fixed
+- **Custom slides:** a custom slide with background media but no CTA URL now displays on the live site as a non-clickable slide (previously it saved and showed in the admin list but never appeared on the front end).
+- **Heroes tab:** the **Hide all text & CTAs** toggle now reflects its correct on/off state the moment the page loads (previously it always started off and corrected a moment later).
+- **Heroes tab:** the **Retain Slide after Schedule** toggle on page, category, and custom slides is now correctly linked to its label, so clicking the label text toggles it (and each slide's toggle is uniquely identified).
+
+---
+
 ## v1.0.118 — 2026-07-13
 
 ### Added
