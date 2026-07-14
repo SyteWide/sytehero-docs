@@ -10,6 +10,17 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.118 — 2026-07-13
+
+### Added
+- **Featured products:** a **Make entire slide clickable** toggle now appears directly on each product row in the Heroes tab (beside **Open Button/CTA Link in New Tab**). Turn it on to link the whole slide to the product page — it saves automatically. The full product-vs-custom Slide Link options remain available under **Modify Hero Text** and in the product metabox.
+
+### Changed
+- **Heroes tab:** the CTA new-tab toggle is now labeled **Open Button/CTA Link in New Tab** (previously "Open Link in New Tab"), so it's clearly distinct from the slide link's **Open slide link in a new tab**.
+- **Heroes tab:** the slide status toggle now reads **green when Live** and **red when Paused** across every slide type, making the two states easy to tell apart at a glance.
+
+---
+
 ## v1.0.117 — 2026-07-13
 
 ### Fixed
