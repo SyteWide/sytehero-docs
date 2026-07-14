@@ -101,7 +101,7 @@ Each slide (product or supplemental) supports individual settings:
 
 By default only the CTA button is clickable. **Slide Link** makes the entire slide a link, so visitors can click anywhere on the background image or video to navigate. Buttons and text layered on a slide (the CTA button, Text Area 1/2) always keep their own separate links — enabling Slide Link never changes what the CTA button does. Whole-slide clicks are tracked the same way as CTA clicks for attribution.
 
-**Product slides** — configure it in the **SyteHero** metabox on the product editor or the Heroes-tab inline editor (both save to the same product):
+**Product slides** — the fastest way is the **Make entire slide clickable** toggle **directly on each product row** (next to **Open Button/CTA Link in New Tab**): turn it on to link the whole slide to the **product page** (the same destination the CTA button uses) — it saves automatically. For a custom link instead, open the full Slide Link section in the **SyteHero** metabox or under **Modify Hero Text**:
 
 1. Turn **Make entire slide clickable** ON.
 2. Choose the destination: **Product link** (the product's own page, default) or **Custom link** (a URL you enter).
