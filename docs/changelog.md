@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.120 — 2026-07-14
+
+### Added
+- **AI Studio:** **GPT-Image 2** is now available in the image model picker. It's earmarked as a high-fidelity 🛡️ model that preserves text, logos, and product details — recommended when you turn on **Preserve product details** — and can also be used for from-scratch generation in the Generate tab.
+
+---
+
 ## v1.0.119 — 2026-07-14
 
 ### Added
