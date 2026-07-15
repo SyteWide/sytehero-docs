@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.121 — 2026-07-15
+
+### Added
+- **Standardization tool:** a new one-click **Standardize** action turns any client-uploaded image into a clean, un-clipped **16:9 (≥1920×1080)** hero. It reframes the subject and text inward (rule-of-thirds), extends the sides to a true 16:9 with AI (skipped automatically when the image is already 16:9), then upscales 2×. Run it from the **Standardize** button next to every hero slide, or from **AI Studio → Standardization**.
+- **Standardization profiles:** save named presets — prompt, composition placement (Centered, Rule of Thirds, Balanced, Inset/Safe, Golden Ratio, or a custom value), reframe model (defaults to GPT-Image 2), target ratio, upscale model/factor, and an optional “move the original to Trash after success.” One profile is active and drives the slide button; switch or manage profiles in AI Studio.
+
+---
+
 ## v1.0.120 — 2026-07-14
 
 ### Added
