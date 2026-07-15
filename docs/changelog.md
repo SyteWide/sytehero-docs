@@ -10,6 +10,18 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.122 — 2026-07-15
+
+### Added
+- **Standardization cost estimate:** the profile editor, the AI Studio launcher, and each saved profile now show an estimated **per-run cost** (`~$…`) for the selected reframe, extend, and upscale steps, using the same price table as the Generate cards.
+- **Standardization progress bar:** a progress bar now tracks each run — in the AI Studio launcher and next to every hero slide — so you can see how far along a standardization is.
+- **Open standardized image:** when a run finishes, an **Open full image ↗** link lets you open the new image in a new browser tab to preview it at full size.
+
+### Changed
+- **Standardized image naming:** newly standardized images are now saved to the media library as **“SyteHero Standardized”** instead of “SyteHero AI Upscaled,” so they’re easy to recognize.
+
+---
+
 ## v1.0.121 — 2026-07-15
 
 ### Added
