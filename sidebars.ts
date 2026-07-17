@@ -50,6 +50,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Privacy & Consent',
+      items: [
+        'privacy/overview',
+        'privacy/wp-full-picture',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Admin Reference',
       items: [
         'admin-reference/plugin-setup',
