@@ -10,6 +10,26 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.124 — 2026-07-17
+
+### Added
+- **Native WP Full Picture consent support:** when WP Full Picture is your active consent tool, SyteHero now reads its consent choices directly — no extra configuration or per-site glue. Analytics tracking (the attribution beacon, impression beacon, and hero-click tracker) waits until a visitor grants statistics consent in Full Picture, and follows a later change or withdrawal. Global Privacy Control and the EU/EEA/UK opt-in behavior continue to apply. Sites using another consent tool are unaffected (the existing consent event/cookie seam still works).
+
+---
+
+## v1.0.123 — 2026-07-16
+
+### Added
+- **Consent-gated analytics:** the attribution beacon, the slide-impression beacon, and the hero-click tracker now wait for analytics consent before storing or sending anything. EU/EEA/UK visitors are treated as opt-in (nothing stored or sent until consent); US and the rest of the world remain opt-out unless Global Privacy Control is set.
+- **Global Privacy Control (GPC):** honored both in the browser and server-side — a visitor sending GPC has no cookie set and no analytics recorded.
+- **CMP-agnostic consent seam:** SyteHero listens for a configurable consent signal (`sytehero_consent_update` event + `window.syteHeroConsent()`), wireable to any CMP with the `sytehero_consent_config` filter, plus a built-in WP Consent API bridge.
+- **Declared cookies:** SyteHero now declares every cookie it sets (`sytehero_vid`, `sytehero_hero_click`) — with lifetime, purpose, and category — and registers them with the WP Consent API so CMP scanners keep them instead of silently deleting them. See the new Privacy & Consent documentation.
+
+### Fixed
+- The attribution beacon previously fired on every page load regardless of consent or jurisdiction, creating a server-side record for EU visitors who were never shown a choice. It is now gated.
+
+---
+
 ## v1.0.122 — 2026-07-15
 
 ### Added
