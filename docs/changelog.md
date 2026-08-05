@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.125 — 2026-08-04
+
+### Fixed
+- **License activation on SyteWide-managed sites:** licensing requests now present the management credential the licensing service expects from sites SyteWide operates. Affected sites showed a **License Status: Inactive** with the reason `edge_credential_invalid`, and scheduled re-validation could turn a previously working license inactive on its own. A license that was already activated recovers by itself at the next scheduled check (within 4 hours) or immediately via **Refresh License Status** — no re-entry of your license key is needed. A site whose *first* activation was attempted while this was happening needs **Activate** clicked once. Installs not managed by SyteWide were never affected and behave exactly as before.
+- **Licensing outages no longer revoke your grace period:** when the licensing service refuses a request for infrastructure reasons — unreachable, a gateway authentication failure, the management-credential check, a server-side rate limit, or an endpoint allowlist — SyteHero now records it as *unreachable* rather than as a verdict on your license, so the existing grace window keeps features unlocked. Previously any such refusal cleared the grace period immediately. Genuine license answers (expired, suspended, invalid, activation limit reached) are unchanged and still lock the plugin.
+- **A revoked license can no longer be revived by an outage:** the "last known good" marker is now cleared when the licensing service gives a genuine answer such as expired or suspended. Previously that marker survived indefinitely, so a license that had already been revoked could be handed a fresh grace period by the next unrelated connectivity problem — and again by every one after it.
+- **Licensing requests no longer follow redirects,** so the credentials they carry can never be forwarded to another host. An unexpected redirect from the licensing service is now treated as a temporary outage instead of locking the plugin.
+
+---
+
 ## v1.0.124 — 2026-07-17
 
 ### Added
