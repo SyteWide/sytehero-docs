@@ -61,6 +61,37 @@ Deduplication prevents multiple emails for the same order when both order comple
 - **Save Settings** — Persists all settings and schedules/unschedules the periodic cron.
 - **Send Test Email** — Saves settings, then sends a test email using orders from the most recent period window.
 
+## Message List Preview Line
+
+Below the subject, most mail apps show a one- or two-line preview of the message. SyteHero fills
+that line deliberately, with the details the subject does not already give you — so you can triage
+a sale without opening anything:
+
+| Email | Preview line |
+|-------|--------------|
+| Real-time / New Sale | `$45.66 · Order #72176 · Brian Favre · processing · Nov 14, 5:13pm` |
+| Periodic summary | `3 orders · $312.40 · Daily Summary: Mar 19, 2026` |
+| Periodic summary with no sales | `No orders · Daily Summary: Mar 19, 2026` |
+| Sources report | `42 tracked orders · $8,421.50 · 18 via Hero` |
+| Attribution report | `6 attributed orders · $290.00 · Last touch model` |
+| Schedule report | `3 schedules configured` |
+
+The sale amount comes first, because it is the field most likely to still be visible on a phone,
+where the preview is truncated hardest. Fields you have not set are skipped rather than left blank —
+an order placed without a customer name shows the email address instead, and an order with neither
+simply omits that part.
+
+If a customer's details or an order total look different here than inside the email, the preview is
+not stale — both are rendered from the same order record, in your site's timezone and currency
+format.
+
+Previously these previews ran together into unreadable text such as
+`New SaleOrder #72176 processing$45.66DateAug 18, 2026 3:17pmCustomerBrian Favre…`, because mail
+apps were reading the body of the email rather than a preview line. That also pulled the customer's
+email address and shipping address into your lock screen and notifications. The preview now stops
+at the line above, so the shipping address no longer appears there, and the email address appears
+only when an order has no customer name to show instead.
+
 ## Dark Mode
 
 Both the Sales Summary and Schedule Report emails support automatic dark mode. Email clients that respect `prefers-color-scheme: dark` (Apple Mail, iOS Mail, Yahoo Mail, Outlook.com) will render emails with dark backgrounds, adjusted text colors, and inverted status badges. Product thumbnails retain a white background pad so images remain clear against dark surfaces. Gmail strips `<style>` blocks and applies its own auto-darkening — this is a Gmail limitation and cannot be overridden.
