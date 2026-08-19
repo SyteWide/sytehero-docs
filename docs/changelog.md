@@ -10,6 +10,20 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.126 — 2026-08-19
+
+### Fixed
+- **Email preview lines in your inbox are readable again.** Sale alerts and report emails showed a run-together preview under the subject — `New SaleOrder #72176 processing$45.66DateAug 18, 2026 3:17pmCustomerBrian Favre…` — because mail apps had run out of preview text and started reading the body of the message instead. Every SyteHero email now supplies a full preview line, so nothing from the body leaks into it. That same alert now reads `$45.66 · Order #72176 · Brian Favre · processing · Aug 18, 3:17pm`.
+- **Customer details no longer surface on your lock screen.** Because mail apps had been reading the message body, a customer's email address and full shipping address could appear in inbox previews and notifications. The shipping address no longer appears there at all, and the email address appears only when an order has no customer name to show instead.
+- **Orders with a missing purchase date no longer display as 1969 or 1970.** The date is now omitted from both the preview line and the order card when a store's order record has no usable timestamp.
+- **Real-time digest emails stated their order count once** instead of repeating it in both the subject and the preview line.
+
+### Changed
+- **The preview line now carries details the subject cannot.** It previously repeated the subject line. It now shows `$45.66 · Order #72176 · Brian Favre · processing · Aug 18, 3:17pm` for a sale alert, `3 orders · $312.40 · Daily Summary: Mar 19, 2026` for a periodic summary, and the equivalent figures for Sources, Attribution, and Schedule reports. The amount comes first, because that is the part still visible when a phone truncates the line.
+- **Minimum PHP version is now 8.1** (previously listed as 7.4). SyteHero has required 8.1 for some time — the listed figure was out of date, which meant a site on an older PHP could install the plugin and hit a fatal error. Sites below PHP 8.1 will no longer be offered updates, which prevents that. If your host is below 8.1, ask them to upgrade; PHP 7.4 has been unsupported since 2022.
+
+---
+
 ## v1.0.125 — 2026-08-04
 
 ### Fixed
