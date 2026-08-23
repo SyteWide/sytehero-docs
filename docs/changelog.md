@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.127 — 2026-08-23
+
+### Added
+- **Image tools can now erase part of a picture without redrawing the rest.** Two new models take a mask — a shape marking the area to repair — and rebuild only what it covers, leaving every other pixel exactly as it was. Previously every image model was given the whole picture and asked, in words, to change one part of it, which is not something a picture model can promise: a corner logo would be replaced by a flat gray block, or a clean photo would come back softer than it went in. This is used by companion plugins that remove a watermark from a single corner.
+
+---
+
 ## v1.0.126 — 2026-08-19
 
 ### Fixed
