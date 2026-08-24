@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.128 — 2026-08-24
+
+### Changed
+- **The fal image provider is now named the way its vendor names it.** It appeared throughout the plugin as "Fal AI"; the vendor's own wordmark is lowercase "fal". The provider list, the connection test messages and the AI Studio setup hint all say "fal" now. Nothing about how it connects or what it costs has changed.
+
+---
+
 ## v1.0.127 — 2026-08-23
 
 ### Added
