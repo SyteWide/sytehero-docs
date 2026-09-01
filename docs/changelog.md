@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.129 — 2026-09-01
+
+### Fixed
+- **Analytics no longer go silently dark on sites that restrict the WordPress REST API.** SyteHero asks a small endpoint which privacy rules apply to each visitor before it records anything. When a site's REST API was locked to logged-in users, that request was refused, and because SyteHero errs on the side of not tracking, it stopped recording everything — attribution, slide impressions and hero clicks — with no visible sign beyond a browser console error on every page. SyteHero now tells the restriction which two endpoints it needs left open, so the site keeps its REST API locked down and analytics keep working. Sites affected by this will start recording again as soon as they update; data missed while it was blocked cannot be recovered.
+
+---
+
 ## v1.0.128 — 2026-08-24
 
 ### Changed
