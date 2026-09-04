@@ -10,6 +10,15 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.131 — 2026-09-04
+
+### Changed
+- **A call-to-action button marked visible but left without a label now renders empty** instead of falling back to the button text already present in your theme. An unset label is now visible so it can be corrected, rather than quietly showing unrelated copy.
+
+### Fixed
+- **The first slide no longer falls back to your theme's own hero text.** On some page loads the first slide displayed whatever headline, subheadline or button label was already written into the theme's own text elements, instead of the hero text configured in SyteHero. Nothing was ever lost — the saved settings stayed correct and only the front end was affected — and re-saving the slide appeared to put it right, which made it look random. Slides after the first were unaffected: SyteHero repaints those every time the slider advances, while the first slide is painted only once, before the slider starts, and was never repainted again when rotation was switched off. A slide's configured text is now authoritative, the overlay stays hidden rather than exposing theme copy when the text elements cannot be found, and the first slide is repainted if the theme is still settling when the page loads.
+- **A malformed CTA button selector no longer stops every hero on the page from painting.** An invalid selector raised an error that halted all sliders on that page, leaving each of them showing theme text.
+
 ## v1.0.130 — 2026-09-03
 
 - **A caller can now ask for a source image at a chosen resolution.** Image-to-image jobs previously always sent WordPress's `large` intermediate — a recompressed downscale, typically 1024px — whatever the original was. A caller may now give a long-edge budget, and the largest representation that fits is sent instead. This is what preserves small text and logos through a re-roll. Existing callers are unchanged: with no budget, the `large` intermediate is still used.
