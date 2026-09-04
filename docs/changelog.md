@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.130 — 2026-09-03
+
+- **A caller can now ask for a source image at a chosen resolution.** Image-to-image jobs previously always sent WordPress's `large` intermediate — a recompressed downscale, typically 1024px — whatever the original was. A caller may now give a long-edge budget, and the largest representation that fits is sent instead. This is what preserves small text and logos through a re-roll. Existing callers are unchanged: with no budget, the `large` intermediate is still used.
+- **The provider request contract now documents `preserve` and `max_source_px`.** `preserve` has been read since launch and was never listed, so no caller on the other side of that seam could learn it existed.
+- **Portrait 3:4 is now an offered aspect ratio.** fal has always accepted it — the enum was already mapped — but it was missing from the advertised list, so a 3:4 or 2:3 source had to be squared or stretched to 9:16. It is now selectable and maps correctly on every model family.
+- **A pixel budget is honored on sites that offload media to a CDN.** Recorded image dimensions live in the database even when the files do not, so an offloaded library now picks the right size rather than silently falling back to the 1024px copy.
+- **A source image is read only from inside the uploads directory**, and an over-budget request can no longer end up sending the single largest file on disk.
+
 ## v1.0.129 — 2026-09-01
 
 ### Fixed
