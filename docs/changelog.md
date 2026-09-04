@@ -10,6 +10,12 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.132 — 2026-09-04
+
+### Fixed
+- **Viewing a page can no longer remove your slides.** When a slide's schedule ended, the clean-up that un-features the product or removes the slide row was carried out by whichever visitor happened to load the page at the wrong moment. On a public page that meant an anonymous visitor could quietly delete slide data you still had in front of you in the admin. Expired slides were, and still are, hidden from the slider either way — only the clean-up moved. It now runs on the scheduled task that owns it, or while you are working in the admin, never from a public page view.
+- **Saving hero text and styling now refreshes cached pages.** Set Defaults, hero layout, per-view overrides, random lines, Custom CSS, Custom Heroes and the slider engine or theme selection all saved correctly but left cached pages untouched, so on a site with a page cache the old hero could keep being served long after the change. Saving any of them now clears the cached pages along with SyteHero's own cache.
+
 ## v1.0.131 — 2026-09-04
 
 ### Changed
