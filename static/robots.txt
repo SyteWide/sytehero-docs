@@ -1,0 +1,8 @@
+# sytehero.sytewide.com — SyteHero documentation (Cloudflare Pages).
+# This subdomain has its own robots namespace; sytewide.com/robots.txt does not cover it.
+
+User-agent: *
+Allow: /
+Disallow: /search
+
+Sitemap: https://sytehero.sytewide.com/sitemap.xml
