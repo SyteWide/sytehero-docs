@@ -92,6 +92,11 @@ const config: Config = {
           remarkPlugins: [[npm2yarn, {sync: true}]],
         },
         blog: false,
+        sitemap: {
+          // WHY: the client-side search page carries no unique content and was the
+          // only non-doc URL the default sitemap emitted.
+          ignorePatterns: ['/search'],
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
