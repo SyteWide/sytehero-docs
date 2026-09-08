@@ -10,6 +10,19 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.133 — 2026-09-08
+
+### Added
+- **GPT-Image 2 can now be chosen for watermark repair.** It was already available for changing a picture with AI; it can now also be selected as the model that removes a watermark from an archive image. It is an option, not the default — the existing default is unchanged, deliberately, because switching it would re-run a paid repair across every image already processed.
+
+### Fixed
+- **Progress while a picture is being made now reflects what is actually happening.** The image service reports a job's state, but only two of them were understood — "finished" and "working". A picture waiting its turn, a failure, and anything unrecognized all looked identical to "nothing has happened yet", so the wait showed no useful information. Waiting in the queue is now reported as waiting, along with your place in line when the service supplies it, and a job that genuinely cannot be measured says so instead of reporting zero.
+- **The plugin's own image window no longer shows "0%" for the whole run.** On the kinds of work the image service cannot measure, it displayed a percentage that never moved. It now shows elapsed time alone rather than a number that means nothing.
+- **A picture made by changing another one is now named after the original.** The new file kept a generated name, so a recognizable photo became an unrecognizable filename in your media library, in its web address, and in any log that records it. It now carries the original's name plus a marker showing it was derived, and two versions of the same picture can never overwrite each other.
+- **Text you type keeps its exact characters.** A backslash in an image's title, caption, description or alt text was silently removed when saved. This affected pictures created by changing another one, and the metadata editor.
+
+---
+
 ## v1.0.132 — 2026-09-04
 
 ### Fixed
