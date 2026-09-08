@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.134 — 2026-09-08
+
+### Changed
+- Internal improvements and maintenance.
+
+---
+
 ## v1.0.133 — 2026-09-08
 
 ### Added
