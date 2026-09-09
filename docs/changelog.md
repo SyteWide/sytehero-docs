@@ -10,10 +10,20 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.136 — 2026-09-09
+
+### Removed
+- **The Straico AI provider is no longer offered.** Its API key field and model picker are gone from the AI Providers card, and any Straico key still stored is deleted when the plugin updates. The remaining providers — OpenAI, Anthropic, OpenRouter, Gemini and fal — are unchanged.
+
+### Changed
+- **A saved AI provider that no longer exists now falls back instead of failing.** If a function such as Image SEO Meta was pointed at a provider that has since been retired, it quietly switches to the default provider and its recommended model rather than returning an error, so generation keeps working without visiting the settings screen. Pick a different provider at any time on the Integrations tab.
+
+---
+
 ## v1.0.135 — 2026-09-09
 
 ### Fixed
-- **AI text generation now works when a reasoning model is selected.** Choosing one of OpenAI's reasoning models — the o-series, or anything in the GPT-5 or GPT-6 families — made every AI text request fail with an error returned by the provider, because those models reject the temperature and maximum-token settings the older chat models expect. A request to a reasoning model now leaves temperature out, so the model uses the single value it allows, and sends the response-length limit under the name those models accept instead of alongside it. Models that do accept both settings, such as GPT-4o, are unchanged, and the fix applies whether the model is reached directly or through OpenRouter or Straico.
+- **AI text generation now works when a reasoning model is selected.** Choosing one of OpenAI's reasoning models — the o-series, or anything in the GPT-5 or GPT-6 families — made every AI text request fail with an error returned by the provider, because those models reject the temperature and maximum-token settings the older chat models expect. A request to a reasoning model now leaves temperature out, so the model uses the single value it allows, and sends the response-length limit under the name those models accept instead of alongside it. Models that do accept both settings, such as GPT-4o, are unchanged, and the fix applies whether the model is reached directly or through OpenRouter.
 
 ---
 

@@ -216,7 +216,7 @@ The **Capability Routing** section appears below the provider cards. It lets you
 
 ## AI Providers Integration
 
-The AI Providers card lets you configure API keys for text-based AI providers (OpenAI, Anthropic, OpenRouter, Gemini, Straico). These keys power features like automatic SEO metadata generation when saving AI-generated images.
+The AI Providers card lets you configure API keys for text-based AI providers (OpenAI, Anthropic, OpenRouter, Gemini). These keys power features like automatic SEO metadata generation when saving AI-generated images.
 
 ### Setup
 
@@ -227,7 +227,7 @@ The AI Providers card lets you configure API keys for text-based AI providers (O
 5. Under **Function Configuration**, select which provider and model to use for each function (e.g., Image SEO Meta).
 
 :::note Reasoning models
-OpenAI's reasoning models — the o-series, and the GPT-5 and GPT-6 families — are supported, whether you reach them directly or through OpenRouter or Straico. These models allow only their own fixed creativity setting, so SyteHero adjusts the request for you and the temperature you would otherwise control does not apply. Models such as GPT-4o are unaffected.
+OpenAI's reasoning models — the o-series, and the GPT-5 and GPT-6 families — are supported, whether you reach them directly or through OpenRouter. These models allow only their own fixed creativity setting, so SyteHero adjusts the request for you and the temperature you would otherwise control does not apply. Models such as GPT-4o are unaffected.
 :::
 
 ### Function Configuration
