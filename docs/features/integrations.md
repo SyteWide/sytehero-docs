@@ -237,7 +237,8 @@ Each AI-powered function can use a different provider and model:
 | Function | Description | Status |
 |----------|-------------|--------|
 | Image SEO Meta | Generates title, alt text, caption, and description for AI images | Active |
-| Prompt Enhancement | Enhances fal.ai generation prompts | Coming Soon |
+| Hero Copy Generation | Writes the two hero text areas and the CTA button text for a slide | Active |
+| Prompt Enhancement | Enhances fal.ai generation prompts | Active |
 
 ### Key Storage
 
