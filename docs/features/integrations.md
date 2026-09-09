@@ -226,6 +226,10 @@ The AI Providers card lets you configure API keys for text-based AI providers (O
 4. Click **Save Settings**.
 5. Under **Function Configuration**, select which provider and model to use for each function (e.g., Image SEO Meta).
 
+:::note Reasoning models
+OpenAI's reasoning models — the o-series, and the GPT-5 and GPT-6 families — are supported, whether you reach them directly or through OpenRouter or Straico. These models allow only their own fixed creativity setting, so SyteHero adjusts the request for you and the temperature you would otherwise control does not apply. Models such as GPT-4o are unaffected.
+:::
+
 ### Function Configuration
 
 Each AI-powered function can use a different provider and model:
