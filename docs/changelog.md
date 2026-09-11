@@ -10,6 +10,19 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.138 — 2026-09-10
+
+### Changed
+- **Transform's picture uploads are held to 30 seconds.** Before a Transform job is sent, SyteHero now has 30 seconds to download and upload the picture being edited and any extra reference photos a companion plugin sends with it. The photos upload one after another within that time. If they don't all finish, the job stops before it runs and asks you to try fewer photos, so a slow upload can't leave behind a generation you never see. At most 8 extra photos go with one job.
+- **The 30 seconds also applies to a plain edit.** With no extra photos, the picture being edited still has to be downloaded and uploaded within those 30 seconds. If its upload runs out of time, it is sent inline with the job instead, as it already was when an upload failed, so the edit still runs.
+- **Each AI model's picture limit is respected.** Where fal publishes how many pictures a model accepts, SyteHero never sends more. Extra photos past the limit are left out, and the picture being edited is always kept. The image models list now also tells companion plugins each model's limit.
+
+### Fixed
+- **A missing offloaded image now gives a clear error.** If a picture stored on an external media host such as S3 can't be downloaded, or the host returns a web page instead of an image, the job stops with a message naming the attachment. Before, it failed inside the AI service with an unclear error.
+- **A reference photo that fails to upload now stops the job.** Before, it could be inlined into the request, which risks running out of memory with large photos. Now the job stops before it runs and names the photo that failed.
+
+---
+
 ## v1.0.137 — 2026-09-10
 
 ### Added
