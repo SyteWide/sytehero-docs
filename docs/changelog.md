@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.137 — 2026-09-10
+
+### Added
+- **Transform can use extra reference photos of a person.** When a companion plugin such as SyteOps sends reference photos with an image edit, AI models that accept several images now receive them after the picture being edited, so the result can match that person's likeness. Models that take a single picture, text-to-image models, and masked edits behave exactly as before. The image models list now also tells companion plugins which models accept extra photos.
+
+---
+
 ## v1.0.136 — 2026-09-09
 
 ### Removed
