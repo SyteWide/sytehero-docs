@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.139 — 2026-09-20
+
+### Added
+- **SyteOps can supply an image AI provider's settings.** On a site running SyteOps, an image AI provider SyteOps is set to manage uses the API key, on/off switch and model choices it supplies. That provider's controls on the Integrations page become read-only and carry a "Managed by SyteOps" link straight to the screen that owns them, so there is one place to change the key rather than two. Nothing SyteOps supplies is saved into SyteHero, and any key you entered here is kept untouched and comes back if management ends.
+- **Without SyteOps, nothing changes.** If SyteOps is not installed, or is not managing the provider, every provider keeps using the settings stored in SyteHero exactly as before.
+
+---
+
 ## v1.0.138 — 2026-09-10
 
 ### Changed
