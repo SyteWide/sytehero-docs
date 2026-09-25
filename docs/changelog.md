@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.144 — 2026-09-25
+
+### Added
+- **fal spend tracking, at fal's published list price — with honest estimates for editing models.** Every AI Media grid card now shows the actual per-generation cost (e.g. "$0.025 · fal list price") instead of only a rough estimate tier, and the Generate modal shows this month's total spend and generation count (e.g. "$0.20 (6 generations, 1 not priced) · includes estimates"). Pure-generation models (priced per output megapixel, per image, or per known-duration second) are tracked at exact fal list price; editing/processing models fal prices by units it cannot derive from the output alone (e.g. "processed megapixels" or a token-priced endpoint) are tracked via fal's own historical-average estimate instead, never a number presented as exact when it is not. A generation whose cost genuinely cannot be determined shows "cost unknown" rather than a misleading $0.00 — it is never guessed, and the monthly summary calls out how many generations were not priced; when EVERY generation in a month is unpriced, the summary says so plainly ("price unknown (N generations)") instead of showing $0.00. The figure excludes any account-level discount and only counts generations run through this site.
+
+---
+
 ## v1.0.143 — 2026-09-25
 
 ### Added
