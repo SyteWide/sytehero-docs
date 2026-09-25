@@ -10,6 +10,17 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.143 — 2026-09-25
+
+### Added
+- **Optional fal billing key.** The AI Image Providers card's fal tile now accepts a second, optional key used only to read your fal account balance. A fal team key — what most sites use for generation — cannot read fal's billing information, so this lets you add a separate Admin key from the account that pays the bill without touching the key used for generation. It's never used for image generation, uploads, or the Assets library — only the balance display.
+
+### Fixed
+- **The Generate modal's balance display no longer shows a misleading $0.00 when fal rejects the current key for reading billing information.** It now shows that a billing key is needed, matching what actually fixes it.
+- **Clicking the balance Refresh button now always fetches a fresh balance**, instead of sometimes silently doing nothing if clicked within the automatic 5-second refresh window.
+
+---
+
 ## v1.0.142 — 2026-09-24
 
 ### Fixed
