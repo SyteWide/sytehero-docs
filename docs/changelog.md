@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.146 — 2026-09-25
+
+### Changed
+- **Replaced fal spend estimates with fal's actual billed cost, wherever fal makes that available.** Once fal's own billing system confirms what a generation actually cost (usually within minutes), the AI Media grid and the Generate modal's monthly total switch from the list-price estimate to that real figure, labeled "fal billed" instead of "fal list price"/"includes estimates" — a month can also show "mixed" when some generations are confirmed and others are still estimates. This needs a fal team key with the Admin role — the same key that already reads your account balance directly (v1.0.145); without one, everything keeps working exactly as before, still labeled by list price/estimate, and nothing about generation itself changes either way. The Generate modal now also shows the fal team's own total spend for the month when that figure is available.
+
+---
+
 ## v1.0.145 — 2026-09-25
 
 ### Changed
