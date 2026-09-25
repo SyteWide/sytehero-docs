@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.145 — 2026-09-25
+
+### Changed
+- **The Generate modal's balance now reads your fal key's own team balance first.** A fal Admin key can read its own team's account balance directly, so the separate optional billing key added in v1.0.143 is no longer needed — use an Admin key from the client's fal team instead. Sites that already saved a billing key keep working exactly as before (it's now used only as a fallback if the main key can't read the balance, and only when that key is valid but simply lacks billing permission — a rejected/revoked key is reported as such instead of silently trying another account); the field on the AI Image Providers card is hidden unless one is already stored, and shows a note explaining it's only a fallback, not needed once your fal key is an Admin key. When the fallback IS the one answering, the Generate modal now says whose balance it's actually showing, since it can belong to a different fal team than the one this site's own key is for.
+
+---
+
 ## v1.0.144 — 2026-09-25
 
 ### Added
