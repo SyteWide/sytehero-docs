@@ -191,7 +191,7 @@ Deleting a Google Calendar event unlinks the schedule but does not delete it. Th
 
 #### "Sync is already in progress"
 
-A sync lock prevents concurrent runs. The lock expires after 30 seconds. Wait briefly and try again.
+A sync lock prevents concurrent runs. The lock expires after 180 seconds if a sync crashes without finishing. Wait briefly and try again.
 
 ## AI Image Providers Integration
 

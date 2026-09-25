@@ -10,6 +10,38 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.142 — 2026-09-24
+
+### Fixed
+- **Using an image from the fal library now reuses the copy already in your Media Library when it's the same image, instead of importing a duplicate.** Previously, clicking **Use** on an image the site had generated itself (background removal, upscaling, Extend to Fit, or a standard AI generation) always created a second, duplicate attachment, because dedupe only recognized images imported through **Use** before. A site-generated image is now recognized too — by its saved output link first, then by its file contents if needed — so **Use** on it reuses the existing attachment instead of downloading a copy. A copy you've since cropped or rotated in WordPress's Image Editor is never matched this way, since its file has changed. A batched background sweep also backfills recognition for images generated before this update, a small number at a time, so large media libraries are never affected all at once.
+
+---
+
+## v1.0.141 — 2026-09-24
+
+### Fixed
+- **Google Calendar pull sync no longer runs twice at once.** Two overlapping requests could previously both start a sync cycle, risking duplicate calendar API calls and conflicting schedule updates; only one now runs at a time, and the crash-recovery timeout is long enough (180 seconds) that a legitimately slow sync — a token refresh, a large paginated fetch, or a full resync — can never have its own lock stolen out from under it by a second overlapping request.
+- **The "No Active Slides" alert email no longer sends twice for the same outage.** Two page loads landing at the same moment could previously both send the alert; only one email now goes out.
+- **Background license validation no longer re-checks the licensing server twice at once.** Two overlapping background runs could previously both call the licensing server concurrently; only one now runs at a time.
+- **A periodic Sales Summary report email can no longer send twice.** Two overlapping scheduled runs could previously both build and send the same report; only one send now goes out.
+- **A real-time Sales Summary digest email can no longer send twice for the same batch of orders.** Two overlapping scheduled runs could previously both drain and send the same queue; only one send now goes out.
+
+---
+
+## v1.0.140 — 2026-09-24
+
+### Added
+- **AI Studio has a new Assets tab.** Once a fal team API key is connected, browse, search, and filter your fal Assets library — by type or by collection — preview an asset with its lineage, and click **Use** to copy it straight into this site's Media Library instead of generating it again. Using the same asset a second time never creates a duplicate, even if you click "Use" on it twice at once. A SyteOps Admin can create a new collection right from this tab (the only place one can be created) and set a default collection so new generations — including background removal, upscaling, and Extend to Fit — file themselves into your library automatically; leave it unset and nothing is filed. Everyone else can still browse and reuse assets.
+- **New generations no longer expire on fal's side.** So an image stays reusable from the Assets tab whenever you need it later.
+- **Video cards in the Assets tab now say why "Use" is disabled.** A "Video · images only" label explains it, and screen readers get the same reason.
+
+### Fixed
+- Reusing an asset that fal's search returned as the closest match, but was not actually the same picture, no longer skips filing the real generation.
+- Changing the default collection now takes effect immediately instead of sometimes reverting on the next visit.
+- Browsing the Assets tab no longer re-fetches your whole collection list on every keystroke, search, or Load more — it's cached for 5 minutes and refreshes itself the moment a collection is created or the default changes.
+
+---
+
 ## v1.0.139 — 2026-09-20
 
 ### Added
