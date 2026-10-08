@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.147 — 2026-10-08
+
+### Fixed
+- **Updating a featured product no longer resets its hero text settings.** Editing stock, price, or other product details in the product editor could quietly turn a slide's Hide / Custom Text choices back into Use Default, so the first (or any) featured product showed the site-wide default copy again. Those settings now stay as you left them.
+- **Swiper loop mode no longer paints the wrong slide's hero text after wrapping.** On sites using the Swiper engine with looping enabled, the overlay could briefly (or stickily) show another slide's text when the rotation wrapped past the end.
+
+---
+
 ## v1.0.146 — 2026-09-25
 
 ### Changed
