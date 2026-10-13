@@ -243,3 +243,25 @@ Each AI-powered function can use a different provider and model:
 ### Key Storage
 
 API keys are encrypted at rest using AES-256-CBC (requires the PHP OpenSSL extension). Keys are stored independently in SyteHero and are not shared with other plugins.
+
+## Headless Frontend
+
+Some sites run a separate frontend on the public address (for example `https://www.example.com`) while WordPress itself lives on a different address (for example a subdomain). On those sites, visits, hero impressions and hero clicks come from a page that is not on the WordPress address, and SyteHero would otherwise ignore them. The **Headless Frontend** card tells SyteHero which address to accept them from.
+
+### Setup
+
+1. Open **SyteHero > Integrations**.
+2. Find the **Headless Frontend** card.
+3. In **Frontend address**, type the address visitors see, starting with `https://` and with no path -- for example `https://www.example.com`. It must be a different address from this WordPress site's own; the site's own address is not accepted.
+4. Click **Save Settings**.
+
+A green note, "Visits from this address are accepted.", confirms the address is stored. Addresses that are not `https://`, that include a path, or that are a single word without a dot are refused with a message, and your previous value is kept.
+
+### Good to know
+
+- **Leaving it empty changes nothing.** If WordPress serves your public site, leave the field blank. SyteHero behaves exactly as it did before.
+- **Clearing it:** empty the field and save.
+- **Set by SyteOps.** When SyteOps supplies the frontend address, the field is shown read-only with no Save button. To change it, edit the address in SyteOps.
+- **Your frontend must confirm consent with every report.** The WordPress site cannot see a consent choice a visitor made on your frontend, so each visit, impression or click your frontend reports must include `consent` set to `granted`. Send it only after your frontend has checked the visitor's choice, and send it in the body of the request, not in a link's address. Anything reported without it is ignored.
+- **The other privacy checks still apply.** A report is also ignored when the browser sends a Global Privacy Control signal, or when a consent plugin on the WordPress site says the visitor declined.
+- **Other addresses are still refused.** Only your WordPress address and the frontend address you enter are accepted.
