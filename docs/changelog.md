@@ -10,6 +10,36 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.160 — 2026-10-13
+
+### Added
+- **Headless sites: the frontend is asked to rebuild when your campaigns change.** On a site with a separate frontend, SyteHero now asks for the frontend to be rebuilt when a sale starts or ends, when a banner's scheduled window opens or closes, and when slides, sale schedules or banners are saved, so the frontend does not keep showing an old price or an ended campaign. Several changes made together lead to one rebuild. This needs SyteOps with its rebuild address set. On a site without a separate frontend no rebuild is requested and no scheduled task is added for it.
+- **SyteOps' headless status lists what SyteHero offers.** On any site that runs both plugins, headless or not, SyteOps' pairing status now includes SyteHero's capability names. They say what this version can do, not that anything is switched on.
+
+---
+
+## v1.0.159 — 2026-10-13
+
+### Added
+- **A `wp sytehero status` command.** It reports the plugin's version, whether the licence is unlocked, the frontend address of a headless site, the public endpoints and when each scheduled task runs next, for site checks and frontend builds. Add `--format=json` for a single line a script can read. It prints no licence key, no credential and no IP address.
+
+---
+
+
+
+---
+
+## v1.0.158 — 2026-10-13
+
+### Fixed
+- **A custom slide in the main slider keeps its own numbers.** A custom slide you add to the main slider is now counted under its own identity, so its views, clicks and revenue stay with it when slides are paused, when a slide's schedule starts or ends, or when slides are reordered. Before, a custom slide was counted by its position among the custom slides showing at that moment, and any of those changes could move one slide's numbers onto another. Featured products, page and category slides, custom heroes and the fallback slide were not affected and are unchanged.
+
+### Changed
+- **A custom slide's history starts fresh from this version.** The numbers recorded earlier are not moved and not deleted: they stay listed under the old entries in the Analytics tab and the Sources dashboard until they age out after 90 days. They cannot be given to one slide, because an old entry followed a position in the slider, and different slides held it at different times. Totals are unaffected.
+- **A custom slide is named in the Sources dashboard from the start.** Its row shows the slide's title as soon as an order is credited to it, without waiting for the slide to be viewed.
+
+---
+
 ## v1.0.157 — 2026-10-13
 
 ### Changed
