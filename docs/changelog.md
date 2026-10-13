@@ -10,6 +10,25 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.149 — 2026-10-12
+
+### Fixed
+- **Headless frontend consent can no longer be sidestepped.** Reports from a separate frontend must confirm the visitor's consent (`consent` set to `granted`). That confirmation now has to be in the body of the request, not in a link's address; it is also required when a frontend reports through admin-ajax; and it is still required when the frontend shares the WordPress site's own address.
+- **Slide previews in the Analytics tab are safer.** For a slide that no longer exists, the preview address was reported by a visitor's browser, not chosen by you. Such an address is now shown only when it is a media file on your own site or a YouTube or Vimeo video; anything else shows no preview. For slides you still have, a preview whose media is on another site is now loaded without your login cookies, so it appears only if that site allows cross-site loading, and embeds other than YouTube and Vimeo no longer preview. Your slides themselves are unaffected.
+
+### Changed
+- **The site's own address can no longer be saved as the Frontend address.** It is not a separate frontend, and saving it would have stopped visits from your WordPress pages being recorded. Enter the address of your separate frontend, or leave the field empty.
+
+---
+
+## v1.0.148 — 2026-10-12
+
+### Added
+- **Headless site support for visitor tracking.** If your public site is a separate frontend and WordPress runs on its own address, enter the frontend's address under **Integrations → Headless Frontend**. Attribution touches, slide impressions and CTA clicks sent from that address are then recorded, under the same server-side Global Privacy Control, consent, bot and rate-limit checks as before. Because WordPress cannot see a consent choice made on your frontend, each report from the frontend must include `consent` set to `granted`, sent only after your frontend has checked the visitor's choice; anything without it is ignored. Requests from any other address are still refused. If you leave the field empty, your site keeps behaving as it did. When SyteOps manages the frontend address, SyteHero uses that one and shows it read-only.
+- **Impressions and clicks can be recorded through the REST API.** A separate frontend can now report slide impressions and CTA clicks without going through admin-ajax, which some CDNs challenge for anonymous visitors. Pages rendered by WordPress keep working exactly as before.
+
+---
+
 ## v1.0.147 — 2026-10-08
 
 ### Fixed
