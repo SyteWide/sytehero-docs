@@ -10,6 +10,112 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.157 — 2026-10-13
+
+### Changed
+- **A slide shown only by a slider with its own tag is recognised from an ordinary page view.** SyteHero learns such a slide by seeing its own slider show it to a visitor or customer. It no longer learns one from an admin-ajax or REST request, where the caller can choose what is shown.
+
+---
+
+## v1.0.156 — 2026-10-13
+
+These changes harden the anonymous reports your pages send (visits, slide views and CTA clicks). Pages rendered by WordPress keep reporting exactly as before.
+
+### Fixed
+- **Visit reports must be sent in the body of the request.** The visit-tracking endpoint also accepted its details from the address of the request, so a link or an image placed on your site could record a made-up visit whenever someone loaded it. Only the body of the request counts now, and a request with no body records nothing. SyteHero's own pages have always reported in the body.
+- **Slide views and clicks are no longer dropped on sites with a persistent object cache** (Redis, Memcached). On those sites, after one view or click was recorded, every other one arriving in the next five seconds was lost.
+- **A view or click that could not be recorded no longer blocks the visitor's next one.** Before, it still used up that visitor's allowance, so the same slide was not counted for them for up to five minutes.
+
+### Changed
+- **A limit on made-up slides.** A view, a click or a sale can name any slide, so a script could fill your analytics with slides that do not exist. Slides that are not part of your site are now limited three ways. At most 2,000 of them are taken; nothing you already have is deleted to get there, and a site that already holds more simply takes no new ones until the old ones age out. On any one day (UTC) at most 200 of them are counted, whether they are new that day or not; once one has been counted that day, its further views, clicks and sales that day are counted too. And no name and no preview is kept for such a slide, so it appears in the Analytics tab by its identifier only. The slides you have set up are not limited and do not use up either number: featured products, the page, category and custom slides of the main slider, custom heroes and the fallback slide. Developers can change the two numbers with the `sytehero_analytics_max_unknown_slide_keys` and `sytehero_analytics_max_new_slide_keys_per_day` filters.
+- **Sales revenue follows the same limit.** Revenue is credited to the slide named by a cookie in the buyer's browser, and a buyer can change that cookie. Revenue for one of your own slides is not held back by the limit. Revenue that names any other slide is limited like a view of it, and a slide name of more than 60 characters is ignored. The order itself is never affected.
+- **Revenue waits a moment when the analytics are busy.** SyteHero saves one view, click or sale at a time. A sale that arrived while another was being saved used to be left out at once; it now retries for up to about a sixth of a second. A view or click still does not wait. If a sale's revenue cannot be saved it is left out of that slide's total and, when debug logging is on, noted in the debug log.
+- **The same size limits apply to both ways of reporting a slide view.** A slide identifier of more than 60 characters, or a media address of more than 2,048, is refused however the view is reported. Before, one of the two ways had no limit.
+- **Headless frontends:** a view or click that is not recorded because of a limit gets the same answer as one that was (`{"ok":true}`), so the answer does not show whether a limit has been reached. It can be sent again later.
+
+---
+
+## v1.0.155 — 2026-10-13
+
+### Added
+- **Gumlet videos now show a preview in the Analytics tab.** A slide whose media is a Gumlet embed (`https://play.gumlet.io/embed/…`) used to show no preview there. It now plays in the tile, as YouTube and Vimeo slides do, for slides you still have. The preview appears in Chrome and Edge; other browsers show the slide's numbers without a preview. Your slides themselves are unaffected.
+
+---
+
+## v1.0.154 — 2026-10-13
+
+These changes only affect a site that runs behind a reverse proxy, load balancer or CDN and has listed it in the `SYTEHERO_TRUSTED_PROXY_IPS` setting in `wp-config.php`. A site that never added that setting works exactly as before.
+
+### Fixed
+- **A visitor behind your proxy can no longer dodge the limits on slide views and clicks by forging an address.** Each proxy adds the address it saw to the end of a forwarded list. SyteHero used to read the start of that list, which the visitor's own browser can write. It now reads from the end, the part your proxy writes.
+- **Visit tracking now counts each visitor behind your proxy separately.** The visit-tracking endpoint ignored the trusted proxy setting, so every visitor behind the proxy shared a single limit and visits could go unrecorded on a busy site. It now uses the same setting as slide views and clicks.
+
+### Changed
+- **`X-Real-IP` is no longer read unless you ask for it.** It used to be a fallback when the forwarded list gave no answer, and a caller can write that header itself when the proxy does not set it. If your proxy sets `X-Real-IP` rather than `X-Forwarded-For`, add `SYTEHERO_CLIENT_IP_HEADER` set to `x-real-ip` in `wp-config.php`.
+- **The trusted proxy list accepts address ranges.** An entry may be a single address or a range such as `203.0.113.0/24` or `2001:db8::/32`, which is how CDNs publish their addresses.
+- **If you already use the trusted proxy setting, limits may be counted differently after this update.** List every proxy between your visitors and WordPress, and nothing else: a proxy missing from the list is counted as if it were the visitor.
+
+---
+
+## v1.0.153 — 2026-10-13
+
+### Fixed
+- **A product removed from a running sale is no longer left on its sale price when taking the price off fails.** If the product could not be saved at that moment, the sale's record forgot it and nothing tried again. It now stays on record and is tried again at the next five-minute check, also while your license has lapsed.
+- **A FluentCart price that the database refuses to save is no longer treated as saved.** The sale's record and the product's pre-sale price are kept, and the change is tried again.
+
+---
+
+## v1.0.152 — 2026-10-13
+
+### Added
+- **Sale prices are now checked every five minutes.** A sale's price goes on and comes off at a scheduled moment. If that moment was missed, because a scheduled task was lost or the site could not be reached at that minute, nothing used to try again: a price could stay on after the sale ended, or never go on. The check now puts it right within about five minutes, in both directions. A price left on by a start or end that was missed before this update is not corrected automatically; end or remove that sale from the Schedules tab. The check runs with your site's scheduled tasks, so a site where those are switched off entirely is not covered.
+
+### Changed
+- **Saving while a sale is running no longer re-saves every product in it.** Each save used to apply the sale price to every product in every running sale again. A sale is now applied once, and again only when its products or prices change.
+- **A FluentCart sale price is only ever read from the sale itself.** A price value stored anywhere else in the site's data is never applied to a product.
+
+### Fixed
+- **A sale's prices still come off when your license has lapsed.** Before, a lapsed license stopped sale prices being taken off at the end of a sale. They are now always taken off. No new sale price is applied until the license is active again.
+- **Changing a sale's dates no longer leaves an old start or end waiting to fire.** The old end could take the price off at the old time, and the old start could put it on early.
+- **A sale whose price was taken off can be applied again** while it is still running. Before, it stayed off until the sale was saved again. This includes a sale switched off and on again, or emptied and refilled.
+- **A product in two sales that overlap keeps a sale price when one of them ends.** Before, it went back to its regular price until the schedules were next saved.
+- **One product that cannot be saved no longer holds up the rest of its sale.** The others get their price, and the one that failed is tried again at the next check.
+- **A date changed in the Schedules tab takes effect when it is autosaved.** Before, the new dates were stored but prices, slides and banners kept following the old ones until the next full save.
+- **A sale created, changed or removed through the REST endpoint now schedules and clears its price changes.** Before, its prices did not follow until the schedules were next saved from the admin.
+- **Removing the plugin puts FluentCart prices back** to what they were before a sale, and clears its sale records. Before, a product on sale when the plugin was removed kept its sale price.
+
+---
+
+## v1.0.151 — 2026-10-13
+
+### Fixed
+- **Sale prices now change at the time shown in the Schedules tab.** On a site whose time zone is not UTC, a sale's prices and countdown could start and end several hours away from the time you entered, while its banner switched at the time you entered. They now all follow the time shown in the Schedules tab. A site set to UTC was never affected and sees no change.
+- **A sale time entered for a date on the other side of a daylight-saving change is no longer an hour off.**
+- **Schedule times are always your site's time zone, whatever your browser's.** Editing a sale or a slide schedule from a computer set to a different time zone no longer shifts it.
+- **Saving the Banners tab no longer moves a linked sale.** On a site not set to UTC, every save of the Banners tab pushed the sale linked to a banner further away by the site's offset from UTC.
+- **Changing a custom slide's schedule on the Heroes tab no longer shifts the sale it is linked to.**
+- **The status shown beside a slide or schedule (Active, Scheduled, Expired) now matches its real window** on a site not set to UTC.
+- **The REST endpoint for sales refuses a date it cannot read.** It used to answer as if the sale had been saved while saving nothing, and an update with an unreadable date could remove the sale. It now answers with an error and leaves everything as it was.
+
+### Changed
+- **Your existing sales are adjusted once.** After you update, each sale you had already saved is corrected so that it runs at the time the Schedules tab has always shown. A notice in the WordPress admin lists the adjusted sales that have not ended yet (the first 25, then a count), each with its old and new times, and stays until you dismiss it. A sale whose lower price had started early stays on that price until the sale ends. A sale whose corrected end has already passed is ended right away.
+- **A sale linked to a Google Calendar event keeps its price times,** so it still matches your calendar. The Schedules tab, and the sale's banner and slide, now follow that same time; before, they could show a different one. These sales are listed in the same notice. Check that each one runs when you want it to.
+- **The REST endpoint for sales takes its times in UTC.** A time may be written as `YYYY-MM-DD HH:MM:SS` or in ISO 8601; an ISO 8601 time with an offset is converted to UTC, and one without is read as UTC.
+- **Restoring a backup made with an earlier version adjusts its sale times the same way.**
+
+---
+
+## v1.0.150 — 2026-10-13
+
+### Fixed
+- **FluentCart sales now change the price of a product with one price option.** Before, the sale price was never applied to such a product.
+- **A FluentCart sale now returns the product to the price it had before the sale.** This includes products with no compare-at price, which used to keep the sale price after the sale ended.
+- **Removing a FluentCart sale that never started no longer changes a price.** Before, it could raise the price to the compare-at price.
+- **An empty sale price is never applied.** Before, it could set the price to zero. Clearing the sale price of a running sale now puts the regular price back at once.
+- **A price an earlier version changed on the wrong FluentCart product is put back.** Where an earlier version discounted a different product by mistake, that product returns to its compare-at price the next time the sale is saved or ends.
+
+---
+
 ## v1.0.149 — 2026-10-12
 
 ### Fixed
