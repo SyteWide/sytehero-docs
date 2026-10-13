@@ -28,7 +28,7 @@ If you do not see the Schedules tab, it must be enabled first:
 2. Click **Add Schedule** (or the equivalent button at the top of the list).
 3. **Select products:** Use the product search field to find and select the products (or specific variations) you want to include in the sale.
 4. **Set sale prices:** Enter the sale price for each selected product or variation.
-5. **Choose dates:** Pick a **Start Date** and **End Date** for the sale window.
+5. **Choose dates:** Pick a **Start Date** and **End Date** for the sale window. Times are in your site's time zone (**Settings → General → Timezone** in WordPress), whatever time zone your own computer is set to. Prices, the linked banner, slides and the countdown all change at the time you enter here.
 6. Click **Save Schedules**.
 
 ## What Happens When You Save
@@ -39,6 +39,14 @@ Saving a schedule triggers several automated actions:
 - **Slide creation** -- Hero slides are created (or updated) to showcase the sale products during the active period.
 - **Banner linking** -- If you selected a banner for the schedule, it is linked and will display automatically when the sale is live.
 - **Cache clearing** -- If LiteSpeed Cache is installed and the automatic cache-clearing toggle is enabled in [Settings](/docs/admin-reference/plugin-setup), the LiteSpeed cache is purged when a sale goes live so visitors see updated prices and slides immediately.
+
+## If a Start or End Is Missed
+
+A sale's price goes on and comes off at a scheduled moment. If your site could not act at that moment -- scheduled tasks were switched off, or the site was unreachable -- SyteHero checks again every five minutes and puts it right: the sale price goes on if the sale is running, and comes off if it is over.
+
+- A sale's prices are still taken off when it ends after your license has lapsed. No new sale price is applied until the license is active again.
+- A price left on by a start or end that was missed before version 1.0.152 is not corrected automatically. End or remove that sale from the Schedules tab.
+- Deactivating the plugin leaves sale prices as they are. Removing the plugin puts FluentCart prices back to what they were before the sale.
 
 ## Assigning a Banner
 
