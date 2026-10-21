@@ -61,6 +61,13 @@ back to opt-in. **Manual mode with a bare-country opt-out list (e.g. `US`) works
 verified in production. This is a Full Picture bug, not a SyteHero one.
 :::
 
+### Sites that also run SyteOps
+
+If SyteOps is active with its Leads module on, SyteHero's consent mode follows SyteOps' consent setting rather than its own
+country rule. This does not change how SyteHero reads Full Picture: it still reads Full Picture's
+choices natively whenever Full Picture is active. Until SyteOps v1.6.693, clear your page cache
+after changing SyteOps' consent setting.
+
 ### Global Privacy Control (GPC)
 
 Full Picture 10.1.1 does **not** honor GPC — **SyteHero honors it itself.** A visitor whose

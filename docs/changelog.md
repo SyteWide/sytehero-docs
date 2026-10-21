@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.161 — 2026-10-20
+
+### Changed
+- **When SyteOps Leads is on, SyteHero's consent mode follows SyteOps' consent setting.** Opt-out, opt-in and geo-based now apply to SyteHero's tracking as they do to SyteOps', and a visitor's opt-in or opt-out answer comes from SyteOps. Without SyteOps, or with SyteOps' Leads module off, nothing changes: SyteHero keeps its own geo rule. **Upgrade note:** SyteOps' consent setting defaults to opt-out, so on a site with SyteOps Leads on where that setting was never changed, SyteHero no longer applies its EU/UK opt-in gate after this update. Set SyteOps' consent setting to geo-based (or opt-in) to keep it. A site's `sytehero_consent_config` filter can still set the mode. The `sytehero_visitor_jurisdiction` filter is not consulted while SyteOps is set to geo-based; use SyteOps' `syteops_leads_visitor_jurisdiction` instead. Until SyteOps v1.6.693, clear your page cache after changing the consent setting in SyteOps. `wp sytehero status` now reports the consent mode and who set it.
+
+### Fixed
+- **The visitor jurisdiction lookup is never stored by LiteSpeed page caches.** The lookup could be saved and replayed to the next visitor on sites using LiteSpeed Cache; it now tells LiteSpeed and other page caches to skip it, and sends no-cache headers on WordPress 6.3.2 and later.
+
+---
+
 ## v1.0.160 — 2026-10-13
 
 ### Added
