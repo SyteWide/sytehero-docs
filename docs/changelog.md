@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.165 — 2026-10-21
+
+### Fixed
+- **Debug logging no longer records the text of licence-server replies.** With **Write debug logs to file** on, a licence check now logs only the reply's status codes, a short reason code, and, for a reply that is not JSON, its content type and length. The server's message, the body of a reply that is not JSON, and the text of a connection error are no longer written to the log, so a server error can't put licence details into it. What the Settings page and `wp sytehero` commands show is unchanged.
+
+---
+
 ## v1.0.164 — 2026-10-21
 
 ### Fixed
