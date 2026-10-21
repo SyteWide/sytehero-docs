@@ -46,6 +46,13 @@ pages:
    - **EU / EEA / UK** → opt-in: nothing stored or sent until consent.
    - **US / rest of world** → opt-out is acceptable: tracking runs unless GPC is set.
 
+**When SyteOps Leads is on**, SyteHero follows SyteOps' consent setting (opt-out, opt-in or
+geo-based), and in geo-based mode the visitor's opt-in or opt-out answer comes from SyteOps.
+SyteHero's own country rule applies only without SyteOps Leads. SyteOps' setting defaults to
+opt-out: if you never changed it, SyteHero no longer applies its EU/UK opt-in gate. Set SyteOps to
+geo-based (or opt-in) to keep it. Until SyteOps v1.6.693, clear your page
+cache after changing the consent setting in SyteOps.
+
 Suppressing tracking never breaks a purchase, coupon, or checkout — only the *tracking write* is
 withheld.
 
@@ -63,4 +70,6 @@ withheld.
 When no consent tool is present, SyteHero determines opt-in vs opt-out from the visitor's country
 (Cloudflare's `CF-IPCountry`, or a filter your site provides). EU/EEA/UK ⇒ opt-in; everywhere else
 ⇒ opt-out; unknown ⇒ opt-out (permissive baseline). This is resolved from an endpoint that stores
-nothing.
+nothing. With SyteOps Leads on and its setting geo-based, the answer comes from SyteOps instead, and SyteHero's
+`sytehero_visitor_jurisdiction` filter is not consulted (use SyteOps'
+`syteops_leads_visitor_jurisdiction`). The lookup is marked uncacheable for LiteSpeed page caches.
