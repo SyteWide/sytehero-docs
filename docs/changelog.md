@@ -10,6 +10,30 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.164 — 2026-10-21
+
+### Fixed
+- **The licence move checks the old address more strictly and reports the licence server's answers more clearly.** `wp sytehero license move` now goes ahead only when the old address serves your headless frontend's marker as JSON, with every copy of its backend header naming this site; a marker served as a web page, or with a header that is empty or names another site, is treated as "the old host could not be checked" and can be retried. When the licence server refuses the move because the licence key, email or product does not match, or because it does not recognise the request's credentials, the move now reports `error_license_status` instead of `error_server_unreachable`, so it is not retried; a key or activation the server cannot find is reported as `refused_not_activated`. Only a server that cannot be reached or answers with a server error is reported as retryable.
+
+---
+
+## v1.0.163 — 2026-10-21
+
+### Added
+- **Move your licence to the site's new address: `wp sytehero license move`.** After a site moves to a new address, for example when WordPress moves to a subdomain for a headless setup, run `wp sytehero license move --from=<old address> --format=json` on the site at its new address. It frees the activation of the old address and activates the new one with the same licence key, and it is safe to run again: a finished move answers `already_moved`, and an interrupted one picks up where it stopped. Add `--dry-run` to run every check without changing anything. A copy of your site never takes your licence: the move goes ahead only when the old address serves the marker your new headless frontend publishes there, naming this site, and a copy is refused. If WordPress still answers at the old address, finish the switch to the new address first. An old address that is gone for good needs the licence deactivated and activated again from Settings instead. The command prints a single line a script can read and never your licence key, email or any licence id. `wp sytehero license status` now reports that the move is available.
+
+---
+
+## v1.0.162 — 2026-10-21
+
+### Added
+- **See which address your licence is activated under: `wp sytehero license status`.** It shows whether the licence is active, the site address (host) it is activated under, this site's address and whether the two match. Add `--format=json` for a single line a script can read, and `--refresh` to run the background licence check once first (this also records the address for a site that was activated before this version). `wp sytehero status` now reports the same details in its licence section. Neither prints your licence key, email or any licence id.
+
+### Changed
+- **Background licence checks no longer re-activate your licence under a different address.** SyteHero now remembers the address your licence was activated under. A copy of your site (staging, a restored backup, a site-copy tool) no longer activates itself in the background and uses up one of your activations. Switching between `www.` and the bare address is not a change of address. SyteHero never locks a site because its address changed, but if that site's licence later needs re-activating (for example, the licence server reports it as expired), the background check does not re-activate it under the new address: it waits for the automatic move, coming in the next version, or you can re-activate it from Settings. To move an activation today, deactivate the licence before the move and activate it again afterwards.
+
+---
+
 ## v1.0.161 — 2026-10-20
 
 ### Changed
