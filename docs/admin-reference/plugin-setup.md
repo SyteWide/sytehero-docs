@@ -12,7 +12,16 @@ description: Configure SyteHero plugin settings, theme, and ecommerce platform.
 
 ## License Activation
 
-Enter your license key and customer email, then click **Save Changes**. Check the status table to confirm activation.
+Enter your license key and customer email, then click **Save License**. Check the status table to confirm activation.
+
+### Activation Required (v1.0.168)
+
+A license unlocks only the sites it is activated for. On a site it is not activated for, SyteHero stays locked and the Settings page shows an **Activation Required** notice. Click **Save License** to activate this site with the key and email already saved; you don't need to type them again. If the license has no free activation, deactivate it on another site first.
+
+- A site that was activated before under this same address tries to activate again by itself first (in its background check, or when you click **Refresh License Status**). A site whose address was never recorded doesn't: it locks at its first check after the update, and **Save License** activates it.
+- A site that moved to a new address keeps working for 14 days while you move the license with `wp sytehero license move --from=<old address>`, then locks until the license is moved or activated there.
+- SyteHero confirms the license at least every 15 days. After 14 days without a successful check, an administrator's next dashboard visit runs one (at most once an hour); after 15, features lock until a check succeeds.
+- If the license server can't be reached, features keep working for up to 14 days after the last successful check.
 
 ## Deactivate
 

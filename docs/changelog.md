@@ -10,6 +10,23 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.168 — 2026-10-22
+
+### Changed
+- **SyteHero now stays unlocked only on a site the licence is activated for.** A site that is not activated on its licence shows an "Activation Required" notice on the Settings page, and its features stay locked until it is. Click **Save License** to activate it with the key and email already saved. If this site was activated before under this same address and the licence has a free activation, SyteHero first tries to activate it again: in its background check, or when you click **Refresh License Status** or **Save License**, and again at the next check if the licence server couldn't be reached. A site whose address was never recorded never activates itself in the background: it locks at its first check after this update, with no 14 days, until you click **Save License**.
+- **SyteHero confirms the licence at least every 15 days.** After 14 days without a successful check, an administrator's next dashboard visit runs one (at most once an hour); after 15 days, features lock until a check succeeds. The count starts at this update, so nothing locks when you update.
+- **After a site moves to a new address, it keeps working for 14 days while you move the licence.** Administrators see a notice naming the old and new addresses, the date the 14 days end, and how to move the licence with `wp sytehero license move --from=<old address>` (or remove the old address from the licence in your account and activate it on this site). When the 14 days end, the site locks until the licence is moved or activated there.
+- **If the licence server can't be reached, features keep working for up to 14 days after the last successful check.** Before, every failed check started the 14 days again. On a site that moved, those days end no later than the 14 days to move the licence.
+
+---
+
+## v1.0.167 — 2026-10-22
+
+### Changed
+- **Internal tidy-up.** The install-check route's rate-limit clock was tidied internally. Nothing changes in how SyteHero behaves.
+
+---
+
 ## v1.0.166 — 2026-10-22
 
 ### Fixed

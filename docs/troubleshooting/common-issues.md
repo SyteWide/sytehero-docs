@@ -10,6 +10,10 @@ description: Solutions for common SyteHero problems and error messages.
 
 Re-save your key and email on **Settings**, then click **Refresh License Status**. Check for `product_mismatch`, `variation_mismatch`, or `email_mismatch` messages in the status table.
 
+**"Activation Required" after updating to v1.0.168.** From v1.0.168 a license unlocks only the sites it is activated for. Click **Save License** on **Settings**: it activates this site with the key and email already saved. If the notice says the license has no free activation, deactivate it on another site first. If the site moved to a new address, run `wp sytehero license move --from=<old address>` on the new site instead.
+
+**Locked although the license is active, with no notice about the address.** SyteHero locks when it has not confirmed the license for 15 days (since v1.0.168), for example on a site where WordPress's scheduled tasks never run. Open the dashboard as an administrator (it checks the license when 14 days have passed) or click **Refresh License Status**.
+
 ## 2. Changes Not Showing in Admin
 
 Click **Purge Admin CSS/JS** or **Clear Plugin Update Cache** (buttons above the tabs).
