@@ -10,6 +10,15 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.166 — 2026-10-22
+
+### Fixed
+- **An expired licence keeps showing as expired.** An expired licence now keeps showing as expired, with its "Renew or contact support" prompt on the Settings page, instead of reading "Validation Pending" after a background licence check, including when the licence server is briefly busy or unreachable during that check. Renewing the licence unlocks the plugin again as before.
+- **A disabled licence shows as suspended.** A licence that has been disabled now shows as suspended, with a "License Issue" notice on the Settings page, instead of asking you to activate it. `wp sytehero license move` refuses a disabled licence before it changes anything, so the old site keeps its activation.
+- **A licence at its activation limit shows a clear notice.** The Settings page now says the licence has reached its activation limit and how to free one, instead of "Validation Pending".
+
+---
+
 ## v1.0.165 — 2026-10-21
 
 ### Fixed
