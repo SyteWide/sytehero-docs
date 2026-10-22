@@ -10,6 +10,35 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.171 — 2026-10-22
+
+### Added
+- **Headless frontends can now fetch the site's slider, sales and banners data with the site's PhantomStudio key.** A headless frontend build reads one document with every slide and its schedule, the fallback slide, the custom heroes, the slider settings, the sales and the banners, so a static site can show what the WordPress site shows. The feed needs SyteOps, answers only a request carrying the site's PhantomStudio key, and is never cached. On a site whose licence is locked it carries no slides, sales or banners.
+- **`wp sytehero feed` prints the same data on the site,** so you can check what a headless build will receive.
+- **The Integrations page's Headless Frontend card says whether the feed is available,** that it needs SyteOps when it is not, and to turn on SyteOps' PhantomStudio integration when SyteOps is active but that integration is off.
+- **`wp sytehero status` reports the feed** (whether it is available and its format version) and how many scheduled sale, slide and banner changes are more than five minutes late.
+
+Nothing changes for a site that is not headless.
+
+---
+
+## v1.0.170 — 2026-10-22
+
+### Fixed
+- **FluentCart stores now show their own currency.** The currency symbol and code SyteHero uses on a FluentCart store (prices in the AI product picker, sales reports and order emails) now follow the store's currency setting. Before, they were always `$` and `USD`.
+
+### Changed
+- **Internal groundwork for headless frontends.** SyteHero can now describe a site's slider settings, sales, banners and browser settings as plain data, and its store connection reports the store's currency code. Nothing uses this yet, and nothing changes in how SyteHero behaves.
+
+---
+
+## v1.0.169 — 2026-10-22
+
+### Changed
+- **Groundwork for a headless data feed.** SyteHero can now read every configured slide, the fallback slide and the custom heroes as data, along with whether each slide is live, scheduled or paused. Nothing uses it yet, so nothing changes on your site: the hero slider prints exactly what it printed before.
+
+---
+
 ## v1.0.168 — 2026-10-22
 
 ### Changed
