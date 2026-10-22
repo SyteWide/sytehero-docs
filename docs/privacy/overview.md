@@ -31,7 +31,7 @@ auto-deleted, which breaks attribution).
 | Cookie | Lifetime | Purpose | Category |
 |--------|----------|---------|----------|
 | `sytehero_vid` | 2 years | Anonymous first-party visitor id (random UUID, no personal data) for multi-touch attribution | Statistics / Analytics |
-| `sytehero_hero_click` | 30 days | Which hero slide was clicked, read at checkout for "via Hero" attribution | Statistics / Analytics |
+| `sytehero_hero_click` | 30 days | Which hero slide was clicked, read at checkout for "via Hero" attribution. On a headless site the frontend's browser kit writes it on the parent domain shared with WordPress, only after consent | Statistics / Analytics |
 
 ## How consent is decided
 
