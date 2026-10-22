@@ -10,6 +10,33 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.174 — 2026-10-22
+
+### Fixed
+- **Orders placed through WooCommerce's block checkout are now credited to the hero that was clicked.** Before, only the classic checkout credited the order to the hero, so block-checkout sales never showed as "via Hero" or counted toward the slide's revenue. Block-checkout orders also now get their traffic source recorded in Attribution. An order is credited and recorded once, however it is placed.
+
+---
+
+## v1.0.173 — 2026-10-22
+
+### Added
+- **Headless frontends get a small script to measure hero impressions and clicks.** A frontend on its own hostname can now count which heroes visitors see and click, and credit orders to the hero that was clicked, the way a WordPress page does. The script tracks only after the frontend's own consent banner says the visitor agreed, and stops if they withdraw. It does nothing for visitors who send Global Privacy Control or open a page with `?sytehero_notrack=1`.
+- **A documented contract for it.** The hero feed now says where the script is and carries its checksum, so a frontend build can fetch it and verify it, and a developer guide lists every request the script makes, the limits the site applies, and what is silently not counted.
+
+---
+
+## v1.0.172 — 2026-10-22
+
+### Changed
+- **Preparation for crediting hero clicks on a headless frontend.** This takes effect once the browser kit for headless frontends ships; until then nothing writes the cookie it prepares for. When your headless frontend and WordPress share a parent domain (for example `www.example.com` and `wp.example.com`), the hero feed now names that domain and a short id of your WordPress site, and checkout clears the hero-click cookie on that domain too, so an order is credited to a hero once and later orders are not credited to the same slide.
+- **The clear keeps working after you change or turn off the headless frontend.** For 31 days after the shared domain was last in use, checkout still clears the cookie there, because a frontend built earlier may still write it.
+- **Two stores under one domain do not credit each other's hero clicks.** A click recorded for another SyteHero store under the same parent domain is left for that store.
+- **No shared hosting domain is ever used.** The feed names no domain when the frontend and WordPress do not share one of their own, including a hosting provider's shared staging domain such as `sytestage.com`; the click is then still counted, but no order is credited "via Hero" from a frontend click.
+
+Nothing changes for a site that is not headless.
+
+---
+
 ## v1.0.171 — 2026-10-22
 
 ### Added
