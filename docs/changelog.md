@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.175 — 2026-10-23
+
+### Added
+- **A private version check for SyteWide's maintenance tools.** SyteWide's tools can now see which SyteHero version a site runs without logging in to the server. The check answers only a request that carries the fleet's secret token; to anyone else it looks like a page that does not exist, and no cache ever keeps a copy. It works whatever the state of the licence. Nothing changes for visitors.
+
+---
+
 ## v1.0.174 — 2026-10-22
 
 ### Fixed
