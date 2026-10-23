@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.176 — 2026-10-23
+
+### Changed
+- **Pages no longer show the SyteHero version in script and style links; files still refresh in browsers when they change.**
+
+---
+
 ## v1.0.175 — 2026-10-23
 
 ### Added
