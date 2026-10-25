@@ -10,6 +10,28 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.180 — 2026-10-25
+
+### Fixed
+- **On WooCommerce, a scheduled sale's price no longer shows before the sale starts.** Saving a sale used to write its sale price to the products straight away, where WooCommerce's Store API (read by block themes and apps) listed it, also for a variation looked up on its own. Nothing is written to a product now until its sale starts. Sale prices that earlier versions wrote early are removed once after you update, in the background, wherever they still match the sale exactly; a price you have edited since is left alone. Where two running sales include one product, or an earlier version replaced a running sale's price with a later sale's, the right sale's price goes back on.
+- **Saving a future sale no longer takes a running sale's price off a product both include.**
+- **Taking a product out of one sale no longer resets its price while another running sale still includes it.** Nor does the end or removal of the sale with the higher price, also while the license has lapsed.
+- **Saving a sale no longer makes WooCommerce rebuild its product lookup data for the whole store.** Only the products the sale changed are refreshed.
+
+### Changed
+- **When two running sales include the same product, the lower sale price is the one shown.** When that sale ends, the other sale's price goes back on.
+- **A sale starts, and ends, within about a minute on a site with visitors.** After a page is sent, SyteHero starts any sale that is due and takes off the price of any sale that has ended (putting another running sale's price back), at most once a minute, so neither waits for the next scheduled-task run. The store's API requests, such as a block theme's cart and checkout, never wait for it.
+- **A sale that has not started no longer appears in the banner editor's list of store sales, pre-fills the product's sale dates in the product editor, or offers Match Sale Dates on the Featured Products page.** On WooCommerce and FluentCart alike. All three show it once it starts.
+
+---
+
+## v1.0.179 — 2026-10-25
+
+### Fixed
+- **On WooCommerce, a sale now switches the product to its sale price as soon as the sale starts, everywhere the store shows prices.**
+
+---
+
 ## v1.0.178 — 2026-10-25
 
 ### Added

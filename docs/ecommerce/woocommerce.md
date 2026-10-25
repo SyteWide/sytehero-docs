@@ -11,6 +11,7 @@ SyteHero integrates directly with WooCommerce for product-based hero sliders, au
 ## Requirements
 
 - WooCommerce installed and active on your WordPress site.
+- WooCommerce 10.8 or later is recommended for sales scheduling. Older versions still switch a product to its sale price when a sale starts; SyteHero then updates the price columns of WooCommerce's product lookup data (used for price sorting, the price filter and on-sale lists) itself.
 
 ## Selecting WooCommerce
 
@@ -30,7 +31,7 @@ See [Featured Products](/docs/features/featured-products) for full setup instruc
 
 SyteHero syncs sale prices directly with WooCommerce. When a scheduled sale activates:
 
-- **Sale prices** are written to WooCommerce automatically — your store recognizes the sale natively.
+- **Sale prices** are written to WooCommerce automatically when the sale starts, never before — your store recognizes the sale natively.
 - **Hero slides** are created to showcase the sale products.
 - **Banners** linked to the schedule display automatically.
 
