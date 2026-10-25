@@ -10,6 +10,28 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.178 — 2026-10-25
+
+### Added
+- **Pre-arm on headless sites.** On a site with a frontend address, each sale card has a "Pre-arm on headless sites" switch (off by default). When it is on, the sale's slide, banner and countdown are sent to the frontend with the page before the sale starts and appear a minute after the start time, then come down a minute before the end. Anyone who reads the page source can see them early, including anything you type into the banner, slide text or sale name, such as a price. The feed's own price fields never reach a page before the sale has been applied. The headless feed now says which sales are pre-armed and lists every sale that names a slide, and the browser kit gains helpers that time the show and hide on the server's clock.
+
+### Changed
+- **Sale prices are no longer listed in the headless feed until the sale has been applied.** Before the start, and after the end, the price fields of a sale's items are empty, so a price from the feed cannot reach a page early.
+
+---
+
+## v1.0.177 — 2026-10-25
+
+### Fixed
+- **A site no longer locks its licence when the licence server answers with a web page instead of licence data.** If something in front of the licence server (a website, a cache or a proxy) answers in its place, SyteHero now treats the server as unreachable instead of reading the page as "licence not found". A licence that was valid stays active through the usual grace period, and the check is retried.
+- **WordPress error replies and server failures behind the licence server no longer lock a valid licence.** A "route not found" or "forbidden" reply from WordPress itself, or a failure of the store system behind the licence server, now counts as the server being unreachable, with the same grace period.
+- **Removing a licence now warns you when its activation could not be freed.** If the licence server can't be reached when you remove a licence, the licence is still removed from the site, and a notice tells you to free the activation from your SyteWide account.
+
+### Added
+- **wp-config settings to point a site at a different licence or update server.** `SYTEHERO_LICENSE_GATEWAY_URL` and `SYTEHERO_PUC_METADATA_URL` can be set in `wp-config.php`. Only secure (`https://`) addresses without a username or password are accepted; anything else is ignored and the usual server is used. The licence address receives the site's licence key and email, and the update address decides which plugin code is installed, so point them only at a server you control. `wp sytehero status` shows whether each setting is in use or was ignored.
+
+---
+
 ## v1.0.176 — 2026-10-23
 
 ### Changed
