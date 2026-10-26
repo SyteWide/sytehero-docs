@@ -10,6 +10,17 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.182 — 2026-10-26
+
+### Fixed
+- **A license key the license server doesn't know is now reported as not found, and features lock.** Before, the key was treated as if the license server couldn't be reached: features stayed unlocked for 14 days and the Settings page said "Endpoint is not allowlisted". Removing the license from a site the license server holds no activation for is also answered at once.
+- **Save Configuration no longer activates the license.** Only **Save License** activates a site that shows **Activation Required**, so saving a setting on a staging copy of a site no longer uses up one of the license's activations. A new key or email you type in is still activated whichever button you click.
+- **Removing the license while a background license check runs no longer leaves features unlocked.** Saving, refreshing or removing the license no longer runs at the same time as a background check: while one runs, the page says "A license check is running. Please try again in a moment." Nothing about the license changes until you try again; your other settings are still saved.
+- **The Settings page no longer says "License Active" when features are locked.** After 15 days without a successful license check it shows **License Re-check Needed**, with a pointer to **Refresh License Status**. While the license server can't be reached and features keep working, it shows **License Active**.
+- **Uninstalling SyteHero now also removes its license-check lock and the install-check rate limits.**
+
+---
+
 ## v1.0.181 — 2026-10-26
 
 ### Fixed
