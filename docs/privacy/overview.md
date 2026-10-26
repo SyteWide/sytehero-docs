@@ -56,6 +56,13 @@ cache after changing the consent setting in SyteOps.
 Suppressing tracking never breaks a purchase, coupon, or checkout — only the *tracking write* is
 withheld.
 
+**At checkout.** The checkout itself also respects the visitor's choice. If their browser sends
+Global Privacy Control, or your consent banner reports (through the WP Consent API) that they
+declined statistics, SyteHero records nothing about that order: no "via Hero" flag, no revenue for
+the hero slide, and no link between the order and the visitor's earlier visits. The hero-click
+cookie is still removed, so it can't be applied to a later order. An affiliate coupon used on the
+order still earns its commission, because that comes from the coupon, not from tracking.
+
 ## Which consent tools work
 
 - **WP Full Picture** — supported **natively**. SyteHero detects it and reads its consent choices

@@ -64,6 +64,8 @@ Each featured product can have its own schedule window:
 - When the end date passes, the product automatically expires and is removed from the active rotation.
 - Products without dates remain active indefinitely (until manually removed).
 - **Retain After Schedule** — Toggle this on to keep the product in the hero rotation after its schedule expires. When off (default), expired products are removed automatically.
+- Dates are in your site's time zone, and the status shown beside a slide (Starts On, Ends On, Expired) is judged by your site's time, whatever time zone your computer is set to.
+- Updating a product without changing its dates leaves its schedule, and any sale linked to the slide, exactly where they were.
 
 ## Fallback Slide (required)
 
