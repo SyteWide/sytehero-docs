@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.181 — 2026-10-26
+
+### Fixed
+- **Three background maintenance tasks can no longer fail if they're triggered without their usual settings.**
+
+---
+
 ## v1.0.180 — 2026-10-25
 
 ### Fixed
