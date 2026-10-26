@@ -23,6 +23,13 @@ A license unlocks only the sites it is activated for. On a site it is not activa
 - SyteHero confirms the license at least every 15 days. After 14 days without a successful check, an administrator's next dashboard visit runs one (at most once an hour); after 15, features lock until a check succeeds.
 - If the license server can't be reached, features keep working for up to 14 days after the last successful check.
 
+### Save License and Save Configuration (v1.0.182)
+
+- Only **Save License** activates a site that shows **Activation Required**. **Save Configuration**, at the bottom of the page, saves your settings and re-checks the license, but never activates this site, so saving a setting on a staging copy doesn't use up an activation. A new key or email you type in is activated whichever button you click.
+- A license key the license server doesn't know is reported as not found at once, and features lock.
+- After 15 days without a successful check the page shows **License Re-check Needed**; click **Refresh License Status** to check now.
+- If a background license check is running when you save, refresh or remove the license, the page says "A license check is running. Please try again in a moment." Nothing about the license changes; your other settings are still saved.
+
 ## Deactivate
 
 Toggle **Deactivate license on save** to unlock for a different site.
