@@ -37,6 +37,14 @@ Banners become even more powerful when paired with sales scheduling:
 
 When the linked sale goes live, the banner HTML is injected automatically on your site. This means you can prepare both the sale pricing and the promotional banner ahead of time, and everything activates together on the scheduled start date.
 
+When the sale ends, the banner shows your own text again, or passes to the next sale that uses it. Two sales can share a banner one after the other: the banner follows the sale that is running, or else the next one.
+
+## Banner Times and Time Zones
+
+Banner start and end times are in your site's time zone (**Settings → General → Timezone** in WordPress), whatever time zone your computer is set to.
+
+Saving the Banners tab changes a linked sale's start or end only if you changed that date on the Banners tab. A date you left alone does not move the sale, also on the night the clocks go back, and also after you change your site's time zone. Clearing a banner's date unlinks the sale from the banner; the sale keeps its own dates.
+
 For details on how banner assignment and conflict resolution work, see the [Sales Scheduling](sales-scheduling) documentation.
 
 ## Disabling Banners

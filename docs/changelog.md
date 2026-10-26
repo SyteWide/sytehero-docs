@@ -10,6 +10,37 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.185 — 2026-10-26
+
+### Fixed
+- **Daily sales reports no longer miss orders on sites with a persistent object cache (such as Redis or Memcached).** Each report started at midnight instead of at the previous report, so the orders placed between the send time and midnight never appeared in any report, and a report could be sent twice.
+- **Every order now appears in exactly one sales report.** Before, "Only include completed orders" on WooCommerce counted an order in every report sent on the day it was completed, and a few orders placed while a report was being sent were left out of both.
+- **On FluentCart, "Only include completed orders" reports are no longer always empty.** They now include paid orders whose status is Completed, counted on the day they were completed.
+- **A sales report now includes every order in its period.** Before, a report stopped at 200 orders and left the rest out without saying so.
+- **A hero slide is now credited with an order's revenue only once the order is paid.** Before, an order that was declined, cancelled or never paid still counted on the Analytics tab.
+- **On FluentCart, an order placed after clicking a hero slide is now credited to that slide.** Before, many such orders were not credited, and the click could later be credited to a different order instead.
+- **On FluentCart, amounts in reports now use your currency's decimals,** for example none for the Japanese yen.
+- **Orders you add in wp-admin, or place while logged in as a store manager, are no longer credited to a hero slide.** The hero click in your browser is yours, not a customer's.
+
+### Changed
+- **Checkout now respects Global Privacy Control and a declined consent.** When the visitor's browser sends Global Privacy Control, or they declined statistics cookies in your consent banner, SyteHero records nothing about the order: no "via Hero" flag, no revenue for the hero slide, and no link to the visitor's earlier visits. An affiliate coupon still earns its commission.
+
+## v1.0.184 — 2026-10-26
+
+### Fixed
+- **Saving the Banners tab no longer moves a linked sale's start or end that you did not change.** On the night the clocks go back, after a change of your site's time zone, or for a sale whose times have seconds (set through the API or a calendar), a save that changed nothing could move the sale, and its prices, by up to an hour.
+- **Updating a product no longer moves its slide schedule, or the sale linked to the slide.** On the night the clocks go back, an Update that changed nothing could move both an hour earlier. The same goes for the Heroes tab's schedule save and the API.
+- **Saving the Heroes tab no longer moves a custom slide's schedule, or the sale linked to it, when you did not change it.** On the night the clocks go back, or for a schedule whose times have seconds, a save that changed nothing could move it by up to an hour.
+- **Two sales that follow each other on one banner now each get the banner.** Before, the banner showed the later sale's dates while the first one ran, and when the first sale ended it lost the next sale's dates.
+- **Your own banner text is no longer replaced by the default text when a sale on the banner ends.** Before, it could be lost.
+- **A date that does not exist, such as 30 February, is no longer saved as a date in March.** It is not accepted.
+- **The Go live immediately option on the Schedules tab, and the status shown beside a slide on the Heroes tab, now follow your site's time,** whatever time zone your computer is set to.
+- **The API refuses a banner or slide time it cannot read.** Before, a slide time written with a time zone (such as `Z`) deleted the slide's schedule and unlinked it from its sale while reporting success, and any banner time was saved as sent. Banner and slide times are in your site's time zone; sale times in the API are still UTC.
+- **A banner schedule changed through the API now switches the banner on and off on time, and updates the sale linked to it,** as saving the Banners tab does.
+
+### Changed
+- **When a sale on a banner has ended, saving your schedules no longer puts that sale back on the banner.** The banner shows your own text again, as it does when the sale ends.
+
 ## v1.0.183 — 2026-10-26
 
 ### Fixed

@@ -35,6 +35,8 @@ Period windows (site timezone):
 - **Weekly** — Previous Monday through Sunday
 - **Monthly** — Previous calendar month
 
+Those are the windows of a report's first send. After that, each report starts exactly where the one before it ended, so every order appears in exactly one report: none twice, none skipped. A report includes every order in its window, however many there are. If the orders can't all be read, the report isn't sent, and the same window is tried again an hour later.
+
 ### Real-Time Notifications
 
 Enable per-sale email notifications to get an email every time an order is completed.
@@ -47,7 +49,7 @@ Deduplication prevents multiple emails for the same order when both order comple
 
 ### Order Filters
 
-- **Only include completed orders** — When enabled, emails only include orders with a "completed" status, excluding "processing" and "on-hold" orders. This applies to both periodic summaries and real-time notifications. For real-time, a processing order is silently skipped and will be picked up when it transitions to completed. FluentCart stores are unaffected since all paid orders are already in a completed state.
+- **Only include completed orders** — When enabled, emails only include orders with a "completed" status, excluding "processing" and "on-hold" orders. This applies to both periodic summaries and real-time notifications. For real-time, a processing order is silently skipped and will be picked up when it transitions to completed. On FluentCart, periodic summaries include only paid orders whose status is Completed (FluentCart completes digital orders when they are paid, and physical ones when you complete them); real-time notifications are still sent for every paid FluentCart order. Changing this setting starts the next periodic report's window from that moment.
 
 ### Display Options
 
@@ -116,7 +118,11 @@ Each order triggers **exactly one** "New Sale" email, sent at the moment of purc
 
 ## Hero Click Tracking
 
-When a customer clicks the hero slide CTA button, SyteHero records that interaction. If the customer later completes a purchase, the order is flagged as "via Hero" and a purple badge appears in the sales summary email (when "Show order attribution source" is enabled). This helps you measure how effectively your hero slider drives sales.
+When a customer clicks the hero slide CTA button, SyteHero records that interaction. If the customer later places an order, the order is flagged as "via Hero" and a purple badge appears in the sales summary email (when "Show order attribution source" is enabled). This helps you measure how effectively your hero slider drives sales.
+
+The slide is credited with the order's revenue (on the **Analytics** tab) once the order is paid, and only once. An order that is declined, cancelled or never paid adds no revenue. A bank transfer or check order on hold is credited when you mark it paid (Processing or Completed). Orders you add in wp-admin, and orders placed while logged in as a store manager or administrator, are never credited to a slide: the hero click in that browser is yours, not a customer's.
+
+If the customer's browser sends Global Privacy Control, or they declined statistics cookies in your consent banner (through the WP Consent API), SyteHero doesn't track that order: no "via Hero" flag and no revenue for the slide.
 
 The tracking works automatically — no configuration is needed beyond enabling the attribution display option. It works on both WooCommerce and FluentCart stores.
 
@@ -130,4 +136,6 @@ The report includes orders with these statuses by default:
 - **WooCommerce**: `completed`, `processing`, `on-hold`
 - **FluentCart**: `paid`
 
-When the "Only include completed orders" filter is enabled, WooCommerce reports are limited to `completed` orders only.
+When the "Only include completed orders" filter is enabled, WooCommerce reports are limited to `completed` orders, and FluentCart reports to paid orders whose status is Completed. A completed-only report counts an order on the day it was completed, not the day it was placed.
+
+Amounts are shown with your store currency's number of decimals: none for currencies such as the Japanese yen, three for currencies such as the Kuwaiti dinar.

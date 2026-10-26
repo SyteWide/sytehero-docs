@@ -67,6 +67,10 @@ Each schedule row includes a **Banner** dropdown. Selecting a banner ties that b
 
 If the banner you select is already claimed by another schedule, a confirmation modal will appear explaining the conflict. You can choose to reassign the banner to the current schedule or cancel and pick a different one.
 
+Two sales can use the same banner one after the other. The banner follows the sale that is running, or else the next one to start, and when a sale ends it passes straight to the next sale. When no sale is left, the banner shows your own text again.
+
+The **Go live immediately** option is greyed out for a sale whose start is still ahead. That check uses your site's time, whatever time zone your computer is set to.
+
 ## Schedule States
 
 Every schedule exists in one of three states:
