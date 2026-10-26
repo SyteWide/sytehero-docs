@@ -10,6 +10,24 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.183 — 2026-10-26
+
+### Fixed
+- **A product's price is no longer left wrong when one sale ends and another starts at the same moment.** Before, the two changes could cross: the product could end up at its regular price during the new sale, or, on FluentCart, stay at the old sale's price after both sales had ended.
+- **Saving the Schedules tab and the automatic save of a schedule card no longer overwrite each other.** A sale you deleted could come back. Save now waits for any automatic save still on its way.
+- **Typing a sale's date no longer changes prices before you finish.** A date is saved automatically when you leave its field, not while you type it.
+- **On FluentCart, a sale price of 0, or text that is not a price, no longer stops another running sale's price from going on.** It is not saved as a price, and it is never shown as a sale price.
+- **On a store that writes prices with a decimal comma, a sale price such as 19,99 is no longer read as 1999.** Prices are read and shown the way your store writes them. A sale price that is not lower than the product's regular price is not applied, and saving the schedule warns you about it.
+- **While your license has lapsed, saving no longer puts sale prices on products.** Prices still come off when a sale ends.
+- **On WooCommerce, sale prices written early by older versions are now also removed from products you have since saved in the product editor.** Before, those products could start their sale up to a day early.
+- **The LiteSpeed cache is now cleared when a sale starts or ends from a page visit or from the five-minute check.** Before, visitors could keep seeing the old prices.
+- **On WooCommerce, a product's own sale price comes back when a SyteHero sale on it ends.** Before, the product went back to its regular price.
+- **On FluentCart, a price you change while a sale is running is kept when the sale ends.** Before, the price from before the sale was put back over yours.
+- **Removing the plugin now also removes the WooCommerce sale prices and dates that older versions wrote early, for sales that are not running.**
+
+### Changed
+- **The help now says what turning the Schedules tab off does.** It hides the schedule editor only: sales you have saved still start and end. To cancel a sale, delete it.
+
 ## v1.0.182 — 2026-10-26
 
 ### Fixed

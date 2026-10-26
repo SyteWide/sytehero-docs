@@ -27,9 +27,11 @@ If you do not see the Schedules tab, it must be enabled first:
 1. Open the **Schedules** tab.
 2. Click **Add Schedule** (or the equivalent button at the top of the list).
 3. **Select products:** Use the product search field to find and select the products (or specific variations) you want to include in the sale.
-4. **Set sale prices:** Enter the sale price for each selected product or variation.
+4. **Set sale prices:** Enter the sale price for each selected product or variation. Type it the way your store writes prices: on a store that uses a comma for decimals, `19,99` is nineteen ninety-nine. A sale price must be lower than the product's regular price. When you save, a warning lists any that are not, and those products stay at their regular price during the sale. On FluentCart a sale price of 0 is not a sale and is not saved.
 5. **Choose dates:** Pick a **Start Date** and **End Date** for the sale window. Times are in your site's time zone (**Settings → General → Timezone** in WordPress), whatever time zone your own computer is set to. Prices, the linked banner, slides and the countdown all change at the time you enter here.
 6. Click **Save Schedules**.
+
+A schedule's name and dates are also saved as you work. A date is saved when you leave its field, not while you type it, so a half-typed date never changes prices. **Save Schedules** saves everything on the page, and it first waits for any of those saves still on their way, so neither undoes the other.
 
 ## What Happens When You Save
 
@@ -38,7 +40,8 @@ Saving a schedule triggers several automated actions:
 - **Price updates** -- Nothing is written to your products until the sale starts, so a sale price never shows in your store early, including in WooCommerce's Store API that block themes and apps read. When the sale starts, SyteHero writes the sale price and dates to each product and switches it to its sale price everywhere the store shows prices: the product page, the cart, price sorting and filtering, on-sale product lists, and a variable product's price range. For WooCommerce, this uses WooCommerce's own sale fields, so WooCommerce recognizes the sale natively. For FluentCart, SyteHero manages the pricing directly. A sale you save after its start time goes on straight away.
 - **Slide creation** -- Hero slides are created (or updated) to showcase the sale products during the active period.
 - **Banner linking** -- If you selected a banner for the schedule, it is linked and will display automatically when the sale is live.
-- **Cache clearing** -- If LiteSpeed Cache is installed and the automatic cache-clearing toggle is enabled in [Settings](/docs/admin-reference/plugin-setup), the LiteSpeed cache is purged when a sale goes live so visitors see updated prices and slides immediately.
+- **Cache clearing** -- If LiteSpeed Cache is installed and the automatic cache-clearing toggle is enabled in [Settings](/docs/admin-reference/plugin-setup), the LiteSpeed cache is purged when a sale goes live so visitors see updated prices and slides immediately. This also happens when a sale starts or ends from a page load or from the five-minute check (see below); the cache is then cleared by the next request that can clear it, or by your site's scheduled tasks.
+- **Your own sale comes back** -- On WooCommerce, if a product already had a sale price of its own when a SyteHero sale started, that sale price and its dates are put back when the SyteHero sale ends (also after one SyteHero sale hands the product to another). On FluentCart, the price the product had before the sale is put back, unless you changed the price in FluentCart while the sale was running: then your price is kept.
 
 ## Two Sales on One Product
 
@@ -54,9 +57,9 @@ A sale's start and end are also picked up by your site's own traffic: after a pa
 
 - A sale's prices are still taken off when it ends after your license has lapsed. No new sale price is applied until the license is active again.
 - A price left on by a start or end that was missed before version 1.0.152 is not corrected automatically. End or remove that sale from the Schedules tab.
-- Updating to version 1.0.180 removes, once, the sale prices and dates that earlier versions wrote to products before a sale started. Only values that still match the sale exactly are removed; a sale price you changed by hand in WooCommerce since is left as it is. A product two running sales include gets the lower price, and a product whose running sale's price an earlier version had replaced with a later sale's gets its running sale's price back. This runs in the background, in small batches, through your site's scheduled tasks, so it can take a few minutes on a large store.
+- Updating to version 1.0.180 removes, once, the sale prices and dates that earlier versions wrote to products before a sale started. Only values that still match the sale exactly are removed: the same sale price, and the sale's dates (or the whole days WooCommerce's product editor turns them into when you save the product there). A sale price you changed by hand in WooCommerce since is left as it is. A product two running sales include gets the lower price, and a product whose running sale's price an earlier version had replaced with a later sale's gets its running sale's price back. This runs in the background, in small batches, through your site's scheduled tasks, so it can take a few minutes on a large store.
 - A sale that has not started yet no longer appears in three places that read the product's own sale dates: the banner editor's list of store sales, the product editor's sale dates, and the **Match Sale Dates** button on the **Featured Products** page. This is the same on WooCommerce and on FluentCart. All three show the sale once it starts.
-- Deactivating the plugin leaves sale prices as they are. Removing the plugin puts FluentCart prices back to what they were before the sale.
+- Deactivating the plugin leaves sale prices as they are, and while it is deactivated nothing ends a sale: a FluentCart sale price stays on until you activate the plugin again, and the first check after that takes off whatever ended in the meantime. A WooCommerce sale still ends at the end date stored on the product. Removing the plugin puts FluentCart prices back to what they were before the sale, and removes the WooCommerce sale prices and dates that earlier versions wrote early for sales that are not running (only where they still match the sale exactly).
 
 ## Assigning a Banner
 
@@ -84,13 +87,13 @@ When a schedule creates slides, the slide builder checks that each product has m
 
 ## Disabling Sales Scheduling
 
-To turn off sales scheduling entirely:
+To hide the schedule editor:
 
 1. Go to **SyteHero > Settings**.
 2. Toggle the **Schedules** option **OFF**.
 3. Save your settings.
 
-Disabling the Schedules tab stops all sale syncing and banner injection hooks. Existing sale prices already written to products remain in place. On WooCommerce, you can clear sale prices through WooCommerce's product editor. On FluentCart, sale prices are managed by SyteHero — re-enable the Schedules tab to clear them through the normal expiry flow, or clear them via the FluentCart product editor.
+Turning the Schedules tab off hides the editor only. Sales you have already saved still start and end at their times: their prices go on and come off. To cancel a sale, delete it on the Schedules tab (turn the tab back on first).
 
 ## Retain After Schedule
 
