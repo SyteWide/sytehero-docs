@@ -80,7 +80,7 @@ See the individual platform guides for details on how each integration works.
 
 ## Debug Logging
 
-Toggle file-based logging for diagnostics. The panel shows the log file path.
+Toggle file-based logging for diagnostics. The panel shows the log file path. The log is a `.php` file in a folder under `wp-content` whose name includes a code made from your site's security keys, and its first line stops a web server from showing it, so it cannot be downloaded or guessed. It is capped at 1 MB: when it is full it becomes `debug.log.1.php` (replacing the previous one) and a new file starts, so two files at most are kept. Deleting the plugin removes the folder.
 
 ## Cache Controls
 
