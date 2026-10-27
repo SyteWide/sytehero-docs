@@ -10,6 +10,18 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.191 — 2026-10-26
+
+### Added
+- **The license consent record now includes the address of the person who agreed, alongside the server's.** It is saved as reported by your site and is not verified.
+
+---
+
+## v1.0.190 — 2026-10-26
+
+### Fixed
+- **The debug log can no longer contain text a web server could run.** Text from a request or an error message could reach the log as written, and two requests writing at the same moment could leave the log without the line at its top that stops a web server from running it. Now every character that could start code is stored in a harmless escaped form, and each request checks that line and writes under a lock, writing nothing when it cannot.
+
 ## v1.0.189 — 2026-10-26
 
 ### Fixed

@@ -63,6 +63,15 @@ the hero slide, and no link between the order and the visitor's earlier visits. 
 cookie is still removed, so it can't be applied to a later order. An affiliate coupon used on the
 order still earns its commission, because that comes from the coupon, not from tracking.
 
+## The license consent record
+
+When you agree to the terms as you activate your license, SyteHero sends a consent record to the
+SyteWide license service. Along with your choices it includes the address (IP) of the browser you
+agreed from, so the record shows who agreed as well as which server it came from. That address is
+sent as **reported and unverified**: your site reports it and the license service stores it as
+reported. If your site is behind a proxy or CDN, list it in `SYTEHERO_TRUSTED_PROXY_IPS` so the
+address recorded is yours and not the proxy's. If no valid address is available, none is sent.
+
 ## Which consent tools work
 
 - **WP Full Picture** — supported **natively**. SyteHero detects it and reads its consent choices
