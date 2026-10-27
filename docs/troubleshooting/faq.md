@@ -48,4 +48,13 @@ No. SyteHero stores its hero image and video selections in a separate field on e
 
 ## How do I completely remove SyteHero?
 
-Deactivate the plugin. Deactivation does not delete your settings or product meta.
+**Deactivating** keeps everything: your settings, sales, slides and product data stay, and a sale price that is on stays on (WooCommerce still ends a sale at its own end date; a FluentCart sale price stays until SyteHero is active again).
+
+**Deleting** the plugin (Plugins → Delete, after deactivating) removes everything SyteHero stored. In this order:
+
+1. **Running sales end first.** Every product a SyteHero sale is on goes back: in WooCommerce to the product's own sale price and dates, if it had a sale of its own before, or else to its regular price; in FluentCart to the price the sale replaced. A price you changed yourself while the sale ran is kept.
+2. Then SyteHero's settings, licence details, schedules, banners, reports, analytics and source tracking, its scheduled tasks, the `sytehero-featured-image` tag, its product, order and media data, its database tables (source tracking and AI spend) and its debug log folder (`wp-content/sytehero-logs`) are deleted.
+
+What stays: your products, orders and their own data, and any images you generated with AI and saved to the Media Library. On a multisite network, every site is cleaned.
+
+Deleting cannot be undone. To keep your setup, export it first (see Backup & Restore), or deactivate instead.
