@@ -10,6 +10,31 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.188 — 2026-10-26
+
+### Added
+- **A `publicSubset()` helper in the headless kit** gives a frontend only what may reach the visitor's browser: live items and pre-armed ones, without the names, products or dates of campaigns that have not started.
+
+### Changed
+- **Visit tracking is harder to flood.** Visitors on one IPv6 network now share one limit, and your site records at most 600 new visits a minute, with a fair share for each source so a few cannot crowd everyone else out, and a separate allowance for visitors returning from the same place. At most 2 million stored visits are kept: when there are more, each source of visits is held to its share, a flooding one first, so a flood no longer removes your older visits from elsewhere, and visits that led to an order are always kept. A developer can change either number with a filter.
+- **On a headless site, slide views and clicks reported from anywhere but your own site are counted only when they state the visitor's consent,** as the frontend's own already had to. Your WordPress pages now state it with every view and click they report, after your consent banner allowed it.
+- **The headless kit's clock check now ignores a difference of more than an hour from the server's clock** (it was 24 hours), and its request now goes past caches, a CDN's included.
+
+### Fixed
+- **Slide views and clicks from a headless frontend are no longer lost when its pages send no referrer.** On a frontend whose pages set `Referrer-Policy: no-referrer`, every view and click was refused without an error.
+- **A headless frontend whose consent banner only answers when asked now records the visit's source.** When the visitor accepted after the page had loaded, the landing visit (and the campaign link it came from) was lost, and the slide in view was not counted.
+- **On FluentCart, an order whose visitor sent Global Privacy Control or declined statistics is no longer linked to their earlier visits.** The checkout already kept no hero credit for such an order; the link to the visitor's earlier visits was still made when the payment was processed.
+- **A pre-armed campaign on a headless frontend now comes down on time when the visitor's device wakes from sleep or they return to the page with the Back button.** Before, it could stay up past its end.
+- **The Analytics tab no longer plays a YouTube or Vimeo video reported by a visitor's browser for a slide that no longer exists.** Playing it let whoever uploaded the video see when you opened the tab. Slides you still have preview as before.
+
+## v1.0.187 — 2026-10-26
+
+### Fixed
+- **Deleting SyteHero now runs its clean-up at all.** The clean-up was left out of the plugin download before, so deleting the plugin from the Plugins page removed nothing.
+- **Deleting SyteHero now ends every running sale first.** WooCommerce products get their own sale price and dates back, if they had a sale of their own, or else their regular price; FluentCart products get the price the sale replaced. A price you changed yourself while the sale ran is kept. Before, a sale price that was on when the plugin was deleted stayed on, and with nothing left to end it, a FluentCart sale (or a WooCommerce sale with no end date) never ended.
+- **Deleting SyteHero now removes everything it stored.** Before, its source-tracking tables (visitor ids and hashed emails among them), several settings, temporary data, scheduled tasks and its debug log folder were left behind. Your products, orders and their own data stay, and so do images you generated with AI and saved to the Media Library.
+- **On a multisite network, deleting SyteHero now cleans every site,** not only the main one.
+
 ## v1.0.185 — 2026-10-26
 
 ### Fixed
