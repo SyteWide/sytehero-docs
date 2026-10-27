@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.189 — 2026-10-26
+
+### Fixed
+- **A banner shortcode no longer crashes the page on older WordPress.** On WordPress before 6.5, a banner shortcode with no settings in it (`[your_banner]`) stopped the page with a fatal error.
+- **The debug log can no longer be downloaded from your site.** On servers that ignore `.htaccess` (OpenLiteSpeed, Nginx), the log at its fixed address could be fetched by anyone while debug logging was on. It now lives in a folder whose name includes a code made from your site's security keys, in a file that starts with a line that stops a web server from showing it. It is also capped at 1 MB, with one older file kept. Updating removes the old `sytehero-logs` folder, and deleting the plugin removes the new one.
+- **Saving the Heroes tab at the same moment the plugin gives older custom slides their ids no longer loses the save.**
+- **The fallback slide is now named the same in analytics on every page.** Before, it took the title of whichever page it was shown on.
+- **Deactivating SyteHero now stops all of its background tasks,** including the analytics clean-up, the licence re-check, the Google Calendar sync, the banner check and the cache purge. Before, they kept running with nothing to answer them. Sale and slide start and end events stay booked, as before, so a sale still ends on time after you turn the plugin back on.
+- **During an update across several servers that share a database, the page-file version cache no longer gets rewritten back and forth,** and a file whose modified time moves backwards is no longer re-checked on every page load.
+
 ## v1.0.188 — 2026-10-26
 
 ### Added
