@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.193 — 2026-10-29
+
+### Fixed
+- **A picture another plugin only keeps a note of is no longer treated as in use.** Plugins that record which picture another was made from can now tell SyteHero those records do not show the picture, so it can still be discarded. A picture that is really in use now tells you where when you try to discard it.
+- **A remix of a remix gets a clean file name.** The name no longer collects one remix stamp per round or a "scaled" size word from the original, and a plugin that knows what the new picture shows can name the file after it.
+
+---
+
 ## v1.0.192 — 2026-10-28
 
 ### Fixed
