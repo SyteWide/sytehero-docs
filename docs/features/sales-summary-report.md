@@ -37,6 +37,8 @@ Period windows (site timezone):
 
 Those are the windows of a report's first send. After that, each report starts exactly where the one before it ended, so every order appears in exactly one report: none twice, none skipped. A report includes every order in its window, however many there are. If the orders can't all be read, the report isn't sent, and the same window is tried again an hour later.
 
+If the hourly check that sends reports is missed or delayed (a busy server, a pause in your host's scheduler), the report still goes out the next time it runs, and only once. It covers everything since the previous report, so no orders are lost. A report you have just switched on, or whose schedule you have just changed, is not sent for a send time that has already passed: it waits for its next scheduled time.
+
 ### Real-Time Notifications
 
 Enable per-sale email notifications to get an email every time an order is completed.
@@ -46,6 +48,8 @@ Enable per-sale email notifications to get an email every time an order is compl
 | Digest Window | **Immediately** sends one email per sale. **5 min**, **15 min**, or **30 min** batches multiple sales into a single digest email at the chosen interval. |
 
 Deduplication prevents multiple emails for the same order when both order completion and payment hooks fire.
+
+Orders waiting for a digest are kept until the digest is sent. If the scheduled digest is missed, the next check sends it, and if the email cannot be sent the orders stay queued and are tried again after the next window.
 
 ### Order Filters
 

@@ -10,6 +10,15 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.192 — 2026-10-28
+
+### Fixed
+- **Scheduled sale banners, hero slides, cache clearing, reports and Google Calendar sync now still happen if WordPress loses a scheduled task.** WordPress can silently drop a scheduled task when several things update its schedule at the same moment. Each of these now keeps its own record of what is owed and catches up on a later visit to your site, usually within about five minutes of the time it was due. A slide you paused by hand is not resumed by the catch-up.
+- **A sales summary report whose send time was missed is now sent on the next check** instead of being skipped until the next day, week or month. Turning a report on does not send a report for a time that has already passed.
+- **Orders waiting for a real-time digest email are kept until the email is sent.** Before, they could be lost if the digest was delayed by more than two hours. If the email cannot be sent, the orders stay queued and it is tried again.
+
+---
+
 ## v1.0.191 — 2026-10-26
 
 ### Added
