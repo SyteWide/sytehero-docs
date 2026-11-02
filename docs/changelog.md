@@ -10,6 +10,13 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.194 — 2026-11-02
+
+### Fixed
+- **The hourly fal.ai spend check gives up sooner when fal.ai is down.** It now stops after about 90 seconds in total, or after two failed calls in a row, instead of waiting out a timeout for every batch. Spend it did not get to is checked on the next run, and a healthy fal.ai behaves exactly as before.
+
+---
+
 ## v1.0.193 — 2026-10-29
 
 ### Fixed
