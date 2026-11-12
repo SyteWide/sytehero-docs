@@ -10,6 +10,18 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.195 — 2026-11-12
+
+### Fixed
+- **Cached pages are now cleared once after each SyteHero update.** An update can change how the hero looks, and a page cache could keep showing the old version until something else cleared it. SyteHero now clears the LiteSpeed cache the first time your site runs a new version. It does nothing on sites without a cache plugin that can be cleared.
+- **Starting or ending a sale now clears page caches as well as the hero's own saved slides,** so visitors see the new prices and banner straight away.
+- **Saving the attribution settings, and changing the web address (slug) of a featured product, now clear page caches too.** Before, the old pages could keep being served.
+- **A LiteSpeed cache clear that a sale or banner asked for is no longer lost on a site whose license is not active,** and a command-line run (for example a WP-CLI command) no longer uses up a pending cache clear that no visitor would receive.
+- **Banners that are set to clear the LiteSpeed cache now do so on every site where the sales settings already would,** including sites where LiteSpeed's clear-cache hook is available even though the plugin is not listed as active.
+- **Developers can now run their own code whenever SyteHero has cleared the page caches** (for example to also clear a CDN), using a new hook that fires only for full cache clears.
+
+---
+
 ## v1.0.194 — 2026-11-02
 
 ### Fixed
