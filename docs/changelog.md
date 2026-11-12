@@ -10,6 +10,14 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.196 — 2026-11-12
+
+### Changed
+- **"Clear LiteSpeed Cache when live sales change" is now on by default.** Until now a site that had never opened this setting did not clear the LiteSpeed cache when a sale started or ended. It now does. A site that already chose on or off keeps its choice.
+- **The per-banner "Automatically clear LiteSpeed Cache when settings are saved" option is now on by default,** for new banners and for existing banners that never had it set. A banner where you turned it off stays off, and one where you turned it on stays on.
+
+---
+
 ## v1.0.195 — 2026-11-12
 
 ### Fixed

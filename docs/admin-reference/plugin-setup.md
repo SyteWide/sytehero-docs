@@ -93,7 +93,7 @@ When the LiteSpeed Cache plugin is active, an additional toggle appears:
 
 - **Clear LiteSpeed Cache automatically** — When enabled, SyteHero purges the LiteSpeed cache whenever a schedule goes live or expires. This ensures visitors see updated prices and slides immediately.
 
-This toggle only appears if LiteSpeed Cache is installed and active on your site.
+This toggle is on by default: until you save the setting yourself, SyteHero clears the cache. If you turn it off, it stays off. It only appears if LiteSpeed Cache is installed and active on your site.
 
 ## Access Requirement
 
