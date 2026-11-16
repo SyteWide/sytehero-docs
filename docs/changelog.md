@@ -10,6 +10,25 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.198 — 2026-11-16
+
+### Changed
+- **Maintenance release.** The automated release build is fixed so the downloadable package and the update information are created again. Nothing changes in how the plugin works.
+
+---
+
+## v1.0.197 — 2026-11-15
+
+### Changed
+- **Clearing the cache now reaches every page cache plugin you run.** Starting or ending a sale, saving a banner and updating SyteHero used to clear only LiteSpeed Cache. They now also clear WP Rocket, W3 Total Cache, SG Optimizer, Breeze, Hummingbird, Cache Enabler, Comet Cache and WP Super Cache, so visitors see the new prices and banners whichever cache your site uses.
+- **The cache settings are worded "page cache".** The sales setting is now "Clear page cache automatically" and the banner option is "Automatically clear the page cache when settings are saved". They appear whenever your site has a page cache that SyteHero can clear, not only with LiteSpeed Cache. A choice you already made is kept. One exception: on a site without LiteSpeed Cache where Settings was saved before this version, the old code stored the sales switch as off as a side effect, so it shows off there until you switch it on.
+- **On a site that runs SyteOps, SyteHero's cache clears go through SyteOps.** SyteOps clears LiteSpeed first and your CDN after it, so a CDN no longer re-caches the old page, and a burst of clears becomes one.
+
+### Fixed
+- **On a site without SyteOps, a site administrator can now create fal Assets collections and set the default collection.** Before, nobody could, because the permission belonged to SyteOps. A site with SyteOps keeps its rule: only a SyteOps Admin. The message a person without the permission sees no longer mentions SyteOps when the site has none.
+
+---
+
 ## v1.0.196 — 2026-11-12
 
 ### Changed
