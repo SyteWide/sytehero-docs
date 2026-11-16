@@ -87,13 +87,13 @@ Toggle file-based logging for diagnostics. The panel shows the log file path. Th
 - **Purge Admin CSS/JS** — clears cached admin assets.
 - **Clear Plugin Update Cache** — forces a fresh update check.
 
-## LiteSpeed Cache
+## Page Cache
 
-When the LiteSpeed Cache plugin is active, an additional toggle appears:
+When a page cache is active on your site (LiteSpeed Cache, WP Rocket, W3 Total Cache and other common cache plugins), an additional toggle appears:
 
-- **Clear LiteSpeed Cache automatically** — When enabled, SyteHero purges the LiteSpeed cache whenever a schedule goes live or expires. This ensures visitors see updated prices and slides immediately.
+- **Clear page cache automatically** — When enabled, SyteHero purges the page cache whenever a schedule goes live or expires. This ensures visitors see updated prices and slides immediately. On a site that runs SyteOps, SyteHero hands the purge to SyteOps, which clears LiteSpeed first and your CDN after it.
 
-This toggle is on by default: until you save the setting yourself, SyteHero clears the cache. If you turn it off, it stays off. It only appears if LiteSpeed Cache is installed and active on your site.
+This toggle is on by default: until you save the setting yourself, SyteHero clears the cache. If you turn it off, it stays off. It only appears if a page cache is installed and active on your site.
 
 ## Access Requirement
 

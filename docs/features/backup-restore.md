@@ -72,7 +72,7 @@ Restore is not a full mirror — the importer intentionally drops references tha
 - **Custom slides only:** Only custom-type supplemental slides are imported (per the admonition above — page and category slide bindings are dropped).
 - **Featured order filtering:** Product, page, and category keys are removed from the featured order. Only custom slide and fallback references that exist in the imported data are kept.
 - **Sales schedules:** Imported schedules are converted to non-sale schedules — sale flags are cleared, product pricing data is removed, and product/page/category slide links are dropped. Schedule windows (start/end) and custom/fallback slide associations are preserved.
-- **Banners:** Imported as-is through the standard banner sanitizer. LiteSpeed cache is automatically purged.
+- **Banners:** Imported as-is through the standard banner sanitizer. The page cache is automatically purged.
 - **Tab gates:** Merged with the existing tab gates on the target site rather than replacing them.
 
 ## Common Use Cases
