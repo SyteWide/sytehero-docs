@@ -10,6 +10,16 @@ Uses [Keep a Changelog](https://keepachangelog.com/) format with **Added** / **C
 
 ---
 
+## v1.0.199 — 2026-11-16
+
+### Added
+- **Developers can now turn the analytics impression counter off for chosen visitors with a new filter, for example to exclude internal or automated traffic.** The filter is `sytehero_analytics_beacon_enabled`; return `false` and the impression is not counted for that page view.
+
+### Fixed
+- **A page cache plugin that fails while SyteHero is clearing page caches, or custom code added to run right after the page caches are cleared, no longer stops the remaining caches from being cleared.** The failure is written to the SyteHero debug log when debug logging is on.
+
+---
+
 ## v1.0.198 — 2026-11-16
 
 ### Changed
